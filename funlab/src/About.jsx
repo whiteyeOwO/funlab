@@ -139,8 +139,8 @@ function App() {
 
 
         {/* 裝飾圖 */}
-        <figure className="graph-3 gs_reveal"><img src="./images/icon/graph-buble.svg" alt="" /></figure>
-        <figure className="graph-4 gs_reveal"><img src="./images/icon/graph-buble.svg" alt="" /></figure>
+        <figure className="graph-3 "><img src="./images/icon/graph-buble.svg" alt="" /></figure>
+        <figure className="graph-4 "><img src="./images/icon/graph-buble.svg" alt="" /></figure>
         <figure className="graph-5 "><img src="./images/icon/graph-yellowLine.svg" alt="" /></figure>
         <figure className="graph-6 "><img src="./images/icon/graph-blueLine.svg" alt="" /></figure>
       </section>
