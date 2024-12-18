@@ -1,0 +1,741 @@
+@use "reset";
+@use "variables"as *;
+@use "function"as *;
+@use "keyframes";
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
+
+
+body {
+    background-image: linear-gradient(white 80%, #D9E2FB 100%);
+}
+
+/* 頁首區 */
+#topBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 70px 0 70px;
+    font-family: $font-family-en;
+    font-size: $font-size-16;
+    font-weight: $font-weight-bold;
+
+    .logo {
+        min-width: 100px;
+    }
+
+    .navigation {
+
+        display: flex;
+
+
+        .menu {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2.5px rgba(0, 0, 0, 0.8) solid;
+            border-radius: 30px;
+            padding: 0 20px 0 20px;
+
+            a {
+                position: relative;
+                margin: 0px;
+                padding: 0px 20px 0px 20px;
+                transition: $speed-fast;
+            }
+
+            .a_story::after {
+                content: "關於放飲";
+                position: absolute;
+                left: 20%;
+                top: 10%;
+                width: 100%;
+                height: 100%;
+                font-size: 0.875rem;
+                font-weight: 900;
+                color: transparent;
+                transition: color 0.2s;
+            }
+
+            .a_story:hover::after {
+                color: $color-sub-black;
+            }
+
+            .a_story:hover {
+                color: transparent;
+            }
+
+            .a_menu::after {
+                content: "飲品菜單";
+                position: absolute;
+                left: 18%;
+                top: 10%;
+                width: 100%;
+                height: 100%;
+                font-size: 0.875rem;
+                color: transparent;
+                transition: color 0.2s;
+            }
+
+            .a_menu:hover::after {
+                color: $color-sub-black;
+            }
+
+            .a_menu:hover {
+                color: transparent;
+            }
+
+            .a_fresh::after {
+                content: "嚴選食材";
+                position: absolute;
+                left: 20%;
+                top: 10%;
+                width: 100%;
+                height: 100%;
+                font-size: 0.875rem;
+                color: transparent;
+                transition: color 0.2s;
+            }
+
+            .a_fresh:hover::after {
+                color: $color-sub-black;
+            }
+
+            .a_fresh:hover {
+                color: transparent;
+            }
+
+            .a_store::after {
+                content: "門市據點";
+                position: absolute;
+                left: 20%;
+                top: 10%;
+                width: 100%;
+                height: 100%;
+                font-size: 0.875rem;
+                color: transparent;
+                transition: color 0.2s;
+            }
+
+            .a_store:hover::after {
+                color: $color-sub-black;
+            }
+
+            .a_store:hover {
+                color: transparent;
+            }
+
+            .a_search::after {
+                content: "訂單查詢";
+                position: absolute;
+                left: 24%;
+                top: 10%;
+                width: 100%;
+                height: 100%;
+                font-size: 0.875rem;
+                color: transparent;
+                transition: color 0.2s;
+            }
+
+            .a_search:hover::after {
+                color: $color-sub-black;
+            }
+
+            .a_search:hover {
+                color: transparent;
+            }
+        }
+
+        .funLab {
+            margin-left: 20px;
+            width: 145px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2.5px rgba(0, 0, 0, 0.8) solid;
+            border-radius: 30px;
+            background-color: $color-sub-yellow;
+            transition: 0.3s;
+
+            img {
+                width: 43px;
+            }
+
+            &:hover {
+                background-color: $color-primary-white;
+                color: $color-sub-yellow;
+                text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+            }
+        }
+    }
+}
+
+//電腦斷點 => 漢堡按鈕消失
+@media ($mediaLg) {
+    #topBar {
+        .hamburger {
+            display: none
+        }
+    }
+}
+
+//平板斷點 => 加上漢堡按鈕以及更改位置
+@media ($mediaMd) {
+    #topBar {
+        align-items: start;
+        padding: 20px;
+
+        .logo {
+            margin-top: 13px; //對齊漢堡按鈕
+            margin-left: 15px;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column; //調整直排
+            align-items: flex-end;
+
+            .hamburger {
+                /*  修改button預設樣式  */
+                background-color: transparent;
+                border: none;
+
+                //漢堡按鈕設計
+                .Rotate.active {
+                    transform: rotate(45deg);
+                }
+
+                .line {
+                    fill: none;
+                    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+                    stroke: #000;
+                    stroke-width: 5.5;
+                    stroke-linecap: round;
+                }
+
+                .top {
+                    stroke-dasharray: 40 160;
+                }
+
+                .middle {
+                    stroke-dasharray: 40 142;
+                    transform-origin: 50%;
+                    transition: transform 400ms;
+                }
+
+                .bottom {
+                    stroke-dasharray: 40 85;
+                    transform-origin: 50%;
+                    transition: transform 400ms, stroke-dashoffset 400ms;
+                }
+
+                .active .top {
+                    stroke-dashoffset: -64px;
+                }
+
+                .active .middle {
+                    //stroke-dashoffset: -20px;
+                    transform: rotate(90deg);
+                }
+
+                .active .bottom {
+                    stroke-dashoffset: -64px;
+                }
+
+            }
+
+            .navigation {
+                opacity: 0; //初始不可見
+                visibility: hidden; // 防止被點擊
+                // display: none; // react => 使用visibility,不使用display
+                flex-direction: column; //垂直排
+                align-items: center;
+                align-items: end; //原本置右
+                border-radius: 10px;
+
+                transition: opacity 0.8s ease, visibility 0.8s ease;
+
+                &.show {
+                    opacity: 1;
+                    visibility: visible;
+                    animation: show 1s both;
+                }
+
+                .menu {
+                    flex-direction: column; //改成垂直排  
+                    padding: 8px;
+                    margin-bottom: 20px;
+
+                    a {
+                        margin: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//手機斷點 => logo尺寸
+@media ($mediaSm) {
+    #topBar {
+        .logo {
+            width: 100px;
+        }
+
+        .Rotate {
+            width: 60px;
+        }
+    }
+}
+
+
+/* banner區 */
+#banner {
+    height: 100vh;
+    position: relative;
+
+    figure {
+        height: 100%;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        position: absolute;
+        bottom: 10px;
+        right: 70px;
+
+        h1 {
+            color: $color-sub-yellow;
+            text-shadow: 0 1px 0px rgba(207, 200, 0, 0.8);
+        }
+
+        .ch {
+            font-size: $font-size-72;
+            font-weight: $font-weight-bold;
+            font-family: $font-family-ch;
+        }
+
+        .en {
+            font-size: $font-size-96;
+            font-family: $font-family-en-title;
+            margin-top: -20px;
+        }
+    }
+}
+
+//banner區平板
+@media ($mediaMd) {
+    #banner {
+        .title {
+            right: 50px;
+        }
+    }
+}
+
+//banner區手機
+@media ($mediaSm) {
+    #banner {
+        height: 60vh;
+
+        .title {
+            right: 25px;
+
+            .en {
+                font-size: 3.5rem;
+            }
+
+            .ch {
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+
+/* about區 */
+#about {
+    position: relative;
+    background: linear-gradient(to bottom, #FFFFFF, #B3C7FD);
+    z-index: -2;
+    // padding: 1px;
+    overflow: hidden; //隱藏超出區塊
+
+    .item {
+        @extend %box-center-column;
+        padding: 60px;
+
+        .content {
+            width: 100%;
+            @extend %box-center-column;
+
+            h2 {
+                font-size: $font-size-48;
+                font-weight: $font-weight-bold;
+                font-family: $font-family-ch;
+                margin: 50px 0;
+                text-align: center;
+                color: $color-primary-blue;
+            }
+
+            p {
+                font-size: $font-size-16;
+                color: $color-sub-gray;
+                font-weight: $font-weight-regular;
+                font-family: $font-family-ch;
+                width: 60%; // 文字容器寬度為父容器的 50%
+                word-break: break-word; // 遇到長字時換行
+                text-align: center;
+            }
+
+            .circleImage {
+                width: 60%;
+                margin: 50px 0 100px 0;
+                min-width: 500px;
+            }
+
+        }
+    }
+
+
+
+    .marquee-container {
+        z-index: -1;
+        position: absolute;
+        top: 30%;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        /* 隱藏超出的內容 */
+        display: flex;
+
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+
+        .marquee-content2 {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee2 20s linear infinite;
+        }
+
+        p {
+            color: rgba(252, 251, 189, 0.372);
+            font-size: $font-size-240;
+            font-weight: $font-weight-bold;
+            font-family: $font-family-ch;
+        }
+    }
+
+    .whiteBack {
+        scale: 1.1;
+        margin: -1px;
+    }
+
+    .graph-1 {
+        position: absolute;
+        top: 25%;
+        left: 10%;
+        width: 13%;
+        rotate: 35deg;
+    }
+
+    .graph-2 {
+        position: absolute;
+        bottom: 35%;
+        right: 10%
+    }
+}
+
+//about區手機
+@media ($mediaSm) {
+    #about {
+        .item {
+            padding: 40px 20px;
+
+            .content {
+                h2 {
+                    font-size: 20px;
+                    margin: 30px 0;
+                }
+
+                p {
+                    width: 80%;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 3;
+                    overflow: hidden;
+                }
+
+                .circleImage {
+                    min-width: 280px;
+                    margin: 30px 0;
+                }
+            }
+
+        }
+
+        .marquee-container {
+            top: 35%;
+
+            p {
+                font-size: 11rem;
+            }
+        }
+
+        .graph-1 {
+            display: none;
+        }
+
+        .graph-2 {
+            display: none;
+        }
+    }
+}
+
+
+/* about2區 */
+#about2 {
+    position: relative; //graph定位
+    @extend %box-center-column;
+    padding: 20px;
+    overflow: hidden;
+
+    .item {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        width: 60%;
+        margin-bottom: 150px;
+
+        .photo1 {
+            img {
+                transform: rotate(5deg);
+                border-radius: 8px;
+                min-width: 200px;
+            }
+        }
+
+        .photo2 {
+            img {
+                transform: rotate(-3deg);
+                border-radius: 8px;
+                min-height: 200px;
+                object-fit: cover;
+
+            }
+        }
+
+        h3 {
+            font-size: $font-size-32;
+            font-weight: $font-weight-bold;
+            font-family: $font-family-ch;
+            color: $color-primary-blue;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: $font-size-16;
+            font-weight: $font-weight-regular;
+            font-family: $font-family-ch;
+            color: $color-sub-gray;
+        }
+
+        .content1 {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            margin-right: 80px;
+        }
+
+        .content2 {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            margin-left: 80px;
+        }
+    }
+
+
+    // 裝飾圖
+    .graph-3,
+    .graph-4,
+    .graph-5,
+    .graph-6,
+    .graph-7 {
+        position: absolute;
+        z-index: -2;
+    }
+
+    .graph-3 {
+        top: 0;
+        left: -16%;
+        width: 40%;
+
+    }
+
+    .graph-4 {
+        bottom: 4%;
+        right: -4%;
+        width: 35%;
+        overflow-x: hidden
+    }
+
+    .graph-5 {
+        top: 0;
+        left: 7%;
+        width: 15%;
+        transform: rotate(125deg); // 使用 transform 替代 rotate
+    }
+
+    .graph-6 {
+        bottom: -5%;
+        right: 32%;
+        opacity: .5;
+    }
+}
+
+//about2區平版
+@media ($mediaMd) {
+    #about2 {
+        .item {
+            width: 80%
+        }
+    }
+}
+
+//about2區手機
+@media ($mediaSm) {
+    #about2 {
+        .item {
+            flex-direction: column;
+            align-items: start;
+            margin: 50px 0;
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+                font-size: 0.8rem;
+            }
+
+            .content1 {
+                margin-right: 0px;
+                margin-bottom: 30px;
+            }
+
+            .content2 {
+                order: 1;
+                /* content2 排在前面 */
+                margin-left: 0px;
+                margin-bottom: 30px;
+            }
+
+            .photo2 {
+                order: 2;
+                /* figure 排到最後 */
+            }
+
+            figure {
+                width: 200px;
+                height: 200px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .graph-5 {
+            display: none;
+        }
+    }
+}
+
+
+/* 頁尾區 */
+#footer {
+    display: flex;
+    /* 主軸方向:水平 */
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 25px 70px;
+    background-color: $color-primary-blue;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    font-family: $font-family-ch;
+    font-size: $font-size-16;
+    font-weight: 600;
+    color: $color-primary-white;
+    letter-spacing: 0.05rem;
+
+    .logoFooter {
+        .logoFooterImg {
+            width: 80px;
+            padding: 5px 0px;
+        }
+
+        .logoFooterText {
+            width: 200px;
+            padding-bottom: 15px;
+        }
+    }
+
+    .articleFooter {
+        li {
+            margin-bottom: 15px;
+
+            p {
+                margin-bottom: 5px;
+            }
+        }
+
+        .iconFooter {
+            display: flex;
+
+            img {
+                width: 30px;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+@media ($mediaSm) {
+    #footer {
+        flex-direction: column;
+        align-items: start;
+        padding: 25px 35px;
+
+        .logoFooter {
+            display: none;
+        }
+
+        p {
+            font-size: 10px;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "funlab",
+  "name": "funlab-about",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "gsap": "^3.12.5",
+    "jquery": "^3.7.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sass": "^1.83.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",
