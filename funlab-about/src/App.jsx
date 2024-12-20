@@ -42,7 +42,7 @@ function App() {
         <div className="navbar">
           {/* 漢堡按鈕  */}
           <button className="hamburger">
-            <svg className="Rotate" viewBox="0 0 100 100" width="80" onclick="this.classNameList.toggle('active')">
+            <svg className="Rotate" viewBox="0 0 100 100" width="80" onclickonclick={() => $('.Rotate').find('svg').toggleClass('active')}>
               <path className="line top"
                 d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
               <path className="line middle" d="m 30,50 h 40" />
