@@ -8,7 +8,7 @@ import Menu from "./pages/Menu/Menu";
 import Order from "./pages/Order";
 import Search from "./pages/Search";
 import Store from "./pages/Store";
-import './scss/App.scss';
+import './styles/App.scss';
 
 export default function App() {
 
