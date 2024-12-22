@@ -1,4 +1,5 @@
-@import 'src/styles/abstracts/_variables.scss';
-@import 'src/styles/abstracts/_functions.scss';
-@import 'src/styles/base/_reset.scss';
-@import 'src/styles/base/_typography.scss';
+/* App.scss */
+@use './abstracts/variables/_basic.scss';
+@use './abstracts/variables/_color.scss';
+
+@use './base/reset';

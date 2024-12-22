@@ -1,14 +1,7 @@
-@use "src/styles/base/_reset.scss";
-@use "src/styles/abstracts/_variables.scss" as *;
-@use "src/styles/abstracts/_functions.scss" as *;
+@use "../styles/abstracts/variables/color" as *;
+@use "../styles/abstracts/variables/basic" as *;
+@use "../styles/base/reset" as *;
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
-@keyframes goToFunlabAnime {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 
 /* 頁首 */
 #topBar {
@@ -25,152 +18,90 @@
     font-family: $font-family-en;
     font-size: $font-size-16;
     font-weight: $font-weight-bold;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+}
 
-    .logo {
-        min-width: 164px;
+/* Logo */
+.logo img{
+    width: 10vw;
+    max-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Center logo */
+}
+
+
+/* Navigation container */
+.navigation {
+    display: flex;
+
+    .menu {
+        display: flex;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 2.5px rgba(0, 0, 0, 0.8) solid;
+        border-radius: 30px;
+        padding: 0 20px;
     }
 
-    .navigation {
+    /* Individual menu items (links) */
+    a {
+        position: relative;
+        margin: 0;
+        padding: 0 20px;
+        transition: all 0.3s ease;
+        text-decoration: none; /* Remove underline */
+    }
 
-        display: flex;
+    .a_story::after,
+    .a_menu::after,
+    .a_fresh::after,
+    .a_store::after,
+    .a_search::after {
+        content: attr(data-title);
+        position: absolute;
+        left: 20%;
+        top: 10%;
+        font-size: 0.875rem;
+        color: transparent;
+        transition: color 0.2s;
+    }
 
-        .menu {
-            display: flex;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 2.5px rgba(0, 0, 0, 0.8) solid;
-            border-radius: 30px;
-            padding: 0 20px 0 20px;
+    /* Hover effects */
+    a:hover::after {
+        color: $color-sub-black;
+    }
 
-            a {
-                position: relative;
-                margin: 0px;
-                padding: 0px 20px 0px 20px;
-                transition: $speed-fast;
-            }
+    a:hover {
+        color: transparent;
+    }
 
-            .a_story::after {
-                content: "關於放飲";
-                position: absolute;
-                left: 20%;
-                top: 10%;
-                width: 100%;
-                height: 100%;
-                font-size: 0.875rem;
-                color: transparent;
-                transition: color 0.2s;
-            }
+    .a_story::after { content: "關於放飲"; }
+    .a_menu::after { content: "飲品菜單"; }
+    .a_fresh::after { content: "嚴選食材"; }
+    .a_store::after { content: "門市據點"; }
+    .a_search::after { content: "訂單查詢"; }
+}
 
-            .a_story:hover::after {
-                color: $color-sub-black;
-            }
+/* FunLab (Right Section) */
+.funLab {
+    margin-left: 20px;
+    width: 145px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2.5px rgba(0, 0, 0, 0.8) solid;
+    border-radius: 30px;
+    background-color: $color-sub-yellow;
+    transition: 0.3s ease;
 
-            .a_story:hover {
-                color: transparent;
-            }
+    img {
+        width: 43px;
+    }
 
-            .a_menu::after {
-                content: "飲品菜單";
-                position: absolute;
-                left: 18%;
-                top: 10%;
-                width: 100%;
-                height: 100%;
-                font-size: 0.875rem;
-                color: transparent;
-                transition: color 0.2s;
-            }
-
-            .a_menu:hover::after {
-                color: $color-sub-black;
-            }
-
-            .a_menu:hover {
-                color: transparent;
-            }
-
-            .a_fresh::after {
-                content: "嚴選食材";
-                position: absolute;
-                left: 20%;
-                top: 10%;
-                width: 100%;
-                height: 100%;
-                font-size: 0.875rem;
-                color: transparent;
-                transition: color 0.2s;
-            }
-
-            .a_fresh:hover::after {
-                color: $color-sub-black;
-            }
-
-            .a_fresh:hover {
-                color: transparent;
-            }
-
-            .a_store::after {
-                content: "門市據點";
-                position: absolute;
-                left: 20%;
-                top: 10%;
-                width: 100%;
-                height: 100%;
-                font-size: 0.875rem;
-                color: transparent;
-                transition: color 0.2s;
-            }
-
-            .a_store:hover::after {
-                color: $color-sub-black;
-            }
-
-            .a_store:hover {
-                color: transparent;
-            }
-
-            .a_search::after {
-                content: "訂單查詢";
-                position: absolute;
-                left: 24%;
-                top: 10%;
-                width: 100%;
-                height: 100%;
-                font-size: 0.875rem;
-                color: transparent;
-                transition: color 0.2s;
-            }
-
-            .a_search:hover::after {
-                color: $color-sub-black;
-            }
-
-            .a_search:hover {
-                color: transparent;
-            }
-
-        }
-
-        .funLab {
-            margin-left: 20px;
-            width: 145px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2.5px rgba(0, 0, 0, 0.8) solid;
-            border-radius: 30px;
-            background-color: $color-sub-yellow;
-            transition: 0.3s;
-
-            img {
-                width: 43px;
-            }
-
-            &:hover {
-                background-color: $color-primary-white;
-                color: $color-sub-yellow;
-                text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-            }
-        }
+    &:hover {
+        background-color: $color-primary-white;
+        color: $color-sub-yellow;
+        text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     }
 }

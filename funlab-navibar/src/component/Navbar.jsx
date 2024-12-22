@@ -1,21 +1,24 @@
-import{Link} from "react-router-dom";
-import styles from './Navbar.module.scss';
+import { Link } from "react-router-dom";
+import styles from "../component/Navbar.module.scss";  // Import SCSS module
 
-export default function Navbar(){
-
-    return(
-
-        <div>
-            <ul>
-                <li><Link to='/'>首頁</Link></li>
-                <li><Link to='/about'>關於放飲</Link></li>
-                <li><Link to='/diy'>DIY區</Link></li>
-                <li><Link to='/ingred'>原料區</Link></li>
-                <li><Link to='/menu'>菜單</Link></li>
-                <li><Link to='/order'>訂單查詢結果</Link></li>
-                <li><Link to='/search'>訂單查詢</Link></li>
-                <li><Link to='/store'>門市</Link></li>
-            </ul>
+export default function Navbar() {
+    return (
+        <div id="topBar" className={styles.topBar}>
+            <div className={styles.logo}>
+                <img src="/images/funlogoText.svg" alt="Logo" />
+            </div>
+            <div className={styles.navigation}>
+                <div className={styles.menu}>
+                    <Link className={styles.a_story} to="/about">關於放飲</Link>
+                    <Link className={styles.a_menu} to="/menu">飲品菜單</Link>
+                    <Link className={styles.a_fresh} to="/ingred">嚴選食材</Link>
+                    <Link className={styles.a_store} to="/store">門市據點</Link>
+                    <Link className={styles.a_search} to="/search">訂單查詢</Link>
+                </div>
+                <div className={styles.funLab}>
+                    <img src="/images/funLogo.svg" alt="Funlab Logo" />
+                </div>
+            </div>
         </div>
-    )
+    );
 }
