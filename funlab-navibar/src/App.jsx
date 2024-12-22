@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import DIY from "./pages/DIY";
 import Ingred from "./pages/Ingred";
-import Menu from "./pages/Menu";
+import Menu from "./pages/Menu/Menu";
 import Order from "./pages/Order";
 import Search from "./pages/Search";
 import Store from "./pages/Store";

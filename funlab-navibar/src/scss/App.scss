@@ -1,1 +1,4 @@
-/*這是App.scss的CSS*/ 
+@import 'src/styles/abstracts/_variables.scss';
+@import 'src/styles/abstracts/_functions.scss';
+@import 'src/styles/base/_reset.scss';
+@import 'src/styles/base/_typography.scss';
