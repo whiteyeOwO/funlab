@@ -1,64 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export default function Tab() {
     const [activeTab, setActiveTab] = useState("pureteaDrink");
 
-    useEffect(() => {
-        // JavaScript code to handle DOM manipulation or custom JS logic
-        const buttons = document.querySelectorAll(".tab-btn"); // All navigation buttons
-        const contentBoxes = document.querySelectorAll(".listbox"); // All content boxes
-
-        // Set the default active tab and content on component mount
-        const defaultButton = document.querySelector(".tab-btn.active"); // Find the button with the 'active' class
-        const defaultTargetId = defaultButton ? defaultButton.getAttribute("data-target") : "pureteaDrink"; // Get its data-target
-        const defaultContent = document.getElementById(defaultTargetId); // Find the corresponding content box
-
-        // Ensure the default content is visible
-        if (defaultContent) {
-            defaultContent.classList.add("active");
-        } else {
-            console.warn(`Content box with ID "${defaultTargetId}" not found.`);
-        }
-
-        // Add click events to buttons
-        buttons.forEach((button) => {
-            button.addEventListener("click", (event) => {
-                event.preventDefault(); // Prevent default anchor behavior
-
-                // Remove active state from all buttons and content boxes
-                buttons.forEach((btn) => btn.classList.remove("active"));
-                contentBoxes.forEach((box) => box.classList.remove("active"));
-
-                // Add active state to the clicked button
-                button.classList.add("active");
-
-                // Get the target ID from the data-target attribute
-                const targetId = button.getAttribute("data-target");
-                const targetContent = document.getElementById(targetId);
-
-                // Activate the corresponding content box if it exists
-                if (targetContent) {
-                    targetContent.classList.add("active");
-                } else {
-                    console.warn(`Content box with ID "${targetId}" not found.`);
-                }
-            });
-        });
-
-        // Clean up the event listeners when the component is unmounted
-        return () => {
-            buttons.forEach((button) => {
-                button.removeEventListener("click", () => { });
-            });
-        };
-    }, []);
-
+    // Handles tab click to update activeTab state
     const handleTabClick = (targetId) => {
         setActiveTab(targetId);
     };
 
     return (
         <div className="drinkListTab">
+            {/* Tab Buttons */}
             <ul>
                 <li>
                     <a
@@ -106,26 +58,34 @@ export default function Tab() {
                     </a>
                 </li>
             </ul>
-            {/* Example content boxes */}
-            <div id="pureteaDrink" className={`listbox ${activeTab === "pureteaDrink" ? "active" : ""}`}>
-                {/* Content for Pure Tea */}
-                <p>Pure Tea Content</p>
-            </div>
-            <div id="toppingDrink" className={`listbox ${activeTab === "toppingDrink" ? "active" : ""}`}>
-                {/* Content for Topping Drink */}
-                <p>Topping Drink Content</p>
-            </div>
-            <div id="milkDrink" className={`listbox ${activeTab === "milkDrink" ? "active" : ""}`}>
-                {/* Content for Milk Drink */}
-                <p>Milk Drink Content</p>
-            </div>
-            <div id="milkteaDrink" className={`listbox ${activeTab === "milkteaDrink" ? "active" : ""}`}>
-                {/* Content for Milk Tea */}
-                <p>Milk Tea Content</p>
-            </div>
-            <div id="fruitteaDrink" className={`listbox ${activeTab === "fruitteaDrink" ? "active" : ""}`}>
-                {/* Content for Fruit Tea */}
-                <p>Fruit Tea Content</p>
+
+            {/* Content Boxes */}
+            <div className="content">
+                {activeTab === "pureteaDrink" && (
+                    <div id="pureteaDrink" className="listbox active">
+                        <p>Pure Tea Content</p>
+                    </div>
+                )}
+                {activeTab === "toppingDrink" && (
+                    <div id="toppingDrink" className="listbox active">
+                        <p>Topping Drink Content</p>
+                    </div>
+                )}
+                {activeTab === "milkDrink" && (
+                    <div id="milkDrink" className="listbox active">
+                        <p>Milk Drink Content</p>
+                    </div>
+                )}
+                {activeTab === "milkteaDrink" && (
+                    <div id="milkteaDrink" className="listbox active">
+                        <p>Milk Tea Content</p>
+                    </div>
+                )}
+                {activeTab === "fruitteaDrink" && (
+                    <div id="fruitteaDrink" className="listbox active">
+                        <p>Fruit Tea Content</p>
+                    </div>
+                )}
             </div>
         </div>
     );

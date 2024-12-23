@@ -15,7 +15,6 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <hr />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
