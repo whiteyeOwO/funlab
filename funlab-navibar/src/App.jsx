@@ -13,21 +13,21 @@ import './styles/App.scss';
 export default function App() {
 
   return (
-    <div className="wrap">
-      <Navbar/>
-        <hr />
-        <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/about" element={<About/>}></Route>
-        <Route path="/diy" element={< DIY/>}></Route>
-        <Route path="/ingred" element={<Ingred/>}></Route>
-        <Route path="/menu" element={<Menu/>}></Route>
-        <Route path="/order" element={<Order/>}></Route>
-        <Route path="/search" element={<Search/>}></Route>
-        <Route path="/store" element={<Store/>}></Route>
-        
-        </Routes>
-    </div>
+    <>
+      <Navbar />
+      <hr />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/diy" element={< DIY />}></Route>
+        <Route path="/ingred" element={<Ingred />}></Route>
+        <Route path="/menu" element={<Menu />}></Route>
+        <Route path="/order" element={<Order />}></Route>
+        <Route path="/search" element={<Search />}></Route>
+        <Route path="/store" element={<Store />}></Route>
+
+      </Routes>
+    </>
   )
 }
 
