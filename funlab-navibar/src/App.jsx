@@ -7,7 +7,7 @@ import Ingred from "./pages/Ingred";
 import Menu from "./pages/Menu/Menu";
 import Order from "./pages/Order";
 import Search from "./pages/Search";
-import Store from "./pages/Store";
+import Store from "./pages/Store/Store";
 import './styles/App.scss';
 
 export default function App() {
