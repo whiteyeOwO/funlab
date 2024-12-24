@@ -17,6 +17,7 @@ export default function Navbar() {
                 </div>
                 <div className={styles.funLab}>
                     <img src="/images/funLogo.svg" alt="FUNLAB" />
+                    <p>FUNLAB</p>
                 </div>
             </div>
         </div>

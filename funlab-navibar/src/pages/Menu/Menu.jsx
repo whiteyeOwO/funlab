@@ -8,7 +8,6 @@ export default function Menu() {
         <div className={styles.menu}>
             <h1>我是菜單</h1>
             <Tab />
-            <Product />
         </div>
     );
 }
