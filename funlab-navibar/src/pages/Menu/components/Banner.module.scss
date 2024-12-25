@@ -1,0 +1,40 @@
+.wrapper {
+    max-width: auto;
+    height: 30vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marquee {
+    display: flex;
+    width: calc(200%); // Ensure it covers twice the screen width for seamless looping
+    animation: scroll 25s linear infinite; // 10s duration for smooth scrolling
+}
+
+.slide {
+    flex: 0 0 auto; // Prevent shrinking
+    width: 100vw;
+    height: 100vh;
+    background-size:inherit;
+    background-position: center;
+}
+
+// Keyframes for the marquee effect
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+// Media queries for responsiveness
+@media (max-width: 768px) {
+    .slide {
+        height: 70vh;
+    }
+}

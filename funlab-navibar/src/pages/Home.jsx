@@ -1,3 +1,3 @@
-export default function About() {
-    return <div>我是關於</div>
+export default function Home() {
+    return <div>我是首頁</div>
 }
