@@ -1,6 +1,6 @@
 import React from "react";
-import Tab from "./components/Tab";
 import Banner from "./components/Banner";
+import Tab from "./components/Tab";
 import styles from "./Menu.module.scss";
 
 export default function Menu() {
