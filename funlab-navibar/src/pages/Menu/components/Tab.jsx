@@ -63,7 +63,16 @@ export default function Tab() {
             <div className="content">
                 {activeTab === "pureteaDrink" && (
                     <div id="pureteaDrink" className="listbox active">
-                        <p>Pure Tea Content</p>
+                        <p>
+                            查查查查
+                            <br />
+                            查查查查
+                            <br />
+                            查查查查
+                            <br />
+                            查查查查
+
+                        </p>
                     </div>
                 )}
                 {activeTab === "toppingDrink" && (
