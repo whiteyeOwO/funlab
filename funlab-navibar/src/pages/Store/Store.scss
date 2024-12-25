@@ -1,0 +1,279 @@
+@use"../../styles/base/reset";
+@use"../../styles/abstracts/function"as *;
+@use"../../styles/abstracts/variables"as *;
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
+body {
+    background-image: linear-gradient(white 80%, #D9E2FB 100%);
+}
+
+
+
+/* 主要內容區 */
+main {
+
+    // banner區
+    #banner {
+        height: 70vh;
+        width: 100%;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    //標題
+    h1 {
+        font-family: $font-family-en-title;
+        color: $color-primary-blue;
+        font-size: $font-size-72;
+        text-shadow: 0 2.5px 0px rgb(0, 36, 119, 0.8);
+        text-align: center;
+        margin: 50px 0
+    }
+
+    //店家地區分類
+    .shopListTab {
+        ul {
+            display: flex;
+            justify-content: center;
+
+            li {
+                background-color: $color-primary-white;
+                border: solid 3px $color-sub-lightGray;
+                border-radius: 50px;
+                font-size: $font-size-16;
+                margin: 0 15px;
+                cursor: pointer;
+
+                .tab-btn {
+                    font-family: $font-family-ch;
+                    font-weight: $font-weight-bold;
+                    font-size: $font-size-16;
+                    padding: 10px 20px;
+                    background: transparent;
+                    border: none;
+
+
+                    &.active {
+                        font-size: $font-size-16;
+                        border-radius: 50px;
+                        background-color: $color-primary-blue;
+                        color: $color-primary-white;
+                    }
+                }
+            }
+        }
+    }
+
+    //分店區塊
+    .listbox {
+        position: relative; //裝飾素材父親
+        display: flex;
+        flex-direction: column; //方向垂直
+        align-items: center; //置中
+        justify-content: start; //內容置上
+
+        margin: 40px 0 80px 0;
+        height: 100%;
+        min-height: 820px; //最小高度 =>固定高度footer不會隨著內容上下移動
+
+        display: none;
+        // opacity: 0; /* 初始不可見 */
+        // transition: all 0.5s ease-in-out; /* 過渡效果 */
+        // transform: translateY(50px); /* 初始向下偏移 */
+
+        &.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            // opacity: 1; 
+            // transform: translateY(0); /* 回到原位 */
+        }
+
+        //分店內容
+        .card {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin: $interval-s;
+            width: 52%;
+            z-index: 1;
+
+            //圓角漸層邊框效果
+            border-width: 6px; //邊框的寬度
+            border-style: solid;
+            border-color: transparent; //邊框顏色設為透明，這樣可以讓背景漸層的效果穿透顯示
+            border-radius: 10px;
+            background-image: linear-gradient(white, white), linear-gradient(to bottom right, #c6d4fc 40%, #ffffff 100%);
+            background-clip: padding-box, border-box; //padding-box，表示背景只顯示在內邊距範圍內。
+            background-origin: padding-box, border-box;
+
+            box-shadow: 2px 2.5px 0 rgba(0, 36, 119, 0.4);
+
+            a {
+                width: 40%;
+                position: relative; //定位gotomap父親
+                margin-left: 20px;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    border-radius: 10px;
+                }
+
+                .gotomap {
+                    position: absolute; //定位 絕對位置
+                    top: 0;
+                    left: 0;
+                    width: 100%; // 調整整個div大小
+                    height: 100%; // 調整整個div大小
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: 'Noto Sans';
+                    font-weight: $font-weight-bold;
+                    font-size: $font-size-24;
+                    letter-spacing: 2px; //字符間距
+                    color: #383838;
+                    background-color: #d9d9d995;
+                    transition: 0.2s; //動畫
+                    opacity: 0; //透明度0
+
+                    &:hover {
+                        opacity: 1; //hover時出現
+                    }
+                }
+            }
+
+            .content-text {
+                margin-left: 10%;
+
+                h3 {
+                    font-family: $font-family-ch;
+                    font-weight: 600;
+                    font-size: $font-size-22;
+                    color: $color-sub-black;
+                    margin-bottom: 20px; //標題和內文間距
+                    position: relative; // 確保伺服元素可以正確定位
+                }
+            }
+
+            .paragraph {
+                display: flex;
+                align-items: center;
+                margin-top: 10px; //文字間距
+
+                img {
+                    width: 100%;
+                    max-width: 18px;
+                    margin-right: 10px; //icon往右
+                }
+
+                p {
+                    color: $color-sub-gray;
+                    font-family: $font-family-ch;
+                    font-weight: $font-weight-regular;
+                    font-size: $font-size-16;
+                }
+            }
+        }
+    }
+
+    //裝飾素材
+    .graph-1 {
+        position: absolute;
+        top: 14%;
+        right: 6%;
+    }
+
+    .graph-2 {
+        position: absolute;
+        top: -3%;
+        left: 5%;
+    }
+
+    .graph-3 {
+        position: absolute;
+        bottom: 10%;
+        left: 10%;
+        rotate: 18deg;
+    }
+
+    .graph-4 {
+        position: absolute;
+        bottom: 0%;
+        right: 4%
+    }
+}
+
+
+// /* 頁尾區 */
+#footer {
+    display: flex;
+    /* 主軸方向:水平 */
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 25px 70px;
+    background-color: $color-primary-blue;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    font-family: $font-family-ch;
+    font-size: $font-size-16;
+    font-weight: 600;
+    color: $color-primary-white;
+    letter-spacing: 0.05rem;
+
+    .logoFooter {
+        .logoFooterImg {
+            width: 80px;
+            padding: 5px 0px;
+        }
+
+        .logoFooterText {
+            width: 200px;
+            padding-bottom: 15px;
+        }
+    }
+
+    .articleFooter {
+        li {
+            margin-bottom: 15px;
+
+            p {
+                margin-bottom: 5px;
+            }
+        }
+
+        .iconFooter {
+            display: flex;
+
+            img {
+                width: 30px;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+
+/* 手機頁尾區 */
+@media ($mediaSm) {
+    #footer {
+        flex-direction: column;
+        align-items: start;
+        padding: 25px 35px;
+
+        .logoFooter {
+            display: none;
+        }
+
+        p {
+            font-size: 10px;
+        }
+    }
+}

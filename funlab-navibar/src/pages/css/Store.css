@@ -1,0 +1,266 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap");
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+/* RESET  END*/
+body {
+  background-image: linear-gradient(white 80%, #D9E2FB 100%);
+}
+
+/* 主要內容區 */
+main #banner {
+  height: 70vh;
+  width: 100%;
+}
+main #banner img {
+  height: 100%;
+  object-fit: cover;
+}
+main h1 {
+  font-family: "Notable";
+  color: #5082FF;
+  font-size: 4.5rem;
+  text-shadow: 0 2.5px 0px rgba(0, 36, 119, 0.8);
+  text-align: center;
+  margin: 50px 0;
+}
+main .shopListTab ul {
+  display: flex;
+  justify-content: center;
+}
+main .shopListTab ul li {
+  background-color: #FFFFFF;
+  border: solid 3px #D9D9D9;
+  border-radius: 50px;
+  font-size: 1rem;
+  margin: 0 15px;
+  cursor: pointer;
+}
+main .shopListTab ul li .tab-btn {
+  font-family: "Noto Sans";
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+}
+main .shopListTab ul li .tab-btn.active {
+  font-size: 1rem;
+  border-radius: 50px;
+  background-color: #5082FF;
+  color: #FFFFFF;
+}
+main .listbox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin: 40px 0 80px 0;
+  height: 100%;
+  min-height: 820px;
+  display: none;
+}
+main .listbox.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .listbox .card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+  width: 52%;
+  z-index: 1;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white), linear-gradient(to bottom right, #c6d4fc 40%, #ffffff 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  box-shadow: 2px 2.5px 0 rgba(0, 36, 119, 0.4);
+}
+main .listbox .card a {
+  width: 40%;
+  position: relative;
+  margin-left: 20px;
+}
+main .listbox .card a img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+}
+main .listbox .card a .gotomap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Noto Sans";
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: #383838;
+  background-color: rgba(217, 217, 217, 0.5843137255);
+  transition: 0.2s;
+  opacity: 0;
+}
+main .listbox .card a .gotomap:hover {
+  opacity: 1;
+}
+main .listbox .card .content-text {
+  margin-left: 10%;
+}
+main .listbox .card .content-text h3 {
+  font-family: "Noto Sans";
+  font-weight: 600;
+  font-size: 1.375rem;
+  color: #000000;
+  margin-bottom: 20px;
+  position: relative;
+}
+main .listbox .card .paragraph {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+main .listbox .card .paragraph img {
+  width: 100%;
+  max-width: 18px;
+  margin-right: 10px;
+}
+main .listbox .card .paragraph p {
+  color: #7C7C7C;
+  font-family: "Noto Sans";
+  font-weight: 400;
+  font-size: 1rem;
+}
+main .graph-1 {
+  position: absolute;
+  top: 14%;
+  right: 6%;
+}
+main .graph-2 {
+  position: absolute;
+  top: -3%;
+  left: 5%;
+}
+main .graph-3 {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  rotate: 18deg;
+}
+main .graph-4 {
+  position: absolute;
+  bottom: 0%;
+  right: 4%;
+}
+
+#footer {
+  display: flex;
+  /* 主軸方向:水平 */
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 25px 70px;
+  background-color: #5082FF;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  font-family: "Noto Sans";
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.05rem;
+}
+#footer .logoFooter .logoFooterImg {
+  width: 80px;
+  padding: 5px 0px;
+}
+#footer .logoFooter .logoFooterText {
+  width: 200px;
+  padding-bottom: 15px;
+}
+#footer .articleFooter li {
+  margin-bottom: 15px;
+}
+#footer .articleFooter li p {
+  margin-bottom: 5px;
+}
+#footer .articleFooter .iconFooter {
+  display: flex;
+}
+#footer .articleFooter .iconFooter img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+/* 手機頁尾區 */
+@media (max-width: 640px) {
+  #footer {
+    flex-direction: column;
+    align-items: start;
+    padding: 25px 35px;
+  }
+  #footer .logoFooter {
+    display: none;
+  }
+  #footer p {
+    font-size: 10px;
+  }
+}/*# sourceMappingURL=Store.css.map */
