@@ -1,8 +1,134 @@
+@use "/src/styles/abstracts/variables/color" as *;
+@use "/src/styles/abstracts/variables/basic" as *;
+@use "/src/styles/base/reset" as *;
+
 .menu {
     text-align: center;
     padding: 20px;
 
+    .h {
+        height: 100%;
+        min-height: 125px;
+    }
+
     h1 {
         color: #333;
+    }
+
+    #menuLogo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: fit-content;
+        padding: 40px;
+    }
+}
+
+/*分組頁籤*/
+.drinkListTab {
+
+    ul {
+        display: flex;
+        justify-content: center;
+
+        li {
+            background-color: #ffffff;
+            border: 3px solid $color-sub-lightGray;
+            border-radius: 50px;
+            font-size: $font-size-22;
+            font-weight: bold;
+            margin: 0 20px;
+            cursor: pointer;
+
+            .tab-btn {
+                font-size: 22px;
+                padding: 10px 20px;
+                background: transparent;
+                transition: 0.5s;
+
+                &:hover {
+                    background-color: #e8e8e8;
+                    color: #000;
+                    border-radius: 50px;
+                }
+
+                &.active {
+                    font-size: $font-size-22;
+                    background-color: $color-primary-blue;
+                    border-radius: 50px;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+
+
+/*分組商品區*/
+.productlist {
+    min-height: 120vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    /* Add some spacing between items */
+    z-index: 995;
+
+
+    .product {
+        margin: 40px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        /* Smooth transition */
+
+        &:hover {
+            transform: scale(1.08);
+            opacity: 0.9;
+            /* Reduce opacity for a subtle effect */
+        }
+    }
+
+    .drinkText {
+        position: relative;
+        text-align: center;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        /* Transition for scaling and opacity */
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 56%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            height: 10px;
+            background-color: $color-sub-lightblue;
+            /* Default blue color */
+            opacity: 80%;
+            z-index: 1;
+            transition: background-color 0.5s ease;
+            /* Smooth color transition */
+        }
+
+        &:hover {
+            transform: scale(1.08);
+            opacity: 0.9;
+            /* Subtle opacity effect */
+
+
+            &::before {
+                background-color: $color-sub-pink;
+                /* Change to pink */
+            }
+        }
+
+        h2 {
+            position: relative;
+            font-weight: 500;
+            z-index: 2;
+        }
+
+        p {
+            height: auto;
+        }
     }
 }

@@ -2,11 +2,11 @@ import styles from "./Banner.module.scss";
 
 export default function Banner() {
     const slides = [
-        { url: "/images/banner/fruittea.jpg" },
-        { url: "/images/banner/milk.jpg" },
-        { url: "/images/banner/milktea.jpg" },
-        { url: "/images/banner/puretea.jpg" },
-        { url: "/images/banner/topping.jpg" },
+        { url: "/public/images/menu/fruittea.jpg" },
+        { url: "/public/images/menu/milk.jpg" },
+        { url: "/public/images/menu/milktea.jpg" },
+        { url: "/public/images/menu/puretea.jpg" },
+        { url: "/public/images/menu/topping.jpg" },
     ];
 
     return (

@@ -1,6 +1,6 @@
 .wrapper {
-    max-width: auto;
-    height: 30vh;
+    height: 80%;
+    max-height: 100vh;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -10,25 +10,29 @@
 
 .marquee {
     display: flex;
-    width: calc(200%); // Ensure it covers twice the screen width for seamless looping
-    animation: scroll 25s linear infinite; // 10s duration for smooth scrolling
+    width: calc(200% + 40px); // Adjust width to account for the gaps
+    animation: scroll 50s linear infinite;
 }
 
 .slide {
-    flex: 0 0 auto; // Prevent shrinking
-    width: 100vw;
-    height: 100vh;
-    background-size:inherit;
-    background-position: center;
+    flex: 0 0 auto;
+    width: 100vw; // 讓每個 slide 寬度等於整個視窗
+    height: 100vh; // 高度等於視窗高度
+    margin-right: 8vw; // Slide 間的間距
+    background-size: cover; // 背景圖片會完整覆蓋，但維持比例
+    background-position: center; // 背景圖片居中
+    background-repeat: no-repeat; // 禁止背景重複
 }
+
 
 // Keyframes for the marquee effect
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
+
     100% {
-        transform: translateX(-100%);
+        transform: translateX(calc(-100% - 20px)); // Use calc to subtract the gap properly
     }
 }
 

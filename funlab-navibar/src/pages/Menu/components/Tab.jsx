@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Tab.module.scss";
+import "../Menu.module.scss";
 export default function Tab() {
     const [activeTab, setActiveTab] = useState("pureteaDrink");
 

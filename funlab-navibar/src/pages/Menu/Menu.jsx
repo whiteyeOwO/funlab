@@ -6,7 +6,10 @@ import styles from "./Menu.module.scss";
 export default function Menu() {
     return (
         <div className={styles.menu}>
-            <Banner />
+            <div className="h"></div>
+            <Banner /> 
+            <img src="../public/images/menu/menu.svg" id="menuLogo" alt="menu logo" />
+
             <Tab />
         </div>
     );
