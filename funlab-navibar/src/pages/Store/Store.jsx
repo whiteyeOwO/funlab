@@ -1,5 +1,5 @@
+import './store.scss';
 import GSReveal from '../../component/GSReveal';
-import './store.scss'
 import { useEffect } from 'react';
 
 
