@@ -7,6 +7,7 @@
 body {
     background-image: linear-gradient(white 80%, #D9E2FB 100%);
 }
+
 /* banner區 */
 #banner {
     height: 100vh;
@@ -122,8 +123,6 @@ body {
         }
     }
 
-
-
     .marquee-container {
         z-index: -1;
         position: absolute;
@@ -169,8 +168,9 @@ body {
 
     .graph-2 {
         position: absolute;
-        bottom: 35%;
-        right: 10%
+        top: 60%;
+        left: 80%;
+        width: 10%;
     }
 }
 
