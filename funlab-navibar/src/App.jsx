@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./component/Navbar";  
-import Home from "./pages/Index";
+import Home from "./pages/index/Index";
 import About from "./pages/About/About";
-import DIY from "./pages/DIY";
+import DIY from "./pages/DIY/DIY";
 import Ingred from "./pages/Ingred";
 import Menu from "./pages/Menu/Menu";
 import Order from "./pages/Order";
