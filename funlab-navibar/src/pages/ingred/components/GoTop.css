@@ -9,3 +9,6 @@
     cursor: pointer;
     z-index: 0;
 }
+html {
+    scroll-behavior: smooth;
+}

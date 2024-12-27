@@ -64,6 +64,10 @@ a {
   overflow: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* 頁首 */
 #topBar {
   position: fixed;
@@ -305,7 +309,7 @@ header .page-title {
   padding: 10px 18px;
   margin: 0 25px;
   font-size: 1rem;
-  font-family: "Noto Sans TC";
+  font-family: "Noto Sans";
   font-weight: 800;
   text-decoration: none;
   border: 3px solid #D9D9D9;
@@ -484,13 +488,13 @@ header .page-title {
   width: 136px;
 }
 .ingredient h2 {
-  font-family: "Noto Sans TC";
+  font-family: "Noto Sans";
   font-size: 1.5rem;
   font-weight: bold;
   padding: 18px 0;
 }
 .ingredient P {
-  font-family: "Noto Sans TC";
+  font-family: "Noto Sans";
   font-size: 1.125rem;
   line-height: 28px;
 }
@@ -510,7 +514,7 @@ header .page-title {
   background-color: #5082FF;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
-  font-family: "Noto Sans TC";
+  font-family: "Noto Sans";
   font-size: 1rem;
   font-weight: 600;
   color: #FFFFFF;

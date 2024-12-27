@@ -1,6 +1,6 @@
-@use "./base/reset";
-@use "./abstracts/variables/" as *;
-@use "./abstracts/function/" as *;
+@use "../../styles/base/reset";
+@use "../../styles/abstracts/variables/" as *;
+@use "../../styles/abstracts/function/" as *;
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet');
 
 /* 至頂按鈕(搬出去元件區了) */
@@ -32,7 +32,9 @@
 // }
 
 
-
+html {
+    scroll-behavior: smooth;
+}
 /* 頁首 */
 #topBar {
     position: fixed;
