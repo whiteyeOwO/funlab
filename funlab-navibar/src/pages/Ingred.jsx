@@ -433,7 +433,7 @@ const Ingred = () => {
                             <p>CONTACT</p>
                         </li>
                         <li>
-                            <p>PEIVACY POLICY</p>
+                            <p>PRIVACY POLICY</p>
                         </li>
                         <li>
                             <p>放飲 FUN LAB</p>
@@ -441,8 +441,8 @@ const Ingred = () => {
                             <p>TEL 02-3535-3466</p>
                         </li>
                         <li className="iconFooter">
-                            <img src="images/icon/icon-ig-hover.svg" alt="" />
-                            <img src="images/icon/icon-line-hover.svg" alt="" />
+                            <img src="./images/icon/icon-LINE.svg" alt="" />
+                            <img src="./images/icon/icon-ig.svg" alt="" />
                         </li>
                         <li>
                             <p>©2024 放飲, All Rights Reserved</p>
