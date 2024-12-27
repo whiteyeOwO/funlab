@@ -126,73 +126,272 @@
         min-width: 100px;
     }
 
+    // .navigation {
+
+    //     display: flex;
+
+
+    //     .menu {
+    //         display: flex;
+    //         align-items: center;
+    //         background-color: rgba(255, 255, 255, 0.8);
+    //         border: 2.5px rgba(0, 0, 0, 0.8) solid;
+    //         border-radius: 30px;
+    //         padding: 0 20px 0 20px;
+
+    //         // a {
+    //         //     position: relative;
+    //         //     margin: 0px;
+    //         //     padding: 0px 20px 0px 20px;
+    //         //     transition: $speed-fast;
+    //         // }
+
+    //         // .a_about::after {
+    //         //     content: "關於放飲";
+    //         //     position: absolute;
+    //         //     left: 0%;
+    //         //     top: 10%;
+    //         //     width: 100%;
+    //         //     height: 100%;
+    //         //     font-size: 0.875rem;
+    //         //     font-weight: 900;
+    //         //     // color: transparent;
+    //         //     transition: color 0.2s;
+    //         // }
+
+    //         // .a_about:hover::after {
+    //         //     color: $color-sub-black;
+    //         // }
+
+    //         // .a_about:hover {
+    //         //     color: transparent;
+    //         // }
+
+    //         // .a_manu::after {
+    //         //     content: "飲品菜單";
+    //         //     position: absolute;
+    //         //     left: 0%;
+    //         //     top: 10%;
+    //         //     width: 100%;
+    //         //     height: 100%;
+    //         //     font-size: 0.875rem;
+    //         //     // color: transparent;
+    //         //     transition: color 0.2s;
+    //         // }
+
+    //         // .a_menu:hover::after {
+    //         //     color: $color-sub-black;
+    //         // }
+
+    //         // .a_menu:hover {
+    //         //     color: transparent;
+    //         // }
+
+    //         // .a_fresh::after {
+    //         //     content: "嚴選食材";
+    //         //     position: absolute;
+    //         //     left: 0;
+    //         //     top: 10%;
+    //         //     width: 100%;
+    //         //     height: 100%;
+    //         //     font-size: 0.875rem;
+    //         //     color: transparent;
+    //         //     transition: color 0.2s;
+    //         // }
+
+    //         // .a_fresh:hover::after {
+    //         //     color: $color-sub-black;
+    //         // }
+
+    //         // .a_fresh:hover {
+    //         //     color: transparent;
+    //         // }
+
+    //         // .a_store::after {
+    //         //     content: "門市據點";
+    //         //     position: absolute;
+    //         //     left: 0;
+    //         //     top: 10%;
+    //         //     width: 100%;
+    //         //     height: 100%;
+    //         //     font-size: 0.875rem;
+    //         //     color: transparent;
+    //         //     transition: color 0.2s;
+    //         // }
+
+    //         // .a_store:hover::after {
+    //         //     color: $color-sub-black;
+    //         // }
+
+    //         // .a_store:hover {
+    //         //     color: transparent;
+    //         // }
+
+    //         // .a_search::after {
+    //         //     content: "訂單查詢";
+    //         //     position: absolute;
+    //         //     left: 0;
+    //         //     top: 10%;
+    //         //     width: 100%;
+    //         //     height: 100%;
+    //         //     font-size: 0.875rem;
+    //         //     color: transparent;
+    //         //     transition: color 0.2s;
+    //         // }
+
+    //         // .a_search:hover::after {
+    //         //     color: $color-sub-black;
+    //         // }
+
+    //         // .a_search:hover {
+    //         //     color: transparent;
+    //         // }
+
+    //         // a {
+    //         //     position: relative;
+    //         //     margin: 0;
+    //         //     padding: 0 20px;
+    //         //     transition: all 0.3s ease;
+    //         //     text-decoration: none;
+    //         //     /* Remove underline */
+
+    //         // .a_about::after,
+    //         // .a_menu::after,
+    //         // .a_fresh::after,
+    //         // .a_store::after,
+    //         // .a_search::after {
+    //         //     content: attr(data-title);
+    //         //     position: absolute;
+    //         //     left: 0%;
+    //         //     top: 10%;
+    //         //     font-size: 0.875rem;
+    //         //     color: transparent;
+    //         //     transition: color 0.2s;
+    //         // }
+
+    //         // /* Hover effects */
+    //         // a:hover::after {
+    //         //     color: $color-sub-black;
+    //         // }
+
+    //         // a:hover {
+    //         //     color: transparent;
+    //         // }
+
+    //         // .a_about::after {
+    //         //     content: "關於放飲";
+    //         // }
+
+    //         // .a_menu::after {
+    //         //     content: "飲品菜單";
+    //         // }
+
+    //         // .a_fresh::after {
+    //         //     content: "嚴選食材";
+    //         // }
+
+    //         // .a_store::after {
+    //         //     content: "門市據點";
+    //         // }
+
+    //         // .a_search::after {
+    //         //     content: "訂單查詢";
+    //         // }
+    //         // }
+
+
+    //         a {
+    //                     position: relative;
+    //                     margin: 0;
+    //                     padding: 0 20px;
+    //                     transition: all 0.3s ease;
+    //                     text-decoration: none; /* Remove underline */
+    //                 }
+                
+    //                 .a_about::after,
+    //                 .a_menu::after,
+    //                 .a_fresh::after,
+    //                 .a_store::after,
+    //                 .a_search::after {
+    //                     content: attr(data-title);
+    //                     position: absolute;
+    //                     left: 20%;
+    //                     top: 10%;
+    //                     font-size: 0.875rem;
+    //                     color: transparent;
+    //                     transition: color 0.2s;
+    //                 }
+                
+    //                 /* Hover effects */
+    //                 a:hover::after {
+    //                     color: $color-sub-black;
+    //                 }
+                
+    //                 a:hover {
+    //                     color: transparent;
+    //                 }
+                
+    //                 .a_about::after { content: "關於放飲"; }
+    //                 .a_menu::after { content: "飲品菜單"; }
+    //                 .a_fresh::after { content: "嚴選食材"; }
+    //                 .a_store::after { content: "門市據點"; }
+    //                 .a_search::after { content: "訂單查詢"; }
+                
+
+    //     }
+    // }
+
     .navigation {
+    display: flex;
 
+    .menu {
         display: flex;
-
-
-        .menu {
-            display: flex;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 2.5px rgba(0, 0, 0, 0.8) solid;
-            border-radius: 30px;
-            padding: 0 20px 0 20px;
-
-            a {
-                position: relative;
-                margin: 0;
-                padding: 0 20px;
-                transition: all 0.3s ease;
-                text-decoration: none;
-                /* Remove underline */
-            }
-
-            .a_about::after,
-            .a_menu::after,
-            .a_fresh::after,
-            .a_store::after,
-            .a_search::after {
-                content: attr(data-title);
-                position: absolute;
-                left: 20%;
-                top: 10%;
-                font-size: 0.875rem;
-                color: transparent;
-                transition: color 0.2s;
-            }
-
-            /* Hover effects */
-            a:hover::after {
-                color: $color-sub-black;
-            }
-
-            a:hover {
-                color: transparent;
-            }
-
-            .a_about::after {
-                content: "關於放飲";
-            }
-
-            .a_menu::after {
-                content: "飲品菜單";
-            }
-
-            .a_fresh::after {
-                content: "嚴選食材";
-            }
-
-            .a_store::after {
-                content: "門市據點";
-            }
-
-            .a_search::after {
-                content: "訂單查詢";
-            }
-        }
-
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 2.5px rgba(0, 0, 0, 0.8) solid;
+        border-radius: 30px;
+        padding: 0 20px;
     }
+
+    /* Individual menu items (links) */
+    a {
+        position: relative;
+        margin: 0;
+        padding: 0 20px;
+        transition: all 0.3s ease;
+        text-decoration: none; /* Remove underline */
+    }
+
+    .a_about::after,
+    .a_menu::after,
+    .a_fresh::after,
+    .a_store::after,
+    .a_search::after {
+        content: attr(data-title);
+        position: absolute;
+        left: 20%;
+        top: 10%;
+        font-size: 0.875rem;
+        color: transparent;
+        transition: color 0.2s;
+    }
+
+    /* Hover effects */
+    a:hover::after {
+        color: $color-sub-black;
+    }
+
+    a:hover {
+        color: transparent;
+    }
+
+    .a_about::after { content: "關於放飲"; }
+    .a_menu::after { content: "飲品菜單"; }
+    .a_fresh::after { content: "嚴選食材"; }
+    .a_store::after { content: "門市據點"; }
+    .a_search::after { content: "訂單查詢"; }
+}
+
 
     .funLab {
         margin-left: 20px;

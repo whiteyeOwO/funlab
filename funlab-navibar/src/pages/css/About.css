@@ -1,0 +1,427 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap");
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+/* RESET  END*/
+#about .item, #about .item .content, #about2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marquee2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+body {
+  background-image: linear-gradient(white 80%, #D9E2FB 100%);
+}
+
+/* banner區 */
+#banner {
+  height: 100vh;
+  position: relative;
+}
+#banner figure {
+  height: 100%;
+}
+#banner figure img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#banner .title {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: absolute;
+  bottom: 10px;
+  right: 70px;
+}
+#banner .title h1 {
+  color: #FFF55F;
+  text-shadow: 0 1px 0px rgba(207, 200, 0, 0.8);
+}
+#banner .title .ch {
+  font-size: 4.5rem;
+  font-weight: 800;
+  font-family: "Noto Sans";
+}
+#banner .title .en {
+  font-size: 6rem;
+  font-family: "Notable";
+  margin-top: -20px;
+}
+
+@media (max-width: 1023px) {
+  #banner .title {
+    right: 50px;
+  }
+}
+@media (max-width: 640px) {
+  #banner {
+    height: 60vh;
+  }
+  #banner .title {
+    right: 25px;
+  }
+  #banner .title .en {
+    font-size: 3.5rem;
+  }
+  #banner .title .ch {
+    font-size: 3rem;
+  }
+}
+/* about區 */
+#about {
+  position: relative;
+  background: linear-gradient(to bottom, #FFFFFF, #B3C7FD);
+  z-index: -2;
+  overflow: hidden;
+}
+#about .item {
+  padding: 60px;
+}
+#about .item .content {
+  width: 100%;
+}
+#about .item .content h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: "Noto Sans";
+  margin: 50px 0;
+  text-align: center;
+  color: #5082FF;
+}
+#about .item .content p {
+  font-size: 1rem;
+  color: #7C7C7C;
+  font-weight: 400;
+  font-family: "Noto Sans";
+  width: 60%;
+  word-break: break-word;
+  text-align: center;
+}
+#about .item .content .circleImage {
+  width: 60%;
+  margin: 50px 0 100px 0;
+  min-width: 500px;
+}
+#about .marquee-container {
+  z-index: -1;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  /* 隱藏超出的內容 */
+  display: flex;
+}
+#about .marquee-container .marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+#about .marquee-container .marquee-content2 {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee2 20s linear infinite;
+}
+#about .marquee-container p {
+  color: rgba(252, 251, 189, 0.372);
+  font-size: 15rem;
+  font-weight: 800;
+  font-family: "Noto Sans";
+}
+#about .whiteBack {
+  scale: 1.1;
+  margin: -1px;
+}
+#about .graph-1 {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  width: 13%;
+  rotate: 35deg;
+}
+#about .graph-2 {
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  width: 10%;
+}
+
+@media (max-width: 640px) {
+  #about .item {
+    padding: 40px 20px;
+  }
+  #about .item .content h2 {
+    font-size: 20px;
+    margin: 30px 0;
+  }
+  #about .item .content p {
+    width: 80%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  #about .item .content .circleImage {
+    min-width: 280px;
+    margin: 30px 0;
+  }
+  #about .marquee-container {
+    top: 35%;
+  }
+  #about .marquee-container p {
+    font-size: 11rem;
+  }
+  #about .graph-1 {
+    display: none;
+  }
+  #about .graph-2 {
+    display: none;
+  }
+}
+/* about2區 */
+#about2 {
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+}
+#about2 .item {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  width: 60%;
+  margin-bottom: 150px;
+}
+#about2 .item .photo1 img {
+  transform: rotate(5deg);
+  border-radius: 8px;
+  min-width: 200px;
+}
+#about2 .item .photo2 img {
+  transform: rotate(-3deg);
+  border-radius: 8px;
+  min-height: 200px;
+  object-fit: cover;
+}
+#about2 .item h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: "Noto Sans";
+  color: #5082FF;
+  margin-bottom: 10px;
+}
+#about2 .item p {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Noto Sans";
+  color: #7C7C7C;
+}
+#about2 .item .content1 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-right: 80px;
+}
+#about2 .item .content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 80px;
+}
+#about2 .graph-3,
+#about2 .graph-4,
+#about2 .graph-5,
+#about2 .graph-6,
+#about2 .graph-7 {
+  position: absolute;
+  z-index: -2;
+}
+#about2 .graph-3 {
+  top: 0;
+  left: -16%;
+  width: 40%;
+}
+#about2 .graph-4 {
+  bottom: 4%;
+  right: -4%;
+  width: 35%;
+  overflow-x: hidden;
+}
+#about2 .graph-5 {
+  top: 0;
+  left: 7%;
+  width: 15%;
+  transform: rotate(125deg);
+}
+#about2 .graph-6 {
+  bottom: -5%;
+  right: 32%;
+  opacity: 0.5;
+}
+
+@media (max-width: 1023px) {
+  #about2 .item {
+    width: 80%;
+  }
+}
+@media (max-width: 640px) {
+  #about2 .item {
+    flex-direction: column;
+    align-items: start;
+    margin: 50px 0;
+  }
+  #about2 .item h3 {
+    font-size: 1.2rem;
+  }
+  #about2 .item p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    font-size: 0.8rem;
+  }
+  #about2 .item .content1 {
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+  #about2 .item .content2 {
+    order: 1;
+    /* content2 排在前面 */
+    margin-left: 0px;
+    margin-bottom: 30px;
+  }
+  #about2 .item .photo2 {
+    order: 2;
+    /* figure 排到最後 */
+  }
+  #about2 .item figure {
+    width: 200px;
+    height: 200px;
+  }
+  #about2 .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #about2 .graph-5 {
+    display: none;
+  }
+}
+/* 頁尾區 */
+#footer {
+  display: flex;
+  /* 主軸方向:水平 */
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 25px 70px;
+  background-color: #5082FF;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  font-family: "Noto Sans";
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.05rem;
+}
+#footer .logoFooter .logoFooterImg {
+  width: 80px;
+  padding: 5px 0px;
+}
+#footer .logoFooter .logoFooterText {
+  width: 200px;
+  padding-bottom: 15px;
+}
+#footer .articleFooter li {
+  margin-bottom: 15px;
+}
+#footer .articleFooter li p {
+  margin-bottom: 5px;
+}
+#footer .articleFooter .iconFooter {
+  display: flex;
+}
+#footer .articleFooter .iconFooter img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+@media (max-width: 640px) {
+  #footer {
+    flex-direction: column;
+    align-items: start;
+    padding: 25px 35px;
+  }
+  #footer .logoFooter {
+    display: none;
+  }
+  #footer p {
+    font-size: 10px;
+  }
+}/*# sourceMappingURL=About.css.map */
