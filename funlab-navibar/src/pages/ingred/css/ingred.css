@@ -1,0 +1,541 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet');
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+/* RESET  END*/
+/* 至頂按鈕(搬出去元件區了) */
+/*泡泡*/
+.backgroundBubble {
+  position: fixed;
+  top: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 頁首 */
+#topBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 45px 70px 0 70px;
+  font-family: "Mulish";
+  font-size: 1rem;
+  font-weight: 800;
+}
+#topBar .logo {
+  min-width: 164px;
+}
+#topBar .navigation {
+  display: flex;
+}
+#topBar .navigation .menu {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2.5px rgba(0, 0, 0, 0.8) solid;
+  border-radius: 30px;
+  padding: 0 20px 0 20px;
+}
+#topBar .navigation .menu a {
+  position: relative;
+  margin: 0px;
+  padding: 0px 20px 0px 20px;
+  transition: 0.2s;
+}
+#topBar .navigation .menu .a_story::after {
+  content: "關於放飲";
+  position: absolute;
+  left: 20%;
+  top: 10%;
+  width: 100%;
+  height: 100%;
+  font-size: 0.875rem;
+  font-weight: 900;
+  color: transparent;
+  transition: color 0.2s;
+}
+#topBar .navigation .menu .a_story:hover::after {
+  color: #000000;
+}
+#topBar .navigation .menu .a_story:hover {
+  color: transparent;
+}
+#topBar .navigation .menu .a_menu::after {
+  content: "飲品菜單";
+  position: absolute;
+  left: 18%;
+  top: 10%;
+  width: 100%;
+  height: 100%;
+  font-size: 0.875rem;
+  color: transparent;
+  transition: color 0.2s;
+}
+#topBar .navigation .menu .a_menu:hover::after {
+  color: #000000;
+}
+#topBar .navigation .menu .a_menu:hover {
+  color: transparent;
+}
+#topBar .navigation .menu .a_fresh::after {
+  content: "嚴選食材";
+  position: absolute;
+  left: 20%;
+  top: 10%;
+  width: 100%;
+  height: 100%;
+  font-size: 0.875rem;
+  color: transparent;
+  transition: color 0.2s;
+}
+#topBar .navigation .menu .a_fresh:hover::after {
+  color: #000000;
+}
+#topBar .navigation .menu .a_fresh:hover {
+  color: transparent;
+}
+#topBar .navigation .menu .a_store::after {
+  content: "門市據點";
+  position: absolute;
+  left: 20%;
+  top: 10%;
+  width: 100%;
+  height: 100%;
+  font-size: 0.875rem;
+  color: transparent;
+  transition: color 0.2s;
+}
+#topBar .navigation .menu .a_store:hover::after {
+  color: #000000;
+}
+#topBar .navigation .menu .a_store:hover {
+  color: transparent;
+}
+#topBar .navigation .menu .a_search::after {
+  content: "訂單查詢";
+  position: absolute;
+  left: 24%;
+  top: 10%;
+  width: 100%;
+  height: 100%;
+  font-size: 0.875rem;
+  color: transparent;
+  transition: color 0.2s;
+}
+#topBar .navigation .menu .a_search:hover::after {
+  color: #000000;
+}
+#topBar .navigation .menu .a_search:hover {
+  color: transparent;
+}
+#topBar .navigation .funLab {
+  margin-left: 20px;
+  width: 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px rgba(0, 0, 0, 0.8) solid;
+  border-radius: 30px;
+  background-color: #FFF55F;
+  transition: 0.3s;
+}
+#topBar .navigation .funLab img {
+  width: 43px;
+}
+#topBar .navigation .funLab:hover {
+  background-color: #FFFFFF;
+  color: #FFF55F;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+@media (min-width: 1024px) {
+  #topBar .hamburger {
+    display: none;
+  }
+}
+@media (max-width: 1023px) {
+  #topBar {
+    align-items: start;
+    padding: 25px;
+  }
+  #topBar .logo {
+    margin-top: 13px;
+    margin-left: 15px;
+  }
+  #topBar .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  #topBar .navbar .hamburger {
+    /*  修改button預設樣式  */
+    background-color: transparent;
+    border: none;
+  }
+  #topBar .navbar .hamburger .Rotate.active {
+    transform: rotate(45deg);
+  }
+  #topBar .navbar .hamburger .line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #000;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+  }
+  #topBar .navbar .hamburger .top {
+    stroke-dasharray: 40 160;
+  }
+  #topBar .navbar .hamburger .middle {
+    stroke-dasharray: 40 142;
+    transform-origin: 50%;
+    transition: transform 400ms;
+  }
+  #topBar .navbar .hamburger .bottom {
+    stroke-dasharray: 40 85;
+    transform-origin: 50%;
+    transition: transform 400ms, stroke-dashoffset 400ms;
+  }
+  #topBar .navbar .hamburger .active .top {
+    stroke-dashoffset: -64px;
+  }
+  #topBar .navbar .hamburger .active .middle {
+    transform: rotate(90deg);
+  }
+  #topBar .navbar .hamburger .active .bottom {
+    stroke-dashoffset: -64px;
+  }
+  #topBar .navbar .navigation {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    align-items: end;
+    border-radius: 10px;
+    animation: hide 2s both;
+  }
+  #topBar .navbar .navigation .menu {
+    flex-direction: column;
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+  #topBar .navbar .navigation .menu a {
+    margin: 10px;
+  }
+  #topBar .navbar .navigation.show {
+    display: flex;
+    animation: show 0.4s both;
+  }
+}
+/*Page-title*/
+header .page-title {
+  font-family: "Notable";
+  color: #5082FF;
+  font-size: 6rem;
+  text-align: center;
+  margin: 160px 0 0 0;
+}
+
+/*分組頁籤*/
+.drinkList {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+.drinkList .drinkListTab {
+  display: flex;
+}
+.drinkList .drinkListTab a {
+  display: inline-block;
+  padding: 10px 18px;
+  margin: 0 25px;
+  font-size: 1rem;
+  font-family: "Noto Sans TC";
+  font-weight: 800;
+  text-decoration: none;
+  border: 3px solid #D9D9D9;
+  border-radius: 53px;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+}
+.drinkList .drinkListTab a:hover {
+  background-color: #5082FF;
+  color: #FFFFFF;
+}
+.drinkList .drinkListTab a:target {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+/*內容區*/
+.ingredient-list {
+  display: flex;
+  align-items: center;
+  /* 水平置中 */
+  flex-direction: column;
+  /* 垂直排列子元素 */
+}
+
+.tea,
+.milk,
+.fruit {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  /* ingredient 3 欄 + 右側大圖 */
+  grid-template-rows: auto;
+  /* 根據內容自適應高度 */
+  column-gap: 20px;
+  /* 欄之間的間距 */
+  /* 行之間的間距 */
+  position: relative;
+  padding: 110px 0;
+  max-width: 814px;
+}
+
+.topping {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+.topping .top-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  column-gap: 20px;
+  align-items: center;
+  /* 垂直置中 */
+}
+.topping .top-row .showImg-right {
+  grid-column: 4/5;
+  /* 固定在第四欄 */
+  position: relative;
+}
+.topping .top-row .showImg-right figure {
+  clip-path: circle(50% at 50% 50%);
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  right: -100px;
+}
+.topping .top-row .decorate-right {
+  font-size: 79px;
+  font-weight: 900;
+  color: #5082FF;
+  -webkit-text-stroke: 1.5px #000;
+  position: absolute;
+  right: -80px;
+  top: 0px;
+  z-index: 7;
+}
+.topping .top-row .decorate-right figure {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: -60px;
+  top: -40px;
+}
+.topping .bottom-rows {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 每行 4 個 */
+  column-gap: 20px;
+  /* 欄間距 */
+  row-gap: 40px;
+  /* 行間距 */
+}
+
+.showImg-left {
+  width: 178px;
+  height: 292px;
+  position: relative;
+  /* 給decorate定位用的 */
+}
+.showImg-left figure {
+  clip-path: circle(50% at 50% 50%);
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  left: -100px;
+  z-index: 6;
+}
+
+.decorate-left {
+  font-size: 79px;
+  font-weight: 900;
+  color: #FFFFFF;
+  -webkit-text-stroke: 1.5px #000;
+  position: absolute;
+  left: -80px;
+  top: 80px;
+  z-index: 7;
+}
+.decorate-left figure {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: -60px;
+  top: -40px;
+}
+
+.showImg-right {
+  grid-column: 4/5;
+  /* 第四欄 */
+  grid-row: 1/span 2;
+  /* 跨越 2 行 */
+  width: 178px;
+  height: 292px;
+  position: relative;
+  /* 給decorate定位用的 */
+}
+.showImg-right figure {
+  clip-path: circle(50% at 50% 50%);
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  right: -100px;
+}
+
+.decorate-right {
+  font-size: 79px;
+  font-weight: 900;
+  color: #5082FF;
+  -webkit-text-stroke: 1.5px #000;
+  position: absolute;
+  right: -80px;
+  top: 80px;
+  z-index: 7;
+}
+.decorate-right figure {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: -60px;
+  top: -40px;
+}
+
+.ingredient {
+  width: 178px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 40px 0;
+}
+.ingredient figure {
+  clip-path: circle(50% at 50% 50%);
+  height: 136px;
+  width: 136px;
+}
+.ingredient h2 {
+  font-family: "Noto Sans TC";
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 18px 0;
+}
+.ingredient P {
+  font-family: "Noto Sans TC";
+  font-size: 1.125rem;
+  line-height: 28px;
+}
+
+.up-icon img {
+  width: 10px;
+  height: 10px;
+}
+
+/* 頁尾區 */
+#footer {
+  display: flex;
+  /* 主軸方向:水平 */
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 25px 70px;
+  background-color: #5082FF;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  font-family: "Noto Sans TC";
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.05rem;
+  position: relative;
+  z-index: 98;
+}
+#footer .logoFooter .logoFooterImg {
+  width: 80px;
+  padding: 5px 0px;
+}
+#footer .logoFooter .logoFooterText {
+  width: 200px;
+  padding-bottom: 15px;
+}
+#footer .articleFooter li {
+  margin-bottom: 15px;
+}
+#footer .articleFooter li p {
+  margin-bottom: 5px;
+}
+#footer .articleFooter .iconFooter {
+  display: flex;
+}
+#footer .articleFooter .iconFooter img {
+  width: 30px;
+  margin-right: 5px;
+}/*# sourceMappingURL=ingred.css.map */
