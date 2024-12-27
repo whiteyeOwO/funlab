@@ -1,0 +1,800 @@
+@use "reset";
+@use "variables" as *;
+@use "function" as *;
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
+@property --val {
+    syntax: "<integer>";
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --e {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// 面板
+#panel {
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    width: 80%;
+    height: 80vh;
+    padding: 3%;
+
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+
+    .bg {
+        object-fit: contain;
+        height: fit-content;
+    }
+
+    //甜度冰塊區域
+    #sugarIceArea {
+        display: flex;
+        align-items: start;
+        margin-left: 2%;
+        margin-top: 2%;
+
+        #guidedbar {
+            width: 30%;
+            padding-top: 10px;
+        }
+
+        #barButtonAlign {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #buttonSet,
+        #barSet {
+            display: flex;
+            align-items: center;
+        }
+
+        #honeyBtn {
+            margin-right: 20px;
+            display: block;
+            font-size: 24px;
+            font-weight: 800;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 30px;
+            color: white;
+            border: 2px solid rgba(230, 150, 66);
+            background-color: #ffc250;
+            width: 72px;
+            height: 44px;
+            box-shadow: 0 4px 0 rgb(230, 150, 66);
+            transition: all 0.1s ease-in-out;
+            margin-top: 20px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #ffbe46;
+                border: 2px solid rgba(230, 150, 66, 0.8);
+                text-shadow: 0 -1px -1px #ffbe46;
+                box-shadow: 0 4px 0 rgba(230, 150, 66, 0.8), 0 2px 5px 0px white inset;
+            }
+
+            &.active {
+                color: #c37e35;
+                transform: translateY(2px);
+                box-shadow: 0 1px 0px 3px rgba(230, 150, 66, 0.4) inset;
+                background-color: #ffc250;
+            }
+        }
+
+        #hotBtn {
+            display: block;
+            font-size: 24px;
+            font-weight: 800;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            border: 2px solid #EE6060;
+            background-color: #FF816A;
+            width: 72px;
+            height: 44px;
+            box-shadow: 0 4px 0 #EE6060;
+            transition: all 0.1s ease-in-out;
+            margin-top: 20px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #ff9481;
+                border: 2px solid rgba(238, 96, 96, 0.8);
+                text-shadow: 0 -1px -1px #ff9481;
+                box-shadow: 0 4px 0 rgba(238, 96, 96, 0.8), 0 2px 5px 0px white inset;
+            }
+
+            &.active {
+                color: #8A1010;
+                transform: translateY(2px);
+                box-shadow: 0 1px 0px 3px rgba(238, 96, 96, 0.4) inset;
+                background-color: #FF816A;
+            }
+        }
+
+        label {
+            --c: #5082FF;
+            --bar-width: 30px;
+            --bar-height: 296px;
+            position: relative;
+            width: var(--bar-width);
+            height: var(--bar-height);
+            background: white;
+            border: 4px solid var(--c);
+            border-radius: 30px;
+            padding: 0;
+            display: inline-block;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 50%;
+                height: 100%;
+                background: black;
+                opacity: 0.05;
+                border-radius: 0 12.85px 12.85px 0;
+                pointer-events: none; // 確保不影響滑鼠事件
+            }
+
+            &.disabled {
+                --c: #ACACAC;
+                border-color: #ACACAC;
+            }
+        }
+
+        input {
+            width: 400px;
+            height: var(--s);
+            --_c: color-mix(in srgb, var(--c), #000 var(--p, 0%));
+            appearance: none;
+            background: none;
+            cursor: pointer;
+            font-size: inherit;
+        }
+
+        input:focus-visible,
+        input:hover {
+            --p: 25%;
+        }
+
+        input:active,
+        input:focus-visible {
+            --_b: var(--s);
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: var(--bar-height);
+            height: var(--bar-width);
+            margin: 0;
+            background: transparent;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            z-index: 1;
+
+            &::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                overflow: visible;
+            }
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 48px;
+                height: 48px;
+                background: url('/images/DIY/bar-icon-ice.svg') center/contain no-repeat;
+                cursor: pointer;
+                transform: translateY(-50%) rotate(90deg);
+                margin-top: calc(var(--bar-width) / 2);
+                position: relative;
+                z-index: 2;
+            }
+
+            &::-moz-range-track {
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                overflow: visible;
+            }
+
+            &::-moz-range-thumb {
+                width: 48px;
+                height: 48px;
+                border: none;
+                border-radius: 0;
+                background: url('/images/DIY/bar-icon-ice.svg') center/contain no-repeat;
+                cursor: pointer;
+                transform: rotate(90deg);
+                position: relative;
+                z-index: 2;
+            }
+
+            &.disabled {
+                cursor: not-allowed;
+
+                &::-webkit-slider-thumb {
+                    cursor: not-allowed;
+                }
+
+                &::-moz-range-thumb {
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        .ice-level {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: calc(100%);
+            background: #B7EFFF;
+            border-radius: 20px;
+            pointer-events: none;
+            transition: height 0.2s ease;
+
+            &.disabled {
+                background: #c7c7c7;
+            }
+        }
+
+        .sugar-level {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: calc(100%);
+            background: #FAB4F0;
+            border-radius: 20px;
+            pointer-events: none;
+            transition: height 0.2s ease;
+
+            &.disabled {
+                background: #c7c7c7;
+            }
+        }
+
+        .snap-slider {
+            &::-webkit-slider-thumb {
+                transition: all 0.1s ease-out;
+            }
+
+            &::-moz-range-thumb {
+                transition: all 0.1s ease-out;
+            }
+        }
+
+        .slider-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 43px 0 22px;
+            position: relative;
+            overflow: visible;
+        }
+
+        input[type="range"]#ingredient1 {
+            &::-webkit-slider-thumb {
+                background: url('/images/DIY/bar-icon-ice.svg') center/contain no-repeat;
+            }
+
+            &.disabled::-webkit-slider-thumb {
+                background: url('/images/DIY/bar-icon-ice-off.svg') center/contain no-repeat;
+            }
+
+            &::-moz-range-thumb {
+                background: url('/images/DIY/bar-icon-ice.svg') center/contain no-repeat;
+            }
+
+            &.disabled::-moz-range-thumb {
+                background: url('/images/DIY/bar-icon-ice-off.svg') center/contain no-repeat;
+            }
+        }
+
+        input[type="range"]#ingredient2 {
+            &::-webkit-slider-thumb {
+                background: url('/images/DIY/bar-icon-sugar.svg') center/contain no-repeat;
+            }
+
+            &.disabled::-webkit-slider-thumb {
+                background: url('/images/DIY/bar-icon-sugar-off.svg') center/contain no-repeat;
+            }
+
+            &::-moz-range-thumb {
+                background: url('/images/DIY/bar-icon-sugar.svg') center/contain no-repeat;
+            }
+
+            &.disabled::-moz-range-thumb {
+                background: url('/images/DIY/bar-icon-sugar-off.svg') center/contain no-repeat;
+            }
+        }
+    }
+
+    //飲料呈現區
+    #showDrinkArea {
+        position: relative;
+        margin-top: 1%;
+        width: 400px;
+
+        .reflect {
+            position: absolute;
+            top: 5%;
+            left: 6.5%;
+            width: 200px;
+            z-index: 3;
+        }
+
+        #showDrink {
+            position: absolute;
+            top: 20%;
+            left: 30%;
+            width: 40%;
+            height: 60%;
+
+            .drinkcap {
+                position: absolute;
+                top: -10%;
+                left: 0;
+                z-index: 1;
+            }
+
+            .drinkcap2 {
+                position: absolute;
+                top: -10%;
+                left: 0;
+            }
+
+            .liquid {
+                position: absolute;
+                top: -5.5%;
+                left: 2.2%;
+                width:100%;
+                height: 110%;
+                background: linear-gradient(to top, rgba(0, 0, 0 ,0), rgba(0, 0, 0 ,0));
+                clip-path: path('M-3.68362e-06 23.3945L20.9731 210.342C20.9731 222.481 49.4995 228 76.0092 228C102.501 228 131.027 222.481 131.027 210.342L152 23.3945C148.535 38.586 110.989 45.5428 76.0092 45.5428C41.0112 45.5428 3.46496 38.586 -3.68362e-06 23.3945Z M152 24.3937C152 7.64184 112.602 0 76 0C39.3797 0 0 7.64184 0 24.3937C0 41.1456 39.3979 48.7874 76 48.7874C112.602 48.7874 152 41.1633 152 24.3937Z');
+            }
+
+            .cupIngredients {
+                position: absolute;
+                bottom: 0;
+                left: 15%;
+
+                display: flex;
+                flex-direction: column-reverse;
+                padding-bottom: 3px;
+            }
+        }
+    }
+
+    //訂單明細區
+    #orderArea {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-right: 5%;
+        width: 300px;
+
+        .orderDetails {
+            .bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            .orderDetailText {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-self: start;
+                padding: 20px 40px;
+            }
+
+            h3 {
+                font-family: $font-family-ch;
+                font-size: $font-size-18;
+                font-weight: $font-weight-bold;
+                margin-bottom: 5px;
+            }
+
+            .sugarIceText {
+                display: flex;
+                p{
+                    font-family: $font-family-ch;
+                    margin-right: 10px;
+                }
+            }
+
+            .orderDetailTextAlign {
+                display: flex;
+                justify-content: space-between;
+
+                .text {
+                    font-family: $font-family-ch;
+                }
+
+                .price {
+                    font-family: $font-family-en;
+                }
+            }
+
+            .borderArea {
+                align-self: center;
+                width: 110%;
+                height: 10px;
+                border-bottom: 1.5px solid black;
+            }
+
+            .total {
+                align-self: self-end;
+                margin-top: 2px;
+                font-family: $font-family-en;
+                font-weight: 600;
+                font-size: 1.6rem;
+            }
+
+            .inputName {
+                position: absolute;
+                bottom: 27%;
+                width: 100%;
+                padding: 0 40px;
+
+                input {
+                    font-family: $font-family-ch;
+                    font-size: $font-size-14;
+                    padding: 5px 12px;
+                    border-radius: 5px;
+                    color: $color-sub-black;
+                    border: #D9D9D9 1px solid;
+
+                    &::placeholder {
+                        color: #D9D9D9;
+                    }
+                }
+            }
+        }
+
+        .orderButton {
+            display: flex;
+
+            .resetBtn {
+                display: block;
+                // // font-size: 24px;
+                // font-weight: 800;
+                // text-align: center;
+                // text-decoration: none;
+                // color: white;
+                border: 2px solid $color-primary-blue;
+                background-color: $color-primary-white;
+                border-radius: 99px;
+                width: 70px;
+                height: 70px;
+                box-shadow: 0 6px 0 $color-primary-blue;
+                transition: all 0.1s ease-in-out;
+                margin: 10px 20px 0 0;
+                padding-left: 2.5%;
+                cursor: pointer;
+
+                img {
+                    width: 90%;
+                }
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.8);
+                    border: 2px solid rgba(80, 130, 255, 0.8);
+                    // text-shadow: 0 -1px -1px #ff9481;
+                    box-shadow: 0 6px 0 rgba(80, 130, 255, 0.8), 0 2px 5px 0px white inset;
+                }
+
+                &:active {
+                    // color: #8A1010;
+                    transform: translateY(4px);
+                    box-shadow: 0 2px 0 $color-primary-blue, 0 0.5px 0px 2px rgba(156, 156, 156, 0.25) inset;
+                    background-color: rgba(152, 152, 152, 0.2);
+                }
+            }
+
+            .randomBtn {
+                display: block;
+                // // font-size: 24px;
+                // font-weight: 800;
+                // text-align: center;
+                // text-decoration: none;
+                // color: white;
+                border: 2px solid $color-primary-blue;
+                background-color: $color-primary-white;
+                border-radius: 99px;
+                width: 70px;
+                height: 70px;
+                box-shadow: 0 6px 0 $color-primary-blue;
+                transition: all 0.1s ease-in-out;
+                margin: 10px 20px 0 0;
+                padding-left: 4%;
+                cursor: pointer;
+
+                img {
+                    width: 82%;
+                }
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.8);
+                    border: 2px solid rgba(80, 130, 255, 0.8);
+                    // text-shadow: 0 -1px -1px #ff9481;
+                    box-shadow: 0 6px 0 rgba(80, 130, 255, 0.8), 0 2px 5px 0px white inset;
+                }
+
+                &:active {
+                    // color: #8A1010;
+                    transform: translateY(4px);
+                    box-shadow: 0 2px 0 $color-primary-blue, 0 0.5px 0px 2px rgba(156, 156, 156, 0.25) inset;
+                    background-color: rgba(152, 152, 152, 0.2);
+                }
+            }
+
+            .doneBtn {
+                display: block;
+                font-family: $font-family-en;
+                font-size: $font-size-32;
+                font-weight: $font-weight-bold;
+                text-align: center;
+                text-decoration: none;
+                color: white;
+                border: 2px solid #9E9E9E;
+                background-color: #C6C6C6;
+                border-radius: 18px;
+                width: 118px;
+                height: 66px;
+                box-shadow: 0 8px 0 #777777;
+                transition: all 0.1s ease-in-out;
+                margin-top: 10px;
+                cursor: not-allowed;
+
+                &.active {
+                    color: $color-primary-blue;
+                    border: 2px solid $color-primary-blue;
+                    background-color: $color-sub-yellow;
+                    box-shadow: 0 8px 0 $color-primary-blue;
+                    cursor: pointer;
+                }
+
+                &.active:hover {
+                    background-color: rgba(255, 245, 95, 0.8);
+                    border: 2px solid rgba(80, 130, 255, 0.8);
+                    // text-shadow: 0 -1px -1px #ff9481;
+                    box-shadow: 0 8px 0 rgba(80, 130, 255, 0.8), 0 2px 5px 0px white inset;
+                }
+
+                &.active:active {
+                    // color: #8A1010;
+                    transform: translateY(6px);
+                    box-shadow: 0 2px 0 $color-primary-blue, 0 2px 0px 3px #D9CD19 inset;
+                    background-color: #EEE668;
+                }
+            }
+        }
+    }
+}
+
+// 操作區
+#action {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    .actionbg {
+        position: relative;
+        z-index: 1;
+    }
+
+    .tabArea {
+        position: absolute;
+        top: -32%;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+
+
+        .tabAlign {
+            display: flex;
+            justify-content: center; // 确保按钮居中
+            margin-top: 0px; // 根据需要调整位置
+
+            .tab-button {
+                width: 17%; // 根据图像大小调整
+                height: 100px; // 根据图像大小调整
+                background-size: contain;
+                background-color: transparent;
+                background-position: center;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                margin: 0 5px;
+                transition: transform 0.2s ease;
+        
+                &.active {
+                    transform: translateY(-15%);
+                }
+            }
+        }
+    }
+
+    .carousel {
+        position: absolute;
+        z-index: 2;
+        bottom: 15%;
+        left: 14%;
+        width: 75%;
+        display: none;
+
+        .slick-slider {
+            width: 100%;
+            margin: 0 auto;
+        }
+    
+        .slick-list {
+            width: 100%;
+        }
+    }
+    .carousel1 {
+        display: block;
+        .item{
+            padding-top: 0.5%;
+        }
+    }
+    .carousel2 {
+        display: none;
+    }
+    .carousel3 {
+        display: none;
+        .item{
+            padding-top: 0.15%;
+        }
+    }
+    .carousel4 {
+        display: none;
+        .item{
+            padding-top: 0.1%;
+        }
+    }
+    @media (max-width: 1376px) {
+        .carousel1 {
+            bottom: 0;
+        }
+        .carousel3 {
+            bottom: 0;
+        }
+    }
+
+    .slick-arrow {
+        display: block;
+        border: none;
+        background-color: $color-primary-white;
+        border-radius: 99px;
+        width: 70px;
+        height: 70px;
+        box-shadow: 0 8px 0 $color-primary-blue;
+        transition: all 0.1s ease-in-out;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+        }
+
+        &:hover {
+            background-color: rgb(241, 241, 241);
+            box-shadow: 0 8px 0 rgba(80, 130, 255, 0.8), 0 2px 5px 0px white inset;
+        }
+
+        &:active {
+            transform: translateY(4px);
+            box-shadow: 0 4px 0 $color-primary-blue, 0 2px 0px 0px rgba(156, 156, 156, 0.25) inset;
+            background-color: rgba(152, 152, 152, 0.2);
+        }
+    }
+
+    .slick-prev {
+        position: absolute;
+        padding: 0 20px 0 18px;
+        top: -5%;
+        left: -11%;
+        transform: translateY(0);
+        &:before {
+            display: none; // 移除 slick 默認的箭頭
+        }
+    }
+
+    .slick-next {
+        position: absolute;
+        top: -5%;
+        right: -7%;
+        padding: 0 18px 0 20px;
+        transform: translateY(0);
+        &:before {
+            display: none; // 移除 slick 默認的箭頭
+        }
+    }
+
+    .item {
+        position: relative;
+        width: 80%;
+        transition: all 0.8s ease;
+        padding: 5px;
+
+        img {
+            position: relative;
+            object-fit: cover;
+            width: 30%;
+            height: fit-content;
+            transition: transform 0.8s ease;
+        }
+        &:hover{
+            img{
+                transform: rotate(-10deg);
+            }
+            cursor: pointer;
+        }
+    }
+
+    .itemAlign {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .itemText {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        font-family: $font-family-ch;
+        color: #303030;
+
+        h3 {
+            font-size: $font-size-20;
+            font-weight: 600;
+            color: #000;
+
+            span {
+                font-family: $font-family-en;
+                font-size: $font-size-16;
+            }
+        }
+    }
+
+}
