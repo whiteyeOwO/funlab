@@ -81,15 +81,22 @@ a {
   border: 2.5px rgba(0, 0, 0, 0.8) solid;
   border-radius: 30px;
   padding: 0 20px 0 20px;
+  /* Hover effects */
 }
 #topBar .navigation .menu a {
   position: relative;
-  margin: 0px;
-  padding: 0px 20px 0px 20px;
-  transition: 0.2s;
+  margin: 0;
+  padding: 0 20px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  /* Remove underline */
 }
-#topBar .navigation .menu .a_about::after {
-  content: "關於放飲";
+#topBar .navigation .menu .a_about::after,
+#topBar .navigation .menu .a_menu::after,
+#topBar .navigation .menu .a_fresh::after,
+#topBar .navigation .menu .a_store::after,
+#topBar .navigation .menu .a_search::after {
+  content: attr(data-title);
   position: absolute;
   left: 0%;
   top: 10%;
@@ -117,11 +124,17 @@ a {
   color: transparent;
   transition: color 0.2s;
 }
-#topBar .navigation .menu .a_menu:hover::after {
+#topBar .navigation .menu a:hover::after {
   color: #000000;
 }
-#topBar .navigation .menu .a_menu:hover {
+#topBar .navigation .menu a:hover {
   color: transparent;
+}
+#topBar .navigation .menu .a_about::after {
+  content: "關於放飲";
+}
+#topBar .navigation .menu .a_menu::after {
+  content: "飲品菜單";
 }
 #topBar .navigation .menu .a_fresh::after {
   content: "嚴選食材";
@@ -134,12 +147,6 @@ a {
   color: transparent;
   transition: color 0.2s;
 }
-#topBar .navigation .menu .a_fresh:hover::after {
-  color: #000000;
-}
-#topBar .navigation .menu .a_fresh:hover {
-  color: transparent;
-}
 #topBar .navigation .menu .a_store::after {
   content: "門市據點";
   position: absolute;
@@ -151,12 +158,6 @@ a {
   color: transparent;
   transition: color 0.2s;
 }
-#topBar .navigation .menu .a_store:hover::after {
-  color: #000000;
-}
-#topBar .navigation .menu .a_store:hover {
-  color: transparent;
-}
 #topBar .navigation .menu .a_search::after {
   content: "訂單查詢";
   position: absolute;
@@ -167,12 +168,6 @@ a {
   font-size: 0.875rem;
   color: transparent;
   transition: color 0.2s;
-}
-#topBar .navigation .menu .a_search:hover::after {
-  color: #000000;
-}
-#topBar .navigation .menu .a_search:hover {
-  color: transparent;
 }
 #topBar .funLab {
   margin-left: 20px;

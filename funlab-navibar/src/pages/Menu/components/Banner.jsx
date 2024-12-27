@@ -1,4 +1,4 @@
-import styles from "./Banner.module.scss";
+import styles from "../Menu.module.scss";
 
 export default function Banner() {
     const slides = [

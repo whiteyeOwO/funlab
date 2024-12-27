@@ -25,6 +25,64 @@
     }
 }
 
+
+/* 父層容器 */
+.wrapper {
+    height: 80%;
+    max-height: 100vh;
+    // overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 輪播的內容 */
+.marquee {
+    display: flex;
+    width: calc(200% + 40px); // Adjust width to account for the gaps
+    animation: scroll 50s linear infinite;
+    height: 50%;
+}
+
+/* 單張圖片 */
+.slide {
+    flex: 0 0 auto;
+    width: 100%; // 讓每個 slide 寬度等於整個視窗
+    height: 10vh; // 高度等於視窗高度
+    margin-right: 8vw; // Slide 間的間距
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; // 確保多餘部分被隱藏
+}
+
+.slide img {
+    width: 100%; // 圖片寬度滿足父層
+    height: 40%; // 圖片高度滿足父層
+    object-fit: contain; // 圖片等比例縮放，完整顯示
+}
+
+
+
+// Keyframes for the marquee effect
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% - 20px)); // Use calc to subtract the gap properly
+    }
+}
+
+// Media queries for responsiveness
+@media (max-width: 768px) {
+    .slide {
+        height: 70vh;
+    }
+}
+
 /*分組頁籤*/
 .drinkListTab {
 
