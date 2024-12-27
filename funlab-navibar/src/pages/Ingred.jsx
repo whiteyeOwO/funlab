@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import GSReveal from "../component/GSReveal";
 
 import GoTopFunction from "./ingred/components/GoTopFunction";
 import BubbleAnimation from "./ingred/components/BubbleAnimation";
@@ -220,8 +221,8 @@ const Ingred = () => {
     return (
         <>
             {/* <!-- 至頂按鈕 --> */}
-            <button onClick={GoTopFunction} id="myBtn" title="Gotop">
-                <img src=".../../public/images/Ingredients/top.svg" alt="Gototop" />
+            <button onClick={GoTopFunction} id="myBtn" title="Gotop"><GSReveal from="top">
+                <img src=".../../public/images/Ingredients/top.svg" alt="Gototop" /></GSReveal>
             </button>
 
             {/* 泡泡*/}
@@ -230,7 +231,7 @@ const Ingred = () => {
             </div>
 
             <header>
-                <h1 className="page-title">INGERDIENT</h1>
+                <h1 className="page-title"> <GSReveal from="top">INGERDIENT</GSReveal> </h1>
             </header>
             {/*分組頁籤 迅速傳送到該區 */}
             <div className="drinkList">
