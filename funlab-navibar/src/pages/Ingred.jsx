@@ -423,11 +423,11 @@ const Ingred = () => {
             </main>
             {/* <!-- 頁尾區 --> */}
             <footer id="footer">
-                <div class="logoFooter">
-                    <img class="logoFooterImg" src="./images/funLogo.svg" alt="fun飲LOGONav" />
-                    <img class="logoFooterText" src="./images/funLogoText2.svg" alt="fun飲LOGO" title="fun飲LOGO" />
+                <div className="logoFooter">
+                    <img className="logoFooterImg" src="./images/funLogo.svg" alt="fun飲LOGONav" />
+                    <img className="logoFooterText" src="./images/funLogoText2.svg" alt="fun飲LOGO" title="fun飲LOGO" />
                 </div>
-                <div class="articleFooter">
+                <div className="articleFooter">
                     <ul>
                         <li>
                             <p>CONTACT</p>
@@ -440,7 +440,7 @@ const Ingred = () => {
                             <p>100台北市中正區濟南路一段321號</p>
                             <p>TEL 02-3535-3466</p>
                         </li>
-                        <li class="iconFooter">
+                        <li className="iconFooter">
                             <img src="images/icon/icon-ig-hover.svg" alt="" />
                             <img src="images/icon/icon-line-hover.svg" alt="" />
                         </li>
