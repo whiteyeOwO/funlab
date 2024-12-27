@@ -326,7 +326,7 @@ function Store() {
                         <p>CONTACT</p>
                     </li>
                     <li>
-                        <p>PEIVACY POLICY</p>
+                        <p>PRIVACY POLICY</p>
                     </li>
                     <li>
                         <p>放飲 FUN LAB</p>
