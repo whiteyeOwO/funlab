@@ -13,49 +13,49 @@ export default function Tab() {
             {/* Tab Buttons */}
             <ul>
                 <li>
-                    <a
+                    <button
                         className={`tab-btn ${activeTab === "pureteaDrink" ? "active" : ""}`}
                         onClick={() => handleTabClick("pureteaDrink")}
                         href="#"
                     >
                         放飲純茶
-                    </a>
+                    </button>
                 </li>
                 <li>
-                    <a
+                    <button
                         className={`tab-btn ${activeTab === "toppingDrink" ? "active" : ""}`}
                         onClick={() => handleTabClick("toppingDrink")}
                         href="#"
                     >
                         FUN新嚼感
-                    </a>
+                    </button>
                 </li>
                 <li>
-                    <a
+                    <button
                         className={`tab-btn ${activeTab === "milkDrink" ? "active" : ""}`}
                         onClick={() => handleTabClick("milkDrink")}
                         href="#"
                     >
                         濃醇鮮奶
-                    </a>
+                    </button>
                 </li>
                 <li>
-                    <a
+                    <button
                         className={`tab-btn ${activeTab === "milkteaDrink" ? "active" : ""}`}
                         onClick={() => handleTabClick("milkteaDrink")}
                         href="#"
                     >
                         植物奶茶
-                    </a>
+                    </button>
                 </li>
                 <li>
-                    <a
+                    <button
                         className={`tab-btn ${activeTab === "fruitteaDrink" ? "active" : ""}`}
                         onClick={() => handleTabClick("fruitteaDrink")}
                         href="#"
                     >
                         鮮調果粒
-                    </a>
+                    </button>
                 </li>
             </ul>
 
