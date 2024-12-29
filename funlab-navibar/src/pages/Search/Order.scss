@@ -1,3 +1,62 @@
 @use "/src/styles/abstracts/variables/color" as *;
 @use "/src/styles/abstracts/variables/basic" as *;
 @use "/src/styles/base/reset" as *;
+
+/* Section Styles */
+.h2-section {
+    padding: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        padding: 10px 200px;
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 30vw;
+        }
+
+
+        /* Search Section */
+        .search {
+            display: flex;
+            flex-direction: column;
+            width: 30vw;
+            font-size: $font-size-16;
+            padding: 40px 0;
+
+            h4 {
+                padding: 10px 0;
+            }
+
+            #type {
+                width: 100%;
+                height: 5vh;
+                border: 2px solid $color-sub-lightGray;
+                padding: 8px;
+                border-radius: 4px;
+            }
+        }
+
+        /* Submit Button */
+        .submit {
+            border: 2px solid $color-primary-blue;
+            font-size: $font-size-16;
+            font-weight: bold;
+            padding: 8px 16px;
+            width: 6vw;
+            border-radius: 50px;
+            background-color: rgba(81, 130, 255, 0.69);
+            /* Fallback for opacity */
+            color: white;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                background-color: #BCCEFF;
+            }
+        }
+    }
+}
