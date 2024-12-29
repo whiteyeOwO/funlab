@@ -1,75 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import { useLocation } from "react-router-dom";
 import "./Order.scss";
 
-const PastOrder = ({ orderId, orderDate, items, totalPrice }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-
-    const toggleOrder = () => {
-        setIsExpanded(!isExpanded);
-    };
-
-    return (
-        <div className="past">
-            <div className="pastContent">
-                {/* Order Info */}
-                <div className="orderInfo" onClick={toggleOrder}>
-                    <div className="orderInfoL">
-                        <p>訂單編號：{orderId}</p>
-                        <div className="condition">已完成</div>
-                    </div>
-                    <div className="date">
-                        <p>訂單日：{orderDate}</p>
-                    </div>
-                    <img
-                        src="./images/icon-righttriangle.svg"
-                        alt="Expand"
-                        className={`tri ${isExpanded ? "hidden" : ""}`}
-                    />
-                    <img
-                        src="./images/icon-downtriangle.svg"
-                        alt="Collapse"
-                        className={`tri ${isExpanded ? "" : "hidden"}`}
-                    />
-                </div>
-
-                {/* Order Details */}
-                {isExpanded && (
-                    <div className="table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th className="name">商品名稱</th>
-                                    <th className="content">內容</th>
-                                    <th className="store">取件門市</th>
-                                    <th className="price">價格</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {items.map((item, index) => (
-                                    <tr key={index}>
-                                        <td className="name">{item.name}</td>
-                                        <td className="content">{item.content}</td>
-                                        <td className="store">{item.store}</td>
-                                        <td className="price">{item.price}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-
-                        {/* Total Price */}
-                        <div className="total">
-                            <p>訂單總金額</p>
-                            <p>${totalPrice}</p>
-                        </div>
-                    </div>
-                )}
-            </div>
-            <div className="all"></div>
-        </div>
-    );
-};
-
 export default function Order() {
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
+    const phoneNumber = params.get("phone");
+
     const currentOrder = {
         orderId: "313286",
         orderDate: "2025/01/17",
@@ -112,8 +49,10 @@ export default function Order() {
             <header className="title">
                 <h1>訂單管理</h1>
             </header>
-
-            {/* Current Order */}
+            <div className="current-order">
+                <p>查詢的手機號碼：{phoneNumber}</p>
+            </div>
+            {/* Current Order Section */}
             <div className="now">
                 <header className="title">
                     <h2>當前訂單</h2>
@@ -128,7 +67,6 @@ export default function Order() {
                             <p>訂單日：{currentOrder.orderDate}</p>
                         </div>
                     </div>
-
                     <table>
                         <thead>
                             <tr>
@@ -149,7 +87,6 @@ export default function Order() {
                             ))}
                         </tbody>
                     </table>
-
                     <div className="total">
                         <p>訂單總金額</p>
                         <p>${currentOrder.totalPrice}</p>
@@ -162,19 +99,17 @@ export default function Order() {
                 <hr className="custom-hr" />
             </div>
 
-            {/* Past Orders */}
+            {/* Past Orders Section */}
             <header id="pastH2">
                 <h2>過去訂單</h2>
             </header>
-
             {pastOrders.map((order, index) => (
-                <PastOrder
-                    key={index}
-                    orderId={order.orderId}
-                    orderDate={order.orderDate}
-                    items={order.items}
-                    totalPrice={order.totalPrice}
-                />
+                <div key={index} className="past">
+                    <div className="pastContent">
+                        <p>訂單編號：{order.orderId}</p>
+                        <p>訂單日：{order.orderDate}</p>
+                    </div>
+                </div>
             ))}
         </div>
     );
