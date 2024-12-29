@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import GSReveal from "../component/GSReveal";
+import GSReveal from "../../component/GSReveal";
 
-import GoTopFunction from "./ingred/components/GoTopFunction";
-import BubbleAnimation from "./ingred/components/BubbleAnimation";
+import GoTopFunction from "./components/GoTopFunction";
+import BubbleAnimation from "./components/BubbleAnimation";
 
-import "./ingred/css/ingred.min.css"; // 我自己的樣式
+import "./ingred.scss"; // 我自己的樣式
 
 const Ingred = () => {
 
@@ -421,35 +421,7 @@ const Ingred = () => {
                 </section>
 
             </main>
-            {/* <!-- 頁尾區 --> */}
-            <footer id="footer">
-                <div className="logoFooter">
-                    <img className="logoFooterImg" src="./images/funLogo.svg" alt="fun飲LOGONav" />
-                    <img className="logoFooterText" src="./images/funLogoText2.svg" alt="fun飲LOGO" title="fun飲LOGO" />
-                </div>
-                <div className="articleFooter">
-                    <ul>
-                        <li>
-                            <p>CONTACT</p>
-                        </li>
-                        <li>
-                            <p>PRIVACY POLICY</p>
-                        </li>
-                        <li>
-                            <p>放飲 FUN LAB</p>
-                            <p>100台北市中正區濟南路一段321號</p>
-                            <p>TEL 02-3535-3466</p>
-                        </li>
-                        <li className="iconFooter">
-                            <img src="./images/icon/icon-LINE.svg" alt="" />
-                            <img src="./images/icon/icon-ig.svg" alt="" />
-                        </li>
-                        <li>
-                            <p>©2024 放飲, All Rights Reserved</p>
-                        </li>
-                    </ul>
-                </div>
-            </footer>
+
         </>
     );
 };

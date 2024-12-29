@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 /* RESET */
 * {
   box-sizing: border-box;
@@ -52,4 +52,46 @@ a {
   text-decoration: none;
 }
 
-/* RESET  END*//*# sourceMappingURL=Aboout.css.map */
+/* RESET  END*/
+/* 頁尾區 */
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  /* 主軸方向:水平 */
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 25px 70px;
+  background-color: #5082FF;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  font-family: "Noto Sans";
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.05rem;
+}
+#footer .logoFooter .logoFooterImg {
+  width: 80px;
+  padding: 5px 0px;
+}
+#footer .logoFooter .logoFooterText {
+  width: 200px;
+  padding-bottom: 15px;
+}
+#footer .articleFooter li {
+  margin-bottom: 15px;
+}
+#footer .articleFooter li p {
+  margin-bottom: 5px;
+}
+#footer .articleFooter .iconFooter {
+  display: flex;
+}
+#footer .articleFooter .iconFooter img {
+  width: 30px;
+  margin-right: 5px;
+}/*# sourceMappingURL=Footer.css.map */

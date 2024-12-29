@@ -73,6 +73,8 @@ a {
 }
 #topBar .navigation {
   display: flex;
+  /* Individual menu items (links) */
+  /* Hover effects */
 }
 #topBar .navigation .menu {
   display: flex;
@@ -80,10 +82,9 @@ a {
   background-color: rgba(255, 255, 255, 0.8);
   border: 2.5px rgba(0, 0, 0, 0.8) solid;
   border-radius: 30px;
-  padding: 0 20px 0 20px;
-  /* Hover effects */
+  padding: 0 20px;
 }
-#topBar .navigation .menu a {
+#topBar .navigation a {
   position: relative;
   margin: 0;
   padding: 0 20px;
@@ -91,83 +92,39 @@ a {
   text-decoration: none;
   /* Remove underline */
 }
-#topBar .navigation .menu .a_about::after,
-#topBar .navigation .menu .a_menu::after,
-#topBar .navigation .menu .a_fresh::after,
-#topBar .navigation .menu .a_store::after,
-#topBar .navigation .menu .a_search::after {
+#topBar .navigation .a_about::after,
+#topBar .navigation .a_menu::after,
+#topBar .navigation .a_fresh::after,
+#topBar .navigation .a_store::after,
+#topBar .navigation .a_search::after {
   content: attr(data-title);
   position: absolute;
-  left: 0%;
+  left: 20%;
   top: 10%;
-  width: 100%;
-  height: 100%;
-  font-size: 0.875rem;
-  font-weight: 900;
-  color: transparent;
-  transition: color 0.2s;
-}
-#topBar .navigation .menu .a_about:hover::after {
-  color: #000000;
-}
-#topBar .navigation .menu .a_about:hover {
-  color: transparent;
-}
-#topBar .navigation .menu .a_menu::after {
-  content: "飲品菜單";
-  position: absolute;
-  left: 0%;
-  top: 10%;
-  width: 100%;
-  height: 100%;
   font-size: 0.875rem;
   color: transparent;
   transition: color 0.2s;
 }
-#topBar .navigation .menu a:hover::after {
+#topBar .navigation a:hover::after {
   color: #000000;
 }
-#topBar .navigation .menu a:hover {
+#topBar .navigation a:hover {
   color: transparent;
 }
-#topBar .navigation .menu .a_about::after {
+#topBar .navigation .a_about::after {
   content: "關於放飲";
 }
-#topBar .navigation .menu .a_menu::after {
+#topBar .navigation .a_menu::after {
   content: "飲品菜單";
 }
-#topBar .navigation .menu .a_fresh::after {
+#topBar .navigation .a_fresh::after {
   content: "嚴選食材";
-  position: absolute;
-  left: 0%;
-  top: 10%;
-  width: 100%;
-  height: 100%;
-  font-size: 0.875rem;
-  color: transparent;
-  transition: color 0.2s;
 }
-#topBar .navigation .menu .a_store::after {
+#topBar .navigation .a_store::after {
   content: "門市據點";
-  position: absolute;
-  left: 0%;
-  top: 10%;
-  width: 100%;
-  height: 100%;
-  font-size: 0.875rem;
-  color: transparent;
-  transition: color 0.2s;
 }
-#topBar .navigation .menu .a_search::after {
+#topBar .navigation .a_search::after {
   content: "訂單查詢";
-  position: absolute;
-  left: 0%;
-  top: 10%;
-  width: 100%;
-  height: 100%;
-  font-size: 0.875rem;
-  color: transparent;
-  transition: color 0.2s;
 }
 #topBar .funLab {
   margin-left: 20px;
@@ -275,4 +232,4 @@ a {
   #topBar .Rotate {
     width: 60px;
   }
-}/*# sourceMappingURL=Navbar.module.css.map */
+}/*# sourceMappingURL=Navbar.css.map */

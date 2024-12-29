@@ -25,12 +25,11 @@
     }
 }
 
-
 /* 父層容器 */
 .wrapper {
-    height: 80%;
-    max-height: 100vh;
-    // overflow: hidden;
+    margin: 0 0 10vh 0;
+    height: 60vh;
+    overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
@@ -40,39 +39,43 @@
 /* 輪播的內容 */
 .marquee {
     display: flex;
-    width: calc(200% + 40px); // Adjust width to account for the gaps
+    width: calc(200% + 40px);
+    /* Adjust width to account for the gaps */
     animation: scroll 50s linear infinite;
-    height: 50%;
 }
 
 /* 單張圖片 */
 .slide {
     flex: 0 0 auto;
-    width: 100%; // 讓每個 slide 寬度等於整個視窗
-    height: 10vh; // 高度等於視窗高度
-    margin-right: 8vw; // Slide 間的間距
+    width: 100vw;
+    /* 讓每個 slide 寬度等於整個視窗 */
+    height: 60vh;
+    /* 高度等於視窗高度 */
+    margin-right: 8vw;
+    /* Slide 間的間距 */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; // 確保多餘部分被隱藏
+    background-repeat: no-repeat;
 }
 
 .slide img {
-    width: 100%; // 圖片寬度滿足父層
-    height: 40%; // 圖片高度滿足父層
-    object-fit: contain; // 圖片等比例縮放，完整顯示
+    width: 100%;
+    /* 圖片寬度滿足父層 */
+    height: 100%;
+    /* 圖片高度滿足父層 */
+    object-fit: contain;
+    /* 圖片等比例縮放，完整顯示 */
 }
 
-
-
-// Keyframes for the marquee effect
+/* 輪播動畫定義 */
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
 
     100% {
-        transform: translateX(calc(-100% - 20px)); // Use calc to subtract the gap properly
+        transform: translateX(-100%);
     }
 }
 
@@ -103,7 +106,7 @@
                 font-size: 22px;
                 padding: 10px 20px;
                 background: transparent;
-                transition: 0.5s;
+                transition: 0.5s ease-in;
                 border: none;
 
                 &:hover {
@@ -123,7 +126,6 @@
     }
 }
 
-
 /*分組商品區*/
 .productlist {
     min-height: 120vh;
@@ -133,10 +135,9 @@
     /* Add some spacing between items */
     z-index: 995;
 
-
     .product {
         margin: 40px;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        transition: opacity 1s ease-in-out;
         /* Smooth transition */
 
         &:hover {

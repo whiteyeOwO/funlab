@@ -3,17 +3,19 @@ import Navbar from "./component/Navbar";
 import Home from "./pages/index/Index";
 import About from "./pages/About/About";
 import DIY from "./pages/DIY/DIY";
-import Ingred from "./pages/Ingred";
+import Ingred from "./pages/ingred/Ingred";
 import Menu from "./pages/Menu/Menu";
 import Order from "./pages/Order";
 import Search from "./pages/Search";
 import Store from "./pages/Store/Store";
+import Footer from "./component/Footer";
 import './styles/App.scss';
 
 export default function App() {
 
   return (
     <>
+    <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -26,6 +28,9 @@ export default function App() {
         <Route path="/store" element={<Store />}></Route>
 
       </Routes>
+
+      {/* <Footer /> */}
+      </div>
     </>
   )
 }

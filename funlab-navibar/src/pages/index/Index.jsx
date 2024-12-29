@@ -52,47 +52,7 @@ function Index() {
 
     return (
         <>
-            {/* 頁首區 */}
-            <header id="topBar">
-                {/* logo區 */}
-                <h1 className="logo">
-                    <a href="./index.html">
-                        {/* svg預設會自動寬度100% */}
-                        <img src="../public/images/funlogoText.svg" alt="fun飲LOGO" title="fun飲LOGO" />
-                    </a>
-                </h1>
-                <div className="navbar">
-                    {/* 漢堡按鈕 */}
-                    <button className="hamburger">
-                        <svg className="Rotate" viewBox="0 0 100 100" width="80" onClick={() => $('.Rotate').find('svg').toggleClass('active')}>
-                            <path className="line top"
-                                d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
-                            <path className="line middle" d="m 30,50 h 40" />
-                            <path className="line bottom"
-                                d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
-                        </svg>
-
-                    </button>
-                    {/* 導覽列 */}
-                    <nav className="navigation">
-                        {/* 主選單 */}
-                        <ul className="menu">
-                            <li><a className="a_about" href="">ABOUT</a></li>
-                            <li><a className="a_menu" href="">MENU</a></li>
-                            <li><a className="a_fresh" href="">FRESH</a></li>
-                            <li><a className="a_store" href="">STORE</a></li>
-                            <li><a className="a_search" href="">SEARCH</a></li>
-                        </ul>
-                        <ul>
-                            <a href="" className="funLab">
-                                <li><img src="../public/images/funLogo.svg" alt="fun飲LOGONav" /></li>
-                                <li>FUN LAB</li>
-                            </a>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-
+        {/* 側邊導覽列 */}
             <nav className="subNavigation">
                 <img src="../public/images/index/Navigation bar.svg" alt="" />
                 <ul className="subMenu">
@@ -138,7 +98,7 @@ function Index() {
                     <MarqueeEffect className="mt-24" pauseOnHover speed={80}>
                         <div className="marquee">
                             <p>放心好喝又過癮</p>
-                            <img src="../public/images/icon/graph-smile .svg" alt="" />
+                            <img src="../public/images/icon/graph-smile.svg" alt="" />
                             <p>放飲</p>
                             <img src="../public/images/icon/graph-Heart.svg" alt="" />
                             <img src="../public/images/icon/graph-Heart.svg" alt="" />
@@ -274,35 +234,6 @@ function Index() {
                 </section>
             </main>
 
-            {/* 頁尾區 */}
-            <footer id="footer">
-                <div className="logoFooter">
-                    <img className="logoFooterImg" src="../public/images/funLogo.svg" alt="fun飲LOGONav" />
-                    <img className="logoFooterText" src="../public/images/funLogoText2.svg" alt="fun飲LOGO" title="fun飲LOGO" />
-                </div>
-                <div className="articleFooter">
-                    <ul>
-                        <li>
-                            <p>CONTACT</p>
-                        </li>
-                        <li>
-                            <p>PRIVACY POLICY</p>
-                        </li>
-                        <li>
-                            <p>放飲 FUN LAB</p>
-                            <p>100台北市中正區濟南路一段321號</p>
-                            <p>TEL 02-3535-3466</p>
-                        </li>
-                        <li className="iconFooter">
-                            <img src="../public/images/icon/icon-ig.svg" alt="" />
-                            <img src="../public/images/icon/icon-LINE.svg" alt="" />
-                        </li>
-                        <li>
-                            <p>©2024 放飲, All Rights Reserved</p>
-                        </li>
-                    </ul>
-                </div>
-            </footer>
         </>
     )
 }
