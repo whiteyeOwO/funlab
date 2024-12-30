@@ -65,47 +65,6 @@ function Index() {
 
     return (
         <>
-            {/* 頁首區 */}
-            <header id="topBar">
-                {/* logo區 */}
-                <h1 className="logo">
-                    <a href="./index.html">
-                        {/* svg預設會自動寬度100% */}
-                        <img src="../public/images/funlogoText.svg" alt="fun飲LOGO" title="fun飲LOGO" />
-                    </a>
-                </h1>
-                <div className="navbar">
-                    {/* 漢堡按鈕 */}
-                    <button className="hamburger">
-                        <svg className="Rotate" viewBox="0 0 100 100" width="80" onClick={() => $('.Rotate').find('svg').toggleClass('active')}>
-                            <path className="line top"
-                                d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
-                            <path className="line middle" d="m 30,50 h 40" />
-                            <path className="line bottom"
-                                d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
-                        </svg>
-
-                    </button>
-                    {/* 導覽列 */}
-                    <nav className="navigation">
-                        {/* 主選單 */}
-                        <ul className="menu">
-                            <li><a className="a_about" href="">ABOUT</a></li>
-                            <li><a className="a_menu" href="">MENU</a></li>
-                            <li><a className="a_fresh" href="">FRESH</a></li>
-                            <li><a className="a_store" href="">STORE</a></li>
-                            <li><a className="a_search" href="">SEARCH</a></li>
-                        </ul>
-                        <ul>
-                            <a href="" className="funLab">
-                                <li><img src="../public/images/funLogo.svg" alt="fun飲LOGONav" /></li>
-                                <li>FUN LAB</li>
-                            </a>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-
             <nav className="subNavigation">
                 <img src="../public/images/index/Navigation bar.svg" alt="" />
                 <ul className="subMenu">
