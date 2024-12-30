@@ -3,12 +3,324 @@
 @use "function" as *;
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap');
 
-html{
+html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* 頁首 */
 
+#topBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 70px 0 70px;
+    font-family: $font-family-en;
+    font-size: $font-size-16;
+    font-weight: $font-weight-bold;
+
+    .logo {
+        min-width: 164px;
+    }
+
+    .navigation {
+
+        display: flex;
+
+        .menu {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2.5px rgba(0, 0, 0, 0.8) solid;
+            border-radius: 30px;
+            padding: 0 20px 0 20px;
+
+            a {
+                position: relative;
+                margin: 0px;
+                padding: 0px 20px 0px 20px;
+                transition: $speed-fast;
+            }
+
+            .a_about::after {
+                content: "關於放飲";
+                position: absolute;
+                left: 22%;
+                top: 10%;
+                width: 100%;
+                height: 100%;
+                font-family: $font-family-ch;
+                font-weight: 600;
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: transparent;
+                transition: color 0.2s;
+            }
+
+            .a_about:hover::after {
+                color: $color-sub-black;
+            }
+
+            .a_about:hover {
+                color: transparent;
+            }
+
+            .a_menu::after {
+                content: "飲品菜單";
+                position: absolute;
+                left: 18%;
+                top: 10%;
+                width: 100%;
+                height: 100%;
+                font-family: $font-family-ch;
+                font-weight: 600;
+                font-size: 0.875rem;
+                color: transparent;
+                transition: color 0.2s;
+            }
+
+            .a_menu:hover::after {
+                color: $color-sub-black;
+            }
+
+            .a_menu:hover {
+                color: transparent;
+            }
+
+            .a_fresh::after {
+                content: "嚴選食材";
+                position: absolute;
+                left: 20%;
+                top: 10%;
+                width: 100%;
+                height: 100%;
+                font-family: $font-family-ch;
+                font-weight: 600;
+                font-size: 0.875rem;
+                color: transparent;
+                transition: color 0.2s;
+            }
+
+            .a_fresh:hover::after {
+                color: $color-sub-black;
+            }
+
+            .a_fresh:hover {
+                color: transparent;
+            }
+
+            .a_store::after {
+                content: "門市據點";
+                position: absolute;
+                left: 20%;
+                top: 10%;
+                width: 100%;
+                height: 100%;
+                font-family: $font-family-ch;
+                font-weight: 600;
+                font-size: 0.875rem;
+                color: transparent;
+                transition: color 0.2s;
+            }
+
+            .a_store:hover::after {
+                color: $color-sub-black;
+            }
+
+            .a_store:hover {
+                color: transparent;
+            }
+
+            .a_search::after {
+                content: "訂單查詢";
+                position: absolute;
+                left: 24%;
+                top: 10%;
+                width: 100%;
+                height: 100%;
+                font-size: 0.875rem;
+                font-family: $font-family-ch;
+                font-weight: 600;
+                color: transparent;
+                transition: color 0.2s;
+            }
+
+            .a_search:hover::after {
+                color: $color-sub-black;
+            }
+
+            .a_search:hover {
+                color: transparent;
+            }
+        }
+
+        .funLab {
+            margin-left: 20px;
+            width: 145px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2.5px rgba(0, 0, 0, 0.8) solid;
+            border-radius: 30px;
+            background-color: $color-sub-yellow;
+            transition: 0.3s;
+
+            img {
+                width: 43px;
+            }
+
+            &:hover {
+                background-color: $color-primary-white;
+                color: $color-sub-yellow;
+                text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+            }
+        }
+    }
+}
+
+//電腦斷點 => 漢堡按鈕消失
+@media ($mediaLg) {
+    #topBar {
+        .hamburger {
+            display: none
+        }
+    }
+}
+
+
+//平板斷點 => 加上漢堡按鈕以及更改位置
+@media ($mediaMd) {
+    #topBar {
+        align-items: start;
+        padding: 20px;
+
+
+        .logo {
+            margin-top: 13px; //對齊漢堡按鈕
+            margin-left: 15px;
+        }
+
+
+        .navbar {
+            display: flex;
+            flex-direction: column; //調整直排
+            align-items: flex-end;
+
+
+            .hamburger {
+                /*  修改button預設樣式  */
+                background-color: transparent;
+                border: none;
+
+
+                //漢堡按鈕設計
+                .Rotate.active {
+                    transform: rotate(45deg);
+                }
+
+
+                .line {
+                    fill: none;
+                    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+                    stroke: #000;
+                    stroke-width: 5.5;
+                    stroke-linecap: round;
+                }
+
+
+                .top {
+                    stroke-dasharray: 40 160;
+                }
+
+
+                .middle {
+                    stroke-dasharray: 40 142;
+                    transform-origin: 50%;
+                    transition: transform 400ms;
+                }
+
+
+                .bottom {
+                    stroke-dasharray: 40 85;
+                    transform-origin: 50%;
+                    transition: transform 400ms, stroke-dashoffset 400ms;
+                }
+
+
+                .active .top {
+                    stroke-dashoffset: -64px;
+                }
+
+
+                .active .middle {
+                    //stroke-dashoffset: -20px;
+                    transform: rotate(90deg);
+                }
+
+
+                .active .bottom {
+                    stroke-dashoffset: -64px;
+                }
+
+
+            }
+
+
+            .navigation {
+                opacity: 0; //初始不可見
+                visibility: hidden; // 防止被點擊
+                // display: none; // react => 使用visibility,不使用display
+                flex-direction: column; //垂直排
+                align-items: center;
+                align-items: end; //原本置右
+                border-radius: 10px;
+
+
+                transition: opacity 0.8s ease, visibility 0.8s ease;
+
+
+                &.show {
+                    opacity: 1;
+                    visibility: visible;
+                    animation: show 1s both;
+                }
+
+
+                .menu {
+                    flex-direction: column; //改成垂直排  
+                    padding: 8px;
+                    margin-bottom: 20px;
+
+
+                    a {
+                        margin: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//手機斷點 => logo尺寸
+@media ($mediaSm) {
+    #topBar {
+        .logo {
+            width: 100px;
+        }
+
+
+        .Rotate {
+            width: 60px;
+        }
+    }
+}
 
 .subNavigation {
 
@@ -61,7 +373,8 @@ html{
 }
 
 /* banner */
-#banner {
+#index-banner {
+    height: 100vh;
     .img-container {
 
         position: relative;
@@ -77,18 +390,36 @@ html{
         background-image: url(../public/images/index/graph-blueLine.svg), linear-gradient(#FFFFFF 0%, #EEF2FD 18%, #D9E2FB 47%, #5181FF 93%);
         background-size: cover;
 
-        .indexPic {
-            width: 30%;
-            height: 60%;
-            border-radius: 1000rem;
+        .circle-wrapper {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 50%;
+            z-index: 5;
+        }
+
+        .circle-image {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            object-position: center center;
+            display: block;
+            border-radius: 50%;
+        }
+
+        .funlabWarp {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .goToFunlab {
-            position: absolute;
-            top: 4%;
-            width: 45%;
+            width: 700px;
             z-index: 1;
             animation: goToFunlabAnime 15s linear infinite;
         }
@@ -110,10 +441,361 @@ html{
 }
 
 /* drink */
+#index-drink {
+    height: 100vh;
+    #drinkContent {
+        position: relative;
+        z-index: 10;
+        top: 5%;
+        left: 10%;
+
+        .title {
+            h2 {
+                font-size: $font-size-96;
+                font-family: $font-family-en-title;
+                color: $color-primary-blue;
+            }
+
+            h3 {
+                font-size: $font-size-20;
+                font-family: $font-family-en;
+                color: $color-sub-lightblue;
+                font-weight: 800;
+                line-height: 0;
+            }
+        }
+
+        .content {
+            margin-top: 30px;
+            font-size: $font-size-16;
+            font-family: $font-family-ch;
+        }
+
+        .btn {
+            margin-top: 30px;
+            width: 180px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $color-sub-yellow;
+            border-radius: 30px;
+            font-family: $font-family-en;
+            font-size: $font-size-20;
+            font-weight: $font-weight-bold;
+            box-shadow: 1.5px 5px 0 #E0D103, 0 -1px 3px 0px rgba(0, 0, 0, 0.1) inset;
+            transition: all 0.1s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                a {
+                    color: $color-sub-gray;
+                }
+
+                background-color: #FFFDE2;
+                box-shadow: 1.5px 5px 0 #e0d1038a,
+                0 -1px 3px 0px rgba(0, 0, 0, 0.1) inset;
+            }
+        }
+    }
+
+    .drinkCarousel {
+        position: relative;
+        height: 600px;
+        top: -20%;
+
+        .swiper {
+            width: 80%;
+            height: 100%;
+        }
+
+        .swiper-container {
+            height: 400px;
+            width: 80%;
+        }
+
+        .swiper-slide {
+            width: 400px;
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            transform: translateY(0%) scale(1.2);
+            
+
+            img {
+                transition: 0.8s;
+                transform: translateY(-10%);
+            }
+
+            .other-nav__img {
+                position: absolute;
+                top: 50%;
+                left: 16%;
+                width: 100%;
+                margin: auto;
+
+                img {
+                    width: 300px;
+                    height: 300px;
+                    object-fit: cover;
+                }
+            }
+
+            .other-nav_rank {
+                position: absolute;
+                top: 27%;
+                left: 39%;
+                height: 0;
+                line-height: 1;
+                overflow: hidden;
+                transition: height 0.5s ease;
+
+                p {
+                    font-size: $font-size-14;
+                    font-family: $font-family-ch;
+                    font-weight: 600;
+                }
+
+                h2 {
+                    font-size: 36px;
+                    font-family: $font-family-en-title;
+                }
+            }
+
+            .other-nav_btn {
+                position: absolute;
+                bottom: 25%;
+                right: 20%;
+                opacity: 0;
+                transform: rotate(-10deg);
+                transition: all 1s ease;
+                pointer-events: none;
+
+                img {
+                    width: 60%;
+                    transition: all 0.4s ease;
+                }
+
+                &:hover img {
+                    transform: translateY(-35px) scale(1.05);
+                    filter: brightness(1.2); // 調整這些值來達到想要的效果
+                }
+            }
+
+            .other-nav_num {
+                position: absolute;
+                top: 35%;
+                left: 30%;
+
+                p {
+                    font-size: 54px;
+                    font-family: $font-family-en;
+                    font-style: italic;
+                    font-weight: 900;
+                    -webkit-text-stroke: #000 3px;
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: -7%;
+                    left: -90%;
+                    width: 100px;
+                    height: 100px;
+                    background-size: cover;
+                    animation: goToFunlabAnime 15s linear infinite;
+                }
+            }
+
+            .num-1 {
+                color: #469BF6;
+
+                &:after {
+                    background-image: url(../../public/images/index/hotDrink/no1.png);
+                }
+                &::before{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "1";
+                    font-size: 54px;
+                    font-family: $font-family-en;
+                    font-style: italic;
+                    font-weight: 900;
+                }
+            }
+
+            .num-2 {
+                color: #CF8BFF;
+
+                &:after {
+                    background-image: url(../../public/images/index/hotDrink/no2.png);
+                }
+                &::before{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "2";
+                    font-size: 54px;
+                    font-family: $font-family-en;
+                    font-style: italic;
+                    font-weight: 900;
+                }
+            }
+
+            .num-3 {
+                color: $color-sub-yellow;
+
+                &:after {
+                    background-image: url(../../public/images/index/hotDrink/no3.png);
+                }
+                &::before{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "3";
+                    font-size: 54px;
+                    font-family: $font-family-en;
+                    font-style: italic;
+                    font-weight: 900;
+                }
+            }
+
+            .num-4 {
+                color: $color-sub-pink;
+
+                &:after {
+                    background-image: url(../../public/images/index/hotDrink/no4.png);
+                }
+                &::before{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "4";
+                    font-size: 54px;
+                    font-family: $font-family-en;
+                    font-style: italic;
+                    font-weight: 900;
+                }
+            }
+
+            .num-5 {
+                color: #49F646;
+
+                &:after {
+                    background-image: url(../../public/images/index/hotDrink/no5.png);
+                }
+                &::before{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "5";
+                    font-size: 54px;
+                    font-family: $font-family-en;
+                    font-style: italic;
+                    font-weight: 900;
+                }
+            }
+
+            &:not(.swiper-slide-active) {
+                .other-nav_num {
+                    top: 50%; // 調整非 active 時的垂直位置
+                    transform: translateY(0%); // 確保垂直置中
+                }
+            }
+
+            &.swiper-slide-active,
+            &.swiper-slide-duplicate-active {
+                transform: scale(1.8);
+                transition: 0.8s;
+
+                img {
+                    transform: translateY(-40%);
+                }
+
+                .other-nav_rank {
+                    height: 48px;
+                    transition: height 1s ease 0.5s;
+                }
+
+                .other-nav_btn {
+                    opacity: 1;
+                    transition: opacity 1s ease-in;
+                    pointer-events: auto;
+                }
+            }
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            display: none; // 隱藏預設箭頭
+        }
+
+        .swiper-controls {
+            position: absolute;
+            top: 20%;
+            right: 18%;
+            width: 150px;
+            display: flex;
+            gap: 30px;
+
+            .control-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .control-text {
+                    font-family: $font-family-en;
+                    font-size: $font-size-20;
+                    font-weight: 800;
+                    color: $color-sub-black;
+                }
+
+                &:hover {
+                    transform: translateY(-5px) scale(1.1);
+                }
+
+                &.swiper-button-disabled {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        .num-bg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            clip-path: circle(0% at 50% 50%);
+            transition: clip-path 0.4s cubic-bezier(0.72, 0.15, 0.16, 0.97);
+
+            img {
+                width: 100%;
+            }
+
+            &--active {
+                clip-path: circle(50% at 50% 50%);
+                transition-duration: 0.6s;
+            }
+        }
+    }
+
+}
 
 /* 跑馬燈 */
-#Marquee {
-
+#index-Marquee {
     width: 100%;
     height: 50px;
     background-color: $color-sub-yellow;
@@ -137,8 +819,8 @@ html{
 }
 
 /* feature */
-#feature {
-
+#index-feature {
+    height: 100vh;
     position: sticky;
     top: 0;
     z-index: 0;
@@ -312,7 +994,7 @@ html{
 }
 
 /* DIY */
-#DIY {
+#index-DIY {
     position: relative;
     z-index: 1;
     background-color: #FFFFFF;
@@ -398,24 +1080,6 @@ html{
                 margin-bottom: 5px;
             }
 
-            .p1::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 0%;
-                /* 初始寬度為 0 */
-                height: 2px;
-                background-color: #000;
-                transition: width 0.2s ease;
-                /* 添加過渡效果 */
-            }
-
-            .p1:hover::after {
-                width: 100%;
-                /* 當滑鼠移到標題時，底線展開至全寬 */
-            }
-
             img {
                 width: 24px;
                 margin-bottom: 5px;
@@ -460,17 +1124,19 @@ html{
     }
 }
 
-#dropText {
+#index-dropText {
+    height: 100vh;
     position: relative;
     width: 100%;
     z-index: 3;
     background-color: #dae4ff;
+
     .matter-box {
         overflow: hidden;
         width: 100%;
         height: 100vh;
     }
-    
+
     .tag1 {
         position: absolute;
         left: 10%;
@@ -480,12 +1146,13 @@ html{
         border: 2px solid transparent;
         background-color: #FFFFFF;
         border-radius: 35px;
-        font-family: "Noto Sans",sans-serif;
+        font-family: "Noto Sans", sans-serif;
         letter-spacing: 2px;
         font-weight: 600;
         font-size: 38px;
         text-align: center;
     }
+
     .tag2 {
         position: absolute;
         z-index: 5;
@@ -500,6 +1167,7 @@ html{
         font-size: $font-size-32;
         text-align: center;
     }
+
     .tag3 {
         position: absolute;
         left: 20%;
@@ -515,6 +1183,7 @@ html{
         font-size: $font-size-32;
         text-align: center;
     }
+
     .tag4 {
         position: absolute;
         left: 25%;
@@ -528,10 +1197,12 @@ html{
         align-items: center;
         justify-content: space-around;
         padding: 0 30px;
-        img{
+
+        img {
             height: 40px;
         }
     }
+
     .tag5 {
         position: absolute;
         left: 40%;
@@ -544,10 +1215,12 @@ html{
         display: flex;
         align-items: center;
         justify-content: center;
-        img{
+
+        img {
             height: 45px;
         }
     }
+
     .tag6 {
         position: absolute;
         left: 35%;
@@ -558,12 +1231,13 @@ html{
         border: 2px solid transparent;
         background-color: $color-sub-lightblue;
         border-radius: 50px;
-        font-family: "Noto Sans",sans-serif;
+        font-family: "Noto Sans", sans-serif;
         letter-spacing: 3px;
         font-weight: 600;
         font-size: 54px;
         text-align: center;
     }
+
     .tag7 {
         position: absolute;
         left: 50%;
@@ -579,6 +1253,7 @@ html{
         font-size: 46px;
         text-align: center;
     }
+
     .tag8 {
         position: absolute;
         left: 60%;
@@ -595,6 +1270,7 @@ html{
         font-size: 40px;
         text-align: center;
     }
+
     .tag9 {
         position: absolute;
         left: 70%;
@@ -609,6 +1285,7 @@ html{
         font-size: 40px;
         text-align: center;
     }
+
     .tag10 {
         position: absolute;
         left: 80%;
@@ -620,7 +1297,7 @@ html{
         background-color: $color-sub-pink;
         color: #FFFFFF;
         border-radius: 35px;
-        font-family: "Noto Sans",sans-serif;
+        font-family: "Noto Sans", sans-serif;
         letter-spacing: 2px;
         font-weight: 600;
         font-size: 38px;
@@ -628,10 +1305,53 @@ html{
     }
 }
 
+/* 頁尾區 */
 
+#footer {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    /* 主軸方向:水平 */
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 25px 70px;
+    background-color: $color-primary-blue;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    font-family: $font-family-ch;
+    font-size: $font-size-16;
+    font-weight: 600;
+    color: $color-primary-white;
+    letter-spacing: 0.05rem;
 
-section {
-    height: 100vh;
-    @extend %box-center;
-    flex-direction: column;
+    .logoFooter {
+        .logoFooterImg {
+            width: 80px;
+            padding: 5px 0px;
+        }
+
+        .logoFooterText {
+            width: 200px;
+            padding-bottom: 15px;
+        }
+    }
+
+    .articleFooter {
+        li {
+            margin-bottom: 15px;
+
+            p {
+                margin-bottom: 5px;
+            }
+        }
+
+        .iconFooter {
+            display: flex;
+
+            img {
+                width: 30px;
+                margin-right: 5px;
+            }
+        }
+    }
 }

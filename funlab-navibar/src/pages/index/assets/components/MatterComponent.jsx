@@ -180,7 +180,7 @@ const MatterComponent = () => {
 
     // Scroll event listener
     const handleScroll = () => {
-      const dropText = document.querySelector('#dropText');
+      const dropText = document.querySelector('#index-dropText');
       if (dropText) {
         const rect = dropText.getBoundingClientRect();
         const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
