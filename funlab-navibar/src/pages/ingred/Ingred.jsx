@@ -4,7 +4,8 @@ import GSReveal from "../../component/GSReveal";
 import GoTopFunction from "./components/GoTopFunction";
 import BubbleAnimation from "./components/BubbleAnimation";
 
-import "./ingred.scss"; // 我自己的樣式
+import "./ingred.scss";
+import Footer from "../../component/Footer";
 
 const Ingred = () => {
 
@@ -258,21 +259,12 @@ const Ingred = () => {
                         <figure><img src="../../public/images/Ingredients/graph-TeaCircle.png" alt="裝飾圖" /></figure>
                     </div>
 
-                    {/* 原本的大圖區 */}
-                    {/* <div className="showImg-left">
-                        <figure><img src=".../../public/images/ingred/tea/big-Assam.jpg" alt="" /></figure>
-                    </div>
-                    <div className="decorate-left">
-                        <p>茶</p>
-                        <figure><img src="../../public/images/ingred/graph-TeaCircle.png" alt="" /></figure>
-                    </div> */}
-
                     {/* 小圖列表 */}
                     {teas.map((tea, index) => (
                         <div
                             key={index}
                             className="ingredient"
-                            onMouseEnter={() => setTeaBigImage(tea.bigImg)} // 滑鼠移入時更新大圖
+                            onMouseEnter={() => setTeaBigImage(tea.bigImg)}
                         >
                             <figure>
                                 <img src={tea.smallImg} alt={tea.title} />
@@ -313,14 +305,6 @@ const Ingred = () => {
 
                 {/*水果 */}
                 <section id="fruit" className="fruit">
-                    {/* 原本的大圖 */}
-                    {/* <div className="showImg-left">
-                        <figure><img src="../../public/images/Ingredients/fruit/big-lemon.jpg" alt="" /></figure>
-                    </div>
-                    <div className="decorate-left">
-                        <p>果</p>
-                        <figure><img src="../../public/images/Ingredients/graph-FruitCircle.png" alt="" /></figure>
-                    </div> */}
 
                     {/* 大圖區 */}
                     <div className="showImg-left">
@@ -338,7 +322,7 @@ const Ingred = () => {
                         <div
                             key={index}
                             className="ingredient"
-                            onMouseEnter={() => setFruitBigImage(fruit.bigImg)} // 滑鼠移入時更新大圖
+                            onMouseEnter={() => setFruitBigImage(fruit.bigImg)}
                         >
                             <figure>
                                 <img src={fruit.smallImg} alt={fruit.title} />
@@ -392,36 +376,12 @@ const Ingred = () => {
                             </div>
                         ))}
                     </div>
-
-
-
-                    {/* {toppings.map((topping, index) => (
-                        <div
-                            key={index}
-                            className="ingredient"
-                            onMouseEnter={() => setToppingBigImage(topping.bigImg)}
-                        >
-                            <figure>
-                                <img src={topping.smallImg} alt={topping.title} />
-                            </figure>
-                            <h2>{topping.title}</h2>
-                            <p>{topping.desc}</p>
-                        </div>
-                    ))}
-
-                    <div className="showImg-right">
-                        <figure>
-                            <img src={toppingBigImage} alt="配料大圖" />
-                        </figure>
-                    </div>
-                    <div className="decorate-right">
-                        <p>料</p>
-                        <figure><img src="../../public/images/Ingredients/graph-ToppingCircle.png" alt="裝飾圖" /></figure>
-                    </div> */}
                 </section>
-
+                
+                <Footer />
+                
             </main>
-
+            
         </>
     );
 };
