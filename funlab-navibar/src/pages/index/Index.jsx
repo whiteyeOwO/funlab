@@ -1,75 +1,132 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import BubbleAnimation from "./assets/components/BubbleAnimation";
 import MarqueeEffect from "react-fast-marquee";
-import "./assets/scss/style.scss";
 import $ from 'jquery';
 import PhotoOverlay from './assets/components/photoOverlay';
 import WaveScroll from './assets/components/SmoothScrollEffect';
 import GSReveal from './assets/components/GSReveal';
 import MatterComponent from './assets/components/MatterComponent';
+import DrinkCarousel from './assets/components/DrinkCarousel';
+import "./assets/scss/style.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 function Index() {
     const featureOffset = window.innerHeight * 3 + 50;
     const DIYOffset = window.innerHeight * 5;
+
+    const circleWrapperRef = useRef(null);
+    const imgContainerRef = useRef(null);
+
     useEffect(() => {
-        // 漢堡按鈕
+        // 漢堡按鈕的點擊事件
         const handleClick = () => {
-            $('.hamburger').find('svg').toggleClass('active');
-            $('.navigation').toggleClass('show');
+            const hamburger = document.querySelector('.hamburger');
+            const navigation = document.querySelector('.navigation');
+            if (hamburger && navigation) {
+                hamburger.querySelector('svg').classList.toggle('active');
+                navigation.classList.toggle('show');
+            }
         };
+
         // 綁定事件
-        $('.hamburger').on('click', handleClick);
+        const hamburger = document.querySelector('.hamburger');
+        if (hamburger) {
+            hamburger.addEventListener('click', handleClick);
+        }
 
-        // const {innerHeight} = window;
-        // gsap.from(".img-container .indexPic",{
-        //     duration: 0.001,
-        //     borderRadius: "1000em",
+        const circleWrapper = circleWrapperRef.current;
+        const imgContainer = imgContainerRef.current;
 
-        // });
-        // gsap.to(".img-container .indexPic",{
-        //     scale: 1.5, 
-        //     duration: 1,
-        //     // width: "100%",
-        //     // borderRadius: "0em",
-        //     // height: "100vh",
-        //     transformOrigin: "center center",
-        //     scrollTrigger:{
-        //         trigger: ".img-container",
-        //         end:  "+=150%",
-        //         // pin: true,
-        //         scrub: true,
-        //     }
-        // });
+        if (circleWrapper && imgContainer) {
+            gsap.to(circleWrapper, {
+                scale: 6,
+                transformOrigin: "center center",
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: imgContainer,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1,
+                    pin: true,
+                },
+            });
+        }
 
-        // 在 useEffect 清理階段中移除事件綁定
+        // 清理事件和 ScrollTrigger
         return () => {
-            $('.hamburger').off('click', handleClick);
+            if (hamburger) {
+                hamburger.removeEventListener('click', handleClick);
+            }
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     }, []);
 
     return (
         <>
-        {/* 側邊導覽列 */}
+            {/* 頁首區 */}
+            <header id="topBar">
+                {/* logo區 */}
+                <h1 className="logo">
+                    <a href="./index.html">
+                        {/* svg預設會自動寬度100% */}
+                        <img src="../public/images/funlogoText.svg" alt="fun飲LOGO" title="fun飲LOGO" />
+                    </a>
+                </h1>
+                <div className="navbar">
+                    {/* 漢堡按鈕 */}
+                    <button className="hamburger">
+                        <svg className="Rotate" viewBox="0 0 100 100" width="80" onClick={() => $('.Rotate').find('svg').toggleClass('active')}>
+                            <path className="line top"
+                                d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+                            <path className="line middle" d="m 30,50 h 40" />
+                            <path className="line bottom"
+                                d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+                        </svg>
+
+                    </button>
+                    {/* 導覽列 */}
+                    <nav className="navigation">
+                        {/* 主選單 */}
+                        <ul className="menu">
+                            <li><a className="a_about" href="">ABOUT</a></li>
+                            <li><a className="a_menu" href="">MENU</a></li>
+                            <li><a className="a_fresh" href="">FRESH</a></li>
+                            <li><a className="a_store" href="">STORE</a></li>
+                            <li><a className="a_search" href="">SEARCH</a></li>
+                        </ul>
+                        <ul>
+                            <a href="" className="funLab">
+                                <li><img src="../public/images/funLogo.svg" alt="fun飲LOGONav" /></li>
+                                <li>FUN LAB</li>
+                            </a>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
             <nav className="subNavigation">
                 <img src="../public/images/index/Navigation bar.svg" alt="" />
                 <ul className="subMenu">
-                    <li><a href="#banner">UP</a></li>
-                    <li><a href="#drink">MENU</a></li>
-                    <li><a href="#Marquee">ABOUT</a></li>
-                    <li><a href="#DIY">FUN LAB</a></li>
+                    <li><a href="#index-banner">UP</a></li>
+                    <li><a href="#index-drink">MENU</a></li>
+                    <li><a href="#index-Marquee">ABOUT</a></li>
+                    <li><a href="#index-DIY">FUN LAB</a></li>
                     <li><a href="#footer">DOWN</a></li>
                 </ul>
             </nav>
 
             {/* 主要內容區 */}
             <main>
-                <section id="banner">
-                    <div className="img-container">
-                        <img className="indexPic" src="../public/images/index/index.banner.webp" alt="" />
-                        <img className="goToFunlab" src="../public/images/index/rotateText.svg" alt="" />
+                <section id="index-banner">
+                    <div ref={imgContainerRef} className="img-container">
+                        <div ref={circleWrapperRef} className="circle-wrapper">
+                            <img className="circle-image" src="../public/images/index/index.banner.webp" alt="" />
+                        </div>
+                        <div className='funlabWarp'>
+                            <img className="goToFunlab" src="../public/images/index/rotateText.svg" alt="" />
+                        </div>
                         <div className="wrap">
                             <BubbleAnimation />
                         </div>
@@ -78,7 +135,7 @@ function Index() {
 
                 <div style={{ height: "100vh" }}></div>
 
-                <section id="drink">
+                <section id="index-drink">
                     <div id="drinkContent">
                         <header className="title">
                             <h2>DRINK</h2>
@@ -87,18 +144,18 @@ function Index() {
                         <div className="content">
                             <p>飲料熱門排行榜 <br /> 你喜愛的飲品有上榜嗎 ?</p>
                         </div>
-                        <div>
+                        <div className='btn'>
                             <a href="">VIEW ALL</a>
                         </div>
                     </div>
-
+                    <DrinkCarousel/>
                 </section>
 
-                <div id="Marquee">
+                <div id="index-Marquee">
                     <MarqueeEffect className="mt-24" pauseOnHover speed={80}>
                         <div className="marquee">
                             <p>放心好喝又過癮</p>
-                            <img src="../public/images/icon/graph-smile.svg" alt="" />
+                            <img src="../public/images/icon/graph-smile .svg" alt="" />
                             <p>放飲</p>
                             <img src="../public/images/icon/graph-Heart.svg" alt="" />
                             <img src="../public/images/icon/graph-Heart.svg" alt="" />
@@ -134,13 +191,13 @@ function Index() {
                     </MarqueeEffect>
                 </div>
 
-                <section id="feature">
-                    <PhotoOverlay featureOffset={featureOffset}/>
+                <section id="index-feature">
+                    <PhotoOverlay featureOffset={featureOffset} />
                     <img className='graph1' src="../public/images/icon/graph-pinkBall.svg" alt="" />
                     <img className='graph2' src="../public/images/icon/graph-smile Two.svg" alt="" />
                     <img className='graph3' src="../public/images/icon/graph-yellowLine.svg" alt="" />
                     <div className="scroll-container">
-                        <div className= "sticky-content" >
+                        <div className="sticky-content" >
                             <div className="text-section">
                                 <div className="text-block active">
                                     <header className="title">
@@ -195,45 +252,74 @@ function Index() {
                     </div>
                 </section>
 
-                <div className="s" style={{ height: "300vh", position: 'relative',zIndex :-1}}></div>
+                <div className="s" style={{ height: "300vh", position: 'relative', zIndex: -1 }}></div>
 
-                <section id="DIY">
-                    <WaveScroll DIYOffset ={DIYOffset}  targetSelectors={['.wave', '#DIYContent']}/>
+                <section id="index-DIY">
+                    <WaveScroll DIYOffset={DIYOffset} targetSelectors={['.wave', '#DIYContent']} />
                     <img className='whiteWave' src="../public/images/index/graph-whiteWaves.svg" alt="" />
                     <img className='wave' src="../public/images/index/graph-waves.svg" alt="" />
                     <div id="DIYContent">
                         <header className="title">
                             <GSReveal from='top'>
-                            <h2>FUN LAB</h2>
-                            <h3>讓飲品變得獨一無二</h3>
+                                <h2>FUN LAB</h2>
+                                <h3>讓飲品變得獨一無二</h3>
                             </GSReveal>
-                        </header> 
+                        </header>
                         <GSReveal from='bottom'>
-                        <img className='hotDrink1' src="../public/images/index/hotDrink/hotDrink1.png" alt="" />
-                        <img className='hotDrink2' src="../public/images/index/hotDrink/hotDrink2.png" alt="" />
+                            <img className='hotDrink1' src="../public/images/index/hotDrink/hotDrink1.png" alt="" />
+                            <img className='hotDrink2' src="../public/images/index/hotDrink/hotDrink2.png" alt="" />
                         </GSReveal>
                         <GSReveal from='right'>
-                        <div className="content">
-                            <p className='p1'>1. Make</p>
-                            <img src="../public/images/icon/icon-arrowYellow.svg" alt="" />
-                            <p>2. share</p>
-                            <img src="../public/images/icon/icon-arrowYellow.svg" alt="" />
-                            <p>3. drink</p>
-                        </div>
-                        <div className='DIYButton'>
-                            <a href="">製作專屬飲品</a>
-                            <img src="../public/images/funLogo.svg" alt="" />
-                        </div>
+                            <div className="content">
+                                <p>1. Make</p>
+                                <img src="../public/images/icon/icon-arrowYellow.svg" alt="" />
+                                <p>2. share</p>
+                                <img src="../public/images/icon/icon-arrowYellow.svg" alt="" />
+                                <p>3. drink</p>
+                            </div>
+                            <div className='DIYButton'>
+                                <a href="">製作專屬飲品</a>
+                                <img src="../public/images/funLogo.svg" alt="" />
+                            </div>
                         </GSReveal>
                     </div>
 
                 </section>
 
-                <section id="dropText">
-                    <MatterComponent/>
+                <section id="index-dropText">
+                    <MatterComponent />
                 </section>
             </main>
 
+            {/* 頁尾區 */}
+            <footer id="footer">
+                <div className="logoFooter">
+                    <img className="logoFooterImg" src="../public/images/funLogo.svg" alt="fun飲LOGONav" />
+                    <img className="logoFooterText" src="../public/images/funLogoText2.svg" alt="fun飲LOGO" title="fun飲LOGO" />
+                </div>
+                <div className="articleFooter">
+                    <ul>
+                        <li>
+                            <p>CONTACT</p>
+                        </li>
+                        <li>
+                            <p>PRIVACY POLICY</p>
+                        </li>
+                        <li>
+                            <p>放飲 FUN LAB</p>
+                            <p>100台北市中正區濟南路一段321號</p>
+                            <p>TEL 02-3535-3466</p>
+                        </li>
+                        <li className="iconFooter">
+                            <img src="../public/images/icon/icon-ig.svg" alt="" />
+                            <img src="../public/images/icon/icon-LINE.svg" alt="" />
+                        </li>
+                        <li>
+                            <p>©2024 放飲, All Rights Reserved</p>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
         </>
     )
 }
