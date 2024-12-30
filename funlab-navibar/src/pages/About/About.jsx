@@ -1,6 +1,7 @@
 import "./About.scss";
 // import "../css/About.css";
 import GSReveal from '../../component/GSReveal';
+import Footer from "../../component/Footer";
 
 function About() {
     return (
@@ -81,6 +82,8 @@ function About() {
                     <figure className="graph-5 "><img src="./images/icon/graph-yellowLine.svg" alt="" /></figure>
                     <figure className="graph-6 "><img src="./images/icon/graph-blueLine.svg" alt="" /></figure>
                 </section>
+
+                <Footer></Footer>
             </main>
 
         </>

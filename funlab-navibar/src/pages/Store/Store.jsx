@@ -1,6 +1,7 @@
 import './store.scss';
 import GSReveal from '../../component/GSReveal';
 import { useEffect } from 'react';
+import Footer from '../../component/Footer';
 
 
 
@@ -49,7 +50,7 @@ function Store() {
     return (
         <>
             {/* 主要內容 */}
-            <main>
+            <main id="store-main">
                 {/* banner */}
                 <div id="store-banner">
                     <img src="images/store/store-banner.jpg" alt="店家概念照" title="店家概念照" />
@@ -311,9 +312,10 @@ function Store() {
                     <figure className="graph-4"><img src="images/icon/graph-blueLine.svg" alt="" /></figure>
                 </div>
 
+                <Footer></Footer>
             </main>
 
-            
+
         </>
     )
 }
