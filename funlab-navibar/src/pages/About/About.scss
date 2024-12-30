@@ -4,17 +4,20 @@
 @use"../../styles/base/keyframes";
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap');
 
-body {
+// body {
+//     background-image: linear-gradient(white 80%, #D9E2FB 100%);
+// }
+#about-main{
     background-image: linear-gradient(white 80%, #D9E2FB 100%);
 }
-
 /* banner區 */
-#banner {
+#about-banner {
     height: 100vh;
     position: relative;
 
     figure {
         height: 100%;
+        width: 100%;
 
         img {
             object-fit: cover;
@@ -23,7 +26,7 @@ body {
         }
     }
 
-    .title {
+    .about-title {
         display: flex;
         flex-direction: column;
         align-items: end;
@@ -40,20 +43,23 @@ body {
             font-size: $font-size-72;
             font-weight: $font-weight-bold;
             font-family: $font-family-ch;
+            color: $color-sub-yellow;
+            text-shadow: 0 1px 0px rgba(207, 200, 0, 0.8);
         }
 
         .en {
             font-size: $font-size-96;
             font-family: $font-family-en-title;
             margin-top: -20px;
+            
         }
     }
 }
 
 //banner區平板
 @media ($mediaMd) {
-    #banner {
-        .title {
+    #about-banner {
+        .about-title {
             right: 50px;
         }
     }
@@ -61,10 +67,10 @@ body {
 
 //banner區手機
 @media ($mediaSm) {
-    #banner {
+    #about-banner {
         height: 60vh;
 
-        .title {
+        .about-title {
             right: 25px;
 
             .en {
@@ -83,15 +89,15 @@ body {
 #about {
     position: relative;
     background: linear-gradient(to bottom, #FFFFFF, #B3C7FD);
-    z-index: -2;
     // padding: 1px;
     overflow: hidden; //隱藏超出區塊
 
-    .item {
+    .about-item {
         @extend %box-center-column;
         padding: 60px;
+        z-index: 999;
 
-        .content {
+        .about-content {
             width: 100%;
             @extend %box-center-column;
 
@@ -118,13 +124,14 @@ body {
                 width: 60%;
                 margin: 50px 0 100px 0;
                 min-width: 500px;
+            
             }
 
         }
     }
 
     .marquee-container {
-        z-index: -1;
+        z-index: 888;
         position: absolute;
         top: 30%;
         left: 0;
@@ -177,10 +184,10 @@ body {
 //about區手機
 @media ($mediaSm) {
     #about {
-        .item {
+        .about-item {
             padding: 40px 20px;
 
-            .content {
+            .about-content {
                 h2 {
                     font-size: 20px;
                     margin: 30px 0;
@@ -204,7 +211,6 @@ body {
 
         .marquee-container {
             top: 35%;
-
             p {
                 font-size: 11rem;
             }
@@ -213,7 +219,6 @@ body {
         .graph-1 {
             display: none;
         }
-
         .graph-2 {
             display: none;
         }
@@ -228,12 +233,13 @@ body {
     padding: 20px;
     overflow: hidden;
 
-    .item {
+    .about2-item {
         display: flex;
         justify-content: center;
         align-items: end;
         width: 60%;
         margin-bottom: 150px;
+        z-index: 1;
 
         .photo1 {
             img {
@@ -291,7 +297,7 @@ body {
     .graph-6,
     .graph-7 {
         position: absolute;
-        z-index: -2;
+        z-index: 0;
     }
 
     .graph-3 {
@@ -325,7 +331,7 @@ body {
 //about2區平版
 @media ($mediaMd) {
     #about2 {
-        .item {
+        .about2-item {
             width: 80%
         }
     }
@@ -334,7 +340,7 @@ body {
 //about2區手機
 @media ($mediaSm) {
     #about2 {
-        .item {
+        .about2-item {
             flex-direction: column;
             align-items: start;
             margin: 50px 0;
@@ -386,67 +392,3 @@ body {
     }
 }
 
-
-/* 頁尾區 */
-#footer {
-    display: flex;
-    /* 主軸方向:水平 */
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 25px 70px;
-    background-color: $color-primary-blue;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    font-family: $font-family-ch;
-    font-size: $font-size-16;
-    font-weight: 600;
-    color: $color-primary-white;
-    letter-spacing: 0.05rem;
-
-    .logoFooter {
-        .logoFooterImg {
-            width: 80px;
-            padding: 5px 0px;
-        }
-
-        .logoFooterText {
-            width: 200px;
-            padding-bottom: 15px;
-        }
-    }
-
-    .articleFooter {
-        li {
-            margin-bottom: 15px;
-
-            p {
-                margin-bottom: 5px;
-            }
-        }
-
-        .iconFooter {
-            display: flex;
-
-            img {
-                width: 30px;
-                margin-right: 5px;
-            }
-        }
-    }
-}
-
-@media ($mediaSm) {
-    #footer {
-        flex-direction: column;
-        align-items: start;
-        padding: 25px 35px;
-
-        .logoFooter {
-            display: none;
-        }
-
-        p {
-            font-size: 10px;
-        }
-    }
-}

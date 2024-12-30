@@ -1,28 +1,30 @@
 import "./About.scss";
+// import "../css/About.css";
 import GSReveal from '../../component/GSReveal';
 
 function About() {
     return (
         <>
-            <main>
+            <main id="about-main">
                 {/* BANNER區 */}
-                <section id="banner">
-
-                    <div className="title">
+                <section id="about-banner">
+                    <div className="about-title">
                         <GSReveal>
                             <h1 className="ch">放飲</h1>
+                        </GSReveal>
+                        <GSReveal>
                             <h1 className="en">ABOUT</h1>
                         </GSReveal>
                     </div>
 
-                    <figure><img src="images/about/about-banner.webp" alt="" />
+                    <figure><img src="./images/about/about-banner.webp" alt="about概念圖" />
                     </figure>
                 </section>
 
                 {/* about區 */}
                 <section id="about">
-                    <div className="item">
-                        <div className="content">
+                    <div className="about-item">
+                        <div className="about-content">
                             <h2 ><GSReveal from="left">「靈感隨手搖，創意放手喝！」</GSReveal></h2>
                             <p>在放飲 Lab，我們不僅提供飲料，更帶來一場與靈感的碰撞。每一杯都是一次創作，每一口都是驚喜。我們希望將飲料變成日常生活中的快樂創作，讓每個人都能透過飲品，表達自己，分享趣味。
                                 無論是隨興放鬆還是熱鬧聚會，放飲 Lab 都是你不可或缺的陪伴者。</p>
@@ -46,10 +48,11 @@ function About() {
                     <figure className="graph-2"><GSReveal><img src="./images/icon/graph-blueBall.svg" alt="" /> </GSReveal></figure>
                 </section>
 
+
                 {/* about2區 */}
                 <section id="about2">
 
-                    <div className="item">
+                    <div className="about2-item">
                         <div className="content1"><GSReveal from="left">
                             <h3>「經營理念」</h3>
                             <p>放飲
@@ -61,7 +64,7 @@ function About() {
 
                     </div>
 
-                    <div className="item">
+                    <div className="about2-item">
                         <figure className="photo2"><GSReveal from="left"><img src="./images/about/about2.jpg" alt="" /> </GSReveal></figure>
                         <div className="content2"><GSReveal from="left">
                             <h3>「企業願景」</h3>
@@ -69,7 +72,7 @@ function About() {
                                 放飲 Lab 以創新為核心，重新定義手搖文化。我們的願景是成為一個能激發靈感的品牌，透過飲品打造更多互動與分享的機會。</p>
                         </GSReveal>
                         </div>
-                    </div>
+                    </div> 
 
 
                     {/* 裝飾圖 */}

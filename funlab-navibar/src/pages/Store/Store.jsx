@@ -51,12 +51,12 @@ function Store() {
             {/* 主要內容 */}
             <main>
                 {/* banner */}
-                <div id="banner">
+                <div id="store-banner">
                     <img src="images/store/store-banner.jpg" alt="店家概念照" title="店家概念照" />
                 </div>
 
                 {/* 標題 */}
-                <div>
+                <div className="store-title">
                     <GSReveal from='top'>
                         <h1 className="gs_reveal gs_reveal_fromTop">STORE</h1>
                     </GSReveal>
