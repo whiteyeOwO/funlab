@@ -9,7 +9,7 @@ const DrinkCarousel = () => {
   const slides = [
     {
       bg: "../public/images/index/hotDrink/no1-background.png",
-      mainImg: "../public/images/drink/juice/珍愛百香綠.png",
+      mainImg: "../public/images/menu/juice/珍愛百香綠.webp",
       title: "珍愛百香綠",  // 加入對應的標題
       rank: "No.1"
     },
