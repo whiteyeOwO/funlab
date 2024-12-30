@@ -1,6 +1,6 @@
-@use "/src/styles/abstracts/variables/color" as *;
-@use "/src/styles/abstracts/variables/basic" as *;
-@use "/src/styles/base/reset" as *;
+@use "../../styles/abstracts/variables/color" as *;
+@use "../../styles/abstracts/variables/basic" as *;
+@use "../../styles/base/reset" as *;
 
 
 
@@ -37,7 +37,7 @@ section.h2 {
             padding: 10px 0;
         }
 
-        #type {
+        .input {
             width: 30vw;
             height: 5vh;
             border: 2px solid $color-sub-lightGray;

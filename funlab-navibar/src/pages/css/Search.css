@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+/* RESET  END*/
+/*標題*/
+section.h2 {
+  padding: 300px;
+  display: flex;
+  /* Use flexbox */
+  flex-direction: column;
+  /* Stack children vertically */
+  align-items: center;
+  /* Center-align all items horizontally */
+  /*訂單查詢區*/
+}
+section.h2 h2 {
+  padding: 10px 200px;
+}
+section.h2 h2 img {
+  display: block;
+  margin: 0 auto;
+  /* Center image */
+  width: 30vw;
+}
+section.h2 .search {
+  display: block;
+  width: 30vw;
+  font-size: 1rem;
+  padding: 40px 0;
+}
+section.h2 .search h4 {
+  padding: 10px 0;
+}
+section.h2 .search #type {
+  width: 30vw;
+  height: 5vh;
+  border: 2px solid #D9D9D9;
+}
+section.h2 .submit {
+  border: 2px solid;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px;
+  width: 6vw;
+  border-radius: 50px;
+  background-color: rgba(81, 130, 255, 0.6901960784);
+  border-color: #5082FF;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+section.h2 .submit:hover {
+  background-color: #BCCEFF;
+}/*# sourceMappingURL=Search.css.map */

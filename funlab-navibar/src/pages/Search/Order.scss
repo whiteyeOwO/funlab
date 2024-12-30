@@ -1,24 +1,35 @@
-@use "/src/styles/abstracts/variables/color" as *;
-@use "/src/styles/abstracts/variables/basic" as *;
-@use "/src/styles/base/reset" as *;
+@use "../../styles/abstracts/variables/color" as *;
+@use "../../styles/abstracts/variables/basic" as *;
+@use "../../styles/base/reset" as *;
 
 /* Title Section */
 .title {
     h1 {
-        padding-top: 10vh;
+        padding-top: 20vh;
         font-size: $font-size-48;
         font-weight: bold;
         text-align: center;
     }
 }
 
+/* Common Styles for Headers, Paragraphs, and Tables */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+table {
+    font-family: $font-family-ch;
+}
 
 /* Current Order Section */
 .now {
     display: block;
-    padding: 20px 260px;
-    // height: 48px;
-    font-family: $font-family-ch;
+    padding : 20px 260px 30px;
+    height: 100%;
+    max-height:fit-content;
 
     h2 {
         font-size: $font-size-32;
@@ -26,6 +37,8 @@
         background-color: $color-sub-lightblue;
         text-align: center;
         padding: 6px;
+        max-height: 10vh;
+
     }
 
     .nowContent {
@@ -60,39 +73,37 @@
             }
         }
 
-        .wrap {
-            table {
-                border-collapse: collapse;
-                table-layout: fixed;
-                width: 100%;
+        table {
+            border-collapse: collapse;
+            table-layout: fixed;
+            width: 100%;
 
-                th,
-                td {
-                    padding: 12px;
-                    text-align: left;
+            th,
+            td {
+                padding: 12px;
+                text-align: left;
+            }
+
+            td {
+                border-top: 2px solid #000;
+                border-bottom: 2px solid #000;
+            }
+
+            th {
+                font-weight: bold;
+            }
+
+            th,
+            td {
+
+                &.name,
+                &.content,
+                &.store {
+                    width: 250px;
                 }
 
-                td {
-                    border-top: 2px solid #000;
-                    border-bottom: 2px solid #000;
-                }
-
-                th {
-                    font-weight: bold;
-                }
-
-                th,
-                td {
-
-                    &.name,
-                    &.content,
-                    &.store {
-                        width: 250px;
-                    }
-
-                    &.price {
-                        text-align: right;
-                    }
+                &.price {
+                    text-align: right;
                 }
             }
         }
