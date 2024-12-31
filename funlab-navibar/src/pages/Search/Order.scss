@@ -27,9 +27,9 @@ table {
 /* Current Order Section */
 .now {
     display: block;
-    padding : 20px 260px 30px;
+    padding: 20px 260px 10vh;
     height: 100%;
-    max-height:fit-content;
+    max-height: fit-content;
 
     h2 {
         font-size: $font-size-32;
@@ -37,7 +37,6 @@ table {
         background-color: $color-sub-lightblue;
         text-align: center;
         padding: 6px;
-        max-height: 10vh;
 
     }
 
@@ -73,72 +72,80 @@ table {
             }
         }
 
-        table {
-            border-collapse: collapse;
-            table-layout: fixed;
-            width: 100%;
+        .table {
 
-            th,
-            td {
-                padding: 12px;
-                text-align: left;
+
+            table {
+                border-collapse: collapse;
+                table-layout: auto;
+                width: 100%;
+                padding: 20px;
+
+                th,
+                td {
+                    padding: 12px 0;
+                    text-align: left;
+                }
+
+                td {
+                    border-top: 2px solid #000;
+                    border-bottom: 2px solid #000;
+                }
+
+                th {
+                    font-weight: bold;
+                }
+
+                th,
+                td {
+
+                    &.name,
+                    &.content,
+                    &.store {
+                        width: 250px;
+                    }
+
+                    &.price {
+
+                        text-align: right;
+                    }
+                }
             }
 
-            td {
-                border-top: 2px solid #000;
-                border-bottom: 2px solid #000;
-            }
-
-            th {
+            .total {
                 font-weight: bold;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 30px;
+                padding: 10px 0;
             }
-
-            th,
-            td {
-
-                &.name,
-                &.content,
-                &.store {
-                    width: 250px;
-                }
-
-                &.price {
-                    text-align: right;
-                }
-            }
-        }
-
-        .total {
-            font-weight: bold;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 30px;
-            padding: 10px 0;
         }
     }
 }
 
 /* Divider Section */
-.divider {
+
+
+#custom-hr {
     margin: 10px 260px;
     height: 0.5vh;
+    border: none;
+    height: 4px;
+    background: repeating-linear-gradient(to right,
+            black 0,
+            black 16px,
+            transparent 10px,
+            transparent 30px);
 
-    .custom-hr {
-        border: none;
-        height: 4px;
-        background: repeating-linear-gradient(to right,
-                black 0,
-                black 16px,
-                transparent 10px,
-                transparent 30px);
-    }
 }
 
 /* Past Orders Section */
 .pastWrap {
+    padding: 10vh 0;
+
     .pastOrder {
-        padding: 0 260px;
+        padding: 0 260px 20px;
 
         h2 {
             font-size: $font-size-32;
@@ -150,7 +157,7 @@ table {
     }
 
     .past {
-        padding: 0 260px;
+        padding: 0 260px 20px;
 
         .pastContent {
             .orderInfo {
@@ -164,6 +171,7 @@ table {
                     align-items: center;
                     gap: 40px;
                     padding: 10px 0;
+
                 }
 
                 .condition {
@@ -179,11 +187,7 @@ table {
                     text-align: right;
                 }
 
-                img {
-                    padding: 6px;
-                    width: 4.5%;
-                    align-self: center;
-                }
+
             }
         }
 
@@ -208,6 +212,7 @@ table {
             th {
                 padding: 10px 0;
                 font-weight: bold;
+
             }
 
             th,
@@ -216,9 +221,8 @@ table {
                 &.name,
                 &.content,
                 &.store {
+                    width: 250px;
                     text-align: left;
-                    width: max-content;
-                    padding-right: 10px;
                 }
 
                 &.price {
@@ -249,11 +253,13 @@ table {
 /* Expand/Collapse Button */
 .iconExpand {
     cursor: pointer;
-    font-size: 20px;
-}
+    font-size: $font-size-18;
 
-/* All Orders Section */
-#all {
-    padding: 60px;
-    background-color: beige;
+    :hover {
+        color: black;
+    transition: .5s ease-in-out;
+    }
+    :active {
+    transition: 1s ease-in-out;
+    }
 }

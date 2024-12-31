@@ -1,135 +1,209 @@
-
-import { React, useState } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import Footer from "../../component/Footer";
 import "./Order.scss";
 import { BiSolidRightArrow, BiSolidDownArrow } from "react-icons/bi";
+import { gsap } from "gsap";
 
 export default function Order() {
     const [activeOID, setActiveOID] = useState(null);
+    const [orderStatus, setOrderStatus] = useState("飲品製作中"); // Default order status
+    const conditionRef = useRef(null); // Ref for the condition element
 
-    // Order Data
-    const order = [
-        { id: 1, Q: "Order1", Ans: "Detail1" },
-        { id: 2, Q: "Order2", Ans: "Detail2" },
-        { id: 3, Q: "Order3", Ans: "Detail3" },
+    const orders = [
+        {
+            id: 234467,
+            date: "2024/12/12",
+            status: "已完成",
+            items: [
+                { name: "好喝抹茶杏仁奶", content: "抹茶／杏仁奶", store: "善導寺門市", price: 60 },
+            ],
+        },
+        {
+            id: 222359,
+            date: "2024/12/10",
+            status: "已完成",
+            items: [
+                { name: "極品紅茶拿鐵", content: "紅茶／鮮奶", store: "公館門市", price: 65 },
+            ],
+        },
+        {
+            id: 202445,
+            date: "2024/12/08",
+            status: "已完成",
+            items: [
+                { name: "香甜芋頭牛奶", content: "芋頭／牛奶", store: "台北車站門市", price: 70 },
+            ],
+        },
     ];
+
+    // Create a ref for the collapsible content
+    const contentRefs = useRef({});
+
+    // Function to animate the order details with GSAP
+    const toggleOrderDetails = (orderId) => {
+        setActiveOID((prevId) => {
+            const newActiveOID = prevId === orderId ? null : orderId;
+
+            if (contentRefs.current[orderId]) {
+                // Animate using GSAP
+                const content = contentRefs.current[orderId];
+                if (newActiveOID === orderId) {
+                    gsap.to(content, {
+                        duration: 0.5,
+                        height: "auto", // Animate to 'auto' height
+                        opacity: 1,
+                        ease: "power2.out",
+                    });
+                } else {
+                    gsap.to(content, {
+                        duration: 0.5,
+                        height: 0,
+                        opacity: 0,
+                        ease: "power2.in",
+                    });
+                }
+            }
+            return newActiveOID;
+        });
+    };
+
+    // Function to animate condition element
+    const animateCondition = (status) => {
+        if (conditionRef.current) {
+            gsap.fromTo(
+                conditionRef.current,
+                { opacity: 1, scale: .95 }, // Initial state
+                {
+                    opacity: 0.8,
+                    scale: 1,
+                    // backgroundColor: status === "飲品製作中" ? "yellow" : "pink", // Color changes based on status
+                    duration: 1,
+                    ease: "power2.out",
+                }
+            );
+        }
+    };
+
+    // Trigger condition animation when order status changes
+    useEffect(() => {
+        animateCondition(orderStatus);
+    }, [orderStatus]);
 
     return (
         <main>
-            {/* 標題 */}
             <header className="title">
                 <h1>訂單管理</h1>
             </header>
 
-            {/* 當前訂單 */}
             <div className="now">
                 <h2 className="now">當前訂單</h2>
                 <div className="nowContent">
                     <div className="orderInfo">
                         <div className="orderInfoL">
                             <p>訂單編號：313286</p>
-                            <div className="condition">飲品製作中</div>
+                            <div ref={conditionRef} className="condition">
+                                {orderStatus}
+                            </div>
                         </div>
                         <div className="date">
                             <p>訂單日：2025/01/17</p>
                         </div>
                     </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th className="name">商品名稱</th>
-                                <th className="content">內容</th>
-                                <th className="store">取件門市</th>
-                                <th className="price">價格</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className="name">極上珍珠奶茶</td>
-                                <td className="content">奶茶／鮮奶／珍珠</td>
-                                <td className="store">台北商業大學門市</td>
-                                <td className="price">$ 70</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div className="total">
-                        <p>訂單總金額</p>
-                        <p>$ 70</p>
+
+                    <div className="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th className="name">商品名稱</th>
+                                    <th className="content">內容</th>
+                                    <th className="store">取件門市</th>
+                                    <th className="price">價格</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td className="name">極上珍珠奶茶</td>
+                                    <td className="content">奶茶／鮮奶／珍珠</td>
+                                    <td className="store">台北商業大學門市</td>
+                                    <td className="price">$ 70</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div className="total">
+                            <p>訂單總金額</p>
+                            <p>$ 70</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* 分隔線 */}
-            <div className="divider">
-                <hr className="custom-hr" />
-            </div>
+            <hr id="custom-hr" />
 
-            {/* 測試用的useState */}
             <div className="pastWrap">
                 <div className="pastOrder">
                     <h2>過去訂單</h2>
                 </div>
 
-                {/* Mapping through past orders */}
-                {order.map((o) => (
-                    <div key={o.id} className="past">
+                {orders.map((order) => (
+                    <div key={order.id} className="past">
                         <div className="pastContent">
                             <div className="orderInfo">
                                 <div className="orderInfoL">
-                                    <p>訂單編號：{o.id}</p>
-                                    <div className="condition">已完成</div>
+                                    <p>訂單編號：{order.id}</p>
+                                    <div className="condition">{order.status}</div>
                                 </div>
                                 <div className="date">
-                                    <p>訂單日：2024/12/12</p>
+                                    <p>訂單日：{order.date}</p>
                                 </div>
 
-                                {/* Expand/Collapse Button */}
                                 <div
-                                    onClick={() =>
-                                        setActiveOID(activeOID === o.id ? null : o.id)
-                                    }
+                                    onClick={() => toggleOrderDetails(order.id)}
                                     className="iconExpand"
                                 >
-                                    {activeOID === o.id ? (
-                                        <BiSolidDownArrow />
+                                    {activeOID === order.id ? (
+                                        <BiSolidDownArrow color="black" />
                                     ) : (
-                                        <BiSolidRightArrow />
+                                        <BiSolidRightArrow color="gray" />
                                     )}
                                 </div>
                             </div>
 
-                            {/* Conditionally render order details */}
-                            {activeOID === o.id && (
-                                <div className="table">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th className="name">商品名稱</th>
-                                                <th className="content">內容</th>
-                                                <th className="store">取件門市</th>
-                                                <th className="price">價格</th>
+                            <div
+                                ref={(el) => (contentRefs.current[order.id] = el)}
+                                className="table"
+                                style={{ height: 0, overflow: "hidden", opacity: 0 }}
+                            >
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th className="name">商品名稱</th>
+                                            <th className="content">內容</th>
+                                            <th className="store">取件門市</th>
+                                            <th className="price">價格</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {order.items.map((item, idx) => (
+                                            <tr key={idx}>
+                                                <td className="name">{item.name}</td>
+                                                <td className="content">{item.content}</td>
+                                                <td className="store">{item.store}</td>
+                                                <td className="price">$ {item.price}</td>
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td className="name">好喝抹茶杏仁奶</td>
-                                                <td className="content">抹茶／杏仁奶</td>
-                                                <td className="store">善導寺門市</td>
-                                                <td className="price">$ 60</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div className="total">
-                                        <p>訂單總金額</p>
-                                        <p>$ 60</p>
-                                    </div>
+                                        ))}
+                                    </tbody>
+                                </table>
+                                <div className="total">
+                                    <p>訂單總金額</p>
+                                    <p>$ {order.items.reduce((sum, item) => sum + item.price, 0)}</p>
                                 </div>
-                            )}
+                            </div>
                         </div>
-                        <div className="all"></div>
                     </div>
                 ))}
             </div>
+
             <Footer />
         </main>
     );
