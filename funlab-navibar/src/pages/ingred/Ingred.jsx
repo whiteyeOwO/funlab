@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GSReveal from "../../component/GSReveal";
 
-import GoTopFunction from "./components/GoTopFunction";
+import { scrollFunction, GoTopFunction } from "./components/GoTopFunction";
 import BubbleAnimation from "./components/BubbleAnimation";
 
 import "./ingred.scss";
@@ -218,7 +218,15 @@ const Ingred = () => {
         },
     ];
 
-
+    useEffect(() => {
+        // 確保 DOM 已經加載完成才添加事件監聽
+        window.addEventListener('scroll', scrollFunction);
+        
+        // 清理函數
+        return () => {
+            window.removeEventListener('scroll', scrollFunction);
+        };
+    }, []);
     return (
         <>
             {/* <!-- 至頂按鈕 --> */}

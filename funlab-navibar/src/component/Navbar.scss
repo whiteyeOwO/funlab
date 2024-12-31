@@ -63,6 +63,8 @@
 
         /* Hover effects */
         a:hover::after {
+            font-family: $font-family-ch;
+            font-weight: 600;
             color: $color-sub-black;
         }
 

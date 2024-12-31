@@ -65,7 +65,7 @@ function Index() {
     }, []);
 
     return (
-        <>
+        <> 
             <nav className="subNavigation">
                 <img src="../public/images/index/Navigation bar.svg" alt="" />
                 <ul className="subMenu">
@@ -105,7 +105,7 @@ function Index() {
                             <p>飲料熱門排行榜 <br /> 你喜愛的飲品有上榜嗎 ?</p>
                         </div>
                         <div className='btn'>
-                            <a href="">VIEW ALL</a>
+                            <a href="/menu">VIEW ALL</a>
                         </div>
                     </div>
                     <DrinkCarousel/>
@@ -152,12 +152,12 @@ function Index() {
                 </div>
 
                 <section id="index-feature">
-                    <PhotoOverlay featureOffset={featureOffset} />
-                    <img className='graph1' src="../public/images/icon/graph-pinkBall.svg" alt="" />
-                    <img className='graph2' src="../public/images/icon/graph-smile Two.svg" alt="" />
-                    <img className='graph3' src="../public/images/icon/graph-yellowLine.svg" alt="" />
+                    <PhotoOverlay featureOffset={featureOffset}  debug={true} />
                     <div className="scroll-container">
                         <div className="sticky-content" >
+                            <img className='graph1' src="../public/images/icon/graph-pinkBall.svg" alt="" />
+                            <img className='graph2' src="../public/images/icon/graph-smile Two.svg" alt="" />
+                            <img className='graph3' src="../public/images/icon/graph-yellowLine.svg" alt="" />
                             <div className="text-section">
                                 <div className="text-block active">
                                     <header className="title">
@@ -166,7 +166,7 @@ function Index() {
                                     <div className="content">
                                         <p >無論是經典風味、創意特調或清新果茶，在「放飲」菜單應盡有，我們相信每個人都應該享受屬於自己的特色飲品，最貼心的飲品服務。</p>
                                     </div>
-                                    <a href="">
+                                    <a href="/about">
                                         <div className="aboutus">
                                             <p>ABOUT US</p>
                                             <img src="../public/images/icon/icon-arrowPink.svg" alt="" />
@@ -180,7 +180,7 @@ function Index() {
                                     <div className="content">
                                         <p >堅持採用當季水果，為您獻上天然鮮甜的飲品體驗。每一杯飲品都蘊含著季節的氣息，讓每一口飲品帶您回歸自然，感受大地最純真的味道。</p>
                                     </div>
-                                    <a href="">
+                                    <a href="/about">
                                         <div className="aboutus">
                                             <p>ABOUT US</p>
                                             <img src="../public/images/icon/icon-arrowPink.svg" alt="" />
@@ -194,7 +194,7 @@ function Index() {
                                     <div className="content">
                                         <p >無論您喜歡清新的綠茶，還是偏愛香醇的紅茶，我們的茶葉就像您的好朋友，隨時陪伴您度過每一個心情，擁有特選產地和專業沖泡，釋放出最純粹的茶香。</p>
                                     </div>
-                                    <a href="">
+                                    <a href="/about">
                                         <div className="aboutus">
                                             <p>ABOUT US</p>
                                             <img src="../public/images/icon/icon-arrowPink.svg" alt="" />
@@ -212,7 +212,7 @@ function Index() {
                     </div>
                 </section>
 
-                <div className="s" style={{ height: "300vh", position: 'relative', zIndex: -1 }}></div>
+                {/* <div className="s" style={{ height: "300vh", position: 'relative', zIndex: -1 }}></div> */}
 
                 <section id="index-DIY">
                     <WaveScroll DIYOffset={DIYOffset} targetSelectors={['.wave', '#DIYContent']} />
@@ -238,7 +238,7 @@ function Index() {
                                 <p>3. drink</p>
                             </div>
                             <div className='DIYButton'>
-                                <a href="">製作專屬飲品</a>
+                                <a href="/diy">製作專屬飲品</a>
                                 <img src="../public/images/funLogo.svg" alt="" />
                             </div>
                         </GSReveal>
@@ -249,10 +249,10 @@ function Index() {
                 <section id="index-dropText">
                     <MatterComponent />
                 </section>
+                <Footer/>
             </main>
 
             {/* 頁尾區 */}
-            <Footer/>
         </>
     )
 }

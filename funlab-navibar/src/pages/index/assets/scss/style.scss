@@ -231,9 +231,10 @@ html {
             }
 
             .other-nav_rank {
+                width: 500px;
                 position: absolute;
                 top: 27%;
-                left: 39%;
+                left: -2%;
                 height: 0;
                 line-height: 1;
                 overflow: hidden;
@@ -506,37 +507,18 @@ html {
 
 /* feature */
 #index-feature {
-    height: 100vh;
-    position: sticky;
-    top: 0;
+    // height: 100vh;
+    // position: sticky;
+    // top: 0;
     z-index: 0;
-
-    .graph1 {
-        width: 84px;
-        position: absolute;
-        top: 28%;
-        left: 30%;
-    }
-
-    .graph2 {
-        width: 100px;
-        position: absolute;
-        top: 70%;
-        left: 15%;
-    }
-
-    .graph3 {
-        width: 160px;
-        position: absolute;
-        top: 60%;
-        left: 42%;
-    }
+    position: relative;
+    width: 100%;
 
     .scroll-container {
         position: relative;
         padding: 0 5%;
         width: 100%;
-        height: 100vh;
+        height: 400vh;
         /* 4倍視窗高度，對應三個區塊 */
 
     }
@@ -552,6 +534,27 @@ html {
         align-items: center;
         justify-content: space-around;
         overflow: hidden;
+
+        .graph1 {
+            width: 84px;
+            position: absolute;
+            top: 28%;
+            left: 30%;
+        }
+    
+        .graph2 {
+            width: 100px;
+            position: absolute;
+            top: 70%;
+            left: 15%;
+        }
+    
+        .graph3 {
+            width: 160px;
+            position: absolute;
+            top: 60%;
+            left: 42%;
+        }
     }
 
 
