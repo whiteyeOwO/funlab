@@ -3,6 +3,74 @@
 @use "function" as *;
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap');
 
+@keyframes flash {
+    0% {
+        filter: brightness(100%) saturate(100%);
+    }
+
+    50% {
+        filter: brightness(300%) saturate(50%);
+    }
+
+    100% {
+        filter: brightness(100%) saturate(100%);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
 @property --val {
     syntax: "<integer>";
@@ -16,10 +84,14 @@
     initial-value: 0;
 }
 
-main {
+#DIY {
     position: relative;
     width: 100%;
     height: 100vh;
+
+    &.flash {
+        animation: flash 0.4s ease-in;
+    }
 
     .bg {
         position: absolute;
@@ -369,6 +441,7 @@ main {
                 top: -10%;
                 left: 0;
                 z-index: 1;
+
             }
 
             .drinkcap2 {
@@ -379,12 +452,12 @@ main {
 
             .liquid {
                 position: absolute;
-                top: -5.5%;
+                top: 0%;
                 left: 2.2%;
-                width:100%;
+                width: 95%;
                 height: 110%;
-                background: linear-gradient(to top, rgba(0, 0, 0 ,0), rgba(0, 0, 0 ,0));
-                clip-path: path('M-3.68362e-06 23.3945L20.9731 210.342C20.9731 222.481 49.4995 228 76.0092 228C102.501 228 131.027 222.481 131.027 210.342L152 23.3945C148.535 38.586 110.989 45.5428 76.0092 45.5428C41.0112 45.5428 3.46496 38.586 -3.68362e-06 23.3945Z M152 24.3937C152 7.64184 112.602 0 76 0C39.3797 0 0 7.64184 0 24.3937C0 41.1456 39.3979 48.7874 76 48.7874C112.602 48.7874 152 41.1633 152 24.3937Z');
+                background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+                clip-path: path('M-3.68362e-06 23.3945L20.9731 200.342C20.9731 212.481 49.4995 218 76.0092 218C102.501 218 131.027 212.481 131.027 200.342L152 23.3945C148.535 38.586 110.989 45.5428 76.0092 45.5428C41.0112 45.5428 3.46496 38.586 -3.68362e-06 23.3945Z M152 24.3937C152 7.64184 112.602 0 76 0C39.3797 0 0 7.64184 0 24.3937C0 41.1456 39.3979 48.7874 76 48.7874C112.602 48.7874 152 41.1633 152 24.3937Z');
             }
 
             .cupIngredients {
@@ -435,7 +508,8 @@ main {
 
             .sugarIceText {
                 display: flex;
-                p{
+
+                p {
                     font-family: $font-family-ch;
                     margin-right: 10px;
                 }
@@ -647,7 +721,7 @@ main {
                 cursor: pointer;
                 margin: 0 5px;
                 transition: transform 0.2s ease;
-        
+
                 &.active {
                     transform: translateY(-15%);
                 }
@@ -667,36 +741,45 @@ main {
             width: 100%;
             margin: 0 auto;
         }
-    
+
         .slick-list {
             width: 100%;
         }
     }
+
     .carousel1 {
         display: block;
-        .item{
+
+        .item {
             padding-top: 0.5%;
         }
     }
+
     .carousel2 {
         display: none;
     }
+
     .carousel3 {
         display: none;
-        .item{
+
+        .item {
             padding-top: 0.15%;
         }
     }
+
     .carousel4 {
         display: none;
-        .item{
+
+        .item {
             padding-top: 0.1%;
         }
     }
+
     @media (max-width: 1376px) {
         .carousel1 {
             bottom: 0;
         }
+
         .carousel3 {
             bottom: 0;
         }
@@ -735,6 +818,7 @@ main {
         top: -5%;
         left: -11%;
         transform: translateY(0);
+
         &:before {
             display: none; // 移除 slick 默認的箭頭
         }
@@ -746,6 +830,7 @@ main {
         right: -7%;
         padding: 0 18px 0 20px;
         transform: translateY(0);
+
         &:before {
             display: none; // 移除 slick 默認的箭頭
         }
@@ -764,10 +849,12 @@ main {
             height: fit-content;
             transition: transform 0.8s ease;
         }
-        &:hover{
-            img{
+
+        &:hover {
+            img {
                 transform: rotate(-10deg);
             }
+
             cursor: pointer;
         }
     }
@@ -797,4 +884,706 @@ main {
         }
     }
 
+}
+
+#orderConfirm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    background: linear-gradient(to bottom, rgba(21, 21, 21, 0.65), rgba(68, 68, 68, 0.65));
+    backdrop-filter: blur(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .orderDownload {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 415px;
+        height: 555px;
+        opacity: 1;
+        background-color: $color-primary-white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+
+        &.screenshot-mode {
+            #showDrink {
+
+                .drinkcap,
+                .drinkcap2 {
+                    display: none;
+                }
+            }
+        }
+
+        .drinkScreenshot {
+            align-self: center;
+            width: 350px;
+            height: 360px;
+            background-color: transparent; // 改為透明背景
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            img {
+                width: 350px;
+                height: 360px;
+                object-fit: contain;
+                transform: scale(1); // 稍微放大一點，避免邊緣被切
+
+            }
+        }
+
+        .drinkText {
+            margin-left: 30px;
+        }
+
+        .drinkName {
+            margin-top: 10px;
+            width: 350px;
+            font-family: $font-family-ch;
+            font-size: $font-size-32;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .drinkDetail {
+            width: 350px;
+            margin-top: 5px;
+            font-family: $font-family-ch;
+            font-size: $font-size-16;
+            font-weight: 400;
+            color: $color-sub-gray;
+        }
+    }
+
+    .orderDownloadBtn {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 60px;
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            background-color: $color-primary-blue;
+            color: $color-primary-white;
+            font-family: $font-family-ch;
+            font-size: $font-size-22;
+            font-weight: 600;
+            border-radius: 30px;
+            border: none;
+
+            &:hover {
+                animation: rotate 0.7s ease-in-out both;
+
+                span {
+                    animation: storm 0.7s ease-in-out both;
+                    animation-delay: 0.06s;
+                }
+            }
+        }
+    }
+
+    .closeBtn {
+        position: absolute;
+        top: 8%;
+        right: 25%;
+        width: 46px;
+        height: 46px;
+        transform: translate(-50%, -50%);
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            border-radius: 22.5px;
+            border: none;
+            transition: transform 0.3s ease-in-out;
+
+            img {
+                margin: 0 auto;
+                width: 22px;
+                height: 22px;
+            }
+
+            &:hover {
+                transform: scale(1.1) translate(-50%, -50%) ;
+            }
+        }
+    }
+
+    .shareBtn {
+        position: absolute;
+        top: 19%;
+        right: 25%;
+        width: 46px;
+        height: 46px;
+        transform: translate(-50%, -50%);
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            border-radius: 22.5px;
+            border: none;
+            transition: transform 0.3s ease-in-out;
+
+            img {
+                margin: 0 auto;
+                width: 22px;
+                height: 22px;
+            }
+
+            &:hover {
+                transform: scale(1.1) translate(-50%, -50%);
+            }
+        }
+    }
+
+    .orderBtn {
+        position: absolute;
+        top: 26%;
+        right: 25%;
+        width: 46px;
+        height: 46px;
+        transform: translate(-50%, -50%);
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            border-radius: 22.5px;
+            border: none;
+            transition: transform 0.3s ease-in-out;
+
+            img {
+                margin: 0 auto;
+                width: 22px;
+                height: 22px;
+            }
+
+            &:hover {
+                transform: scale(1.1) translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+#shareArea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    background: linear-gradient(to bottom, rgba(21, 21, 21, 0.65), rgba(68, 68, 68, 0.65));
+    backdrop-filter: blur(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .sharePanel {
+        padding: 40px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 465px;
+        opacity: 1;
+        background-color: $color-primary-white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .drinkAlign {
+            width: 425px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+        }
+
+        .drinkScreenshot {
+            width: 174px;
+            height: 220px;
+            background-color: transparent; // 改為透明背景
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            img {
+                width: 174px;
+                height: 178px;
+                object-fit: contain;
+                transform: scale(1); // 稍微放大一點，避免邊緣被切
+
+            }
+        }
+
+        .drinkText {
+            height: 250px;
+            margin-left: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .drinkName {
+            width: 150px;
+            font-family: $font-family-ch;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .drinkDetail {
+            margin-top: 20px;
+            width: 150px;
+            font-family: $font-family-ch;
+            font-size: $font-size-16;
+            font-weight: 400;
+            color: $color-sub-gray;
+        }
+
+        .shareBigText {
+            font-family: $font-family-ch;
+            font-size: $font-size-22;
+            color: #000;
+        }
+
+        .shareBtnDetail {
+            margin-top: 20px;
+            width: 400px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+
+    .closeBtn {
+        position: absolute;
+        top: 13%;
+        right: 22%;
+        width: 46px;
+        height: 46px;
+        transform: translate(-50%, -50%);
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            border-radius: 22.5px;
+            border: none;
+            transition: transform 0.3s ease-in-out;
+
+            img {
+                margin: 0 auto;
+                width: 22px;
+                height: 22px;
+            }
+
+            &:hover {
+                transform: scale(1.1) translate(-50%, -50%);
+            }
+        }
+    }
+
+    .backBtn {
+        position: absolute;
+        top: 12%;
+        left: 28%;
+        width: 46px;
+        height: 46px;
+        transform: translate(-50%, -50%);
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            border-radius: 22.5px;
+            border: none;
+            transition: transform 0.3s ease-in-out;
+
+            img {
+                margin: 0 auto;
+                width: 35px;
+                height: 35px;
+            }
+
+            &:hover {
+                transform: scale(1.1) translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+#orderDataArea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    background: linear-gradient(to bottom, rgba(21, 21, 21, 0.65), rgba(68, 68, 68, 0.65));
+    backdrop-filter: blur(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .orderPanel {
+        padding: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 700px;
+        opacity: 1;
+        background-color: $color-primary-white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .drinkAlign {
+            width: 425px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+        }
+
+        .drinkScreenshot {
+            width: 174px;
+            height: 220px;
+            background-color: transparent; // 改為透明背景
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            img {
+                width: 174px;
+                height: 178px;
+                object-fit: contain;
+                transform: scale(1); // 稍微放大一點，避免邊緣被切
+
+            }
+        }
+
+        .drinkText {
+            height: 250px;
+            margin-left: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .drinkName {
+            width: 150px;
+            font-family: $font-family-ch;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .drinkDetail {
+            margin-top: 20px;
+            width: 150px;
+            font-family: $font-family-ch;
+            font-size: $font-size-16;
+            font-weight: 400;
+            color: $color-sub-gray;
+        }
+
+        .orderForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .orderFormItem {
+                height: 60px;
+                width: 320px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                label {
+                    width: 100px;
+                    font-family: $font-family-ch;
+                    font-size: $font-size-24;
+                }
+
+                input,
+                select {
+                    width: 200px;
+                    height: 36px;
+                    border: 2px solid #AFB1B6;
+                    border-radius: 8px;
+                    padding: 0 10px;
+                    color: #404040;
+                }
+
+                input::placeholder {
+                    font-family: $font-family-ch;
+                    font-size: $font-size-14;
+                    color: #61646B;
+                }
+                optgroup{
+                    font-family: $font-family-ch;
+                }
+                option{
+                    font-family: $font-family-ch;
+                    font-size: $font-size-14;
+                    color: #404040;
+                }
+            }
+        }
+
+        .submitBtn {
+            margin: 30px 0;
+            width: 136px;
+            height: 46px;
+            background-color: $color-primary-blue;
+            border-radius: 20px;
+            color: $color-primary-white;
+            font-family: $font-family-ch;
+            font-size: $font-size-24;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+
+            &:hover {
+                background-color: $color-primary-white;
+                color: $color-primary-blue;
+                border: 2px solid $color-primary-blue;
+            }
+            &.disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+            &.active {
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .closeBtn {
+        position: absolute;
+        top: 8%;
+        right: 25%;
+        width: 46px;
+        height: 46px;
+        transform: translate(-50%, -50%);
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            border-radius: 22.5px;
+            border: none;
+            transition: transform 0.3s ease-in-out;
+
+            img {
+                margin: 0 auto;
+                width: 22px;
+                height: 22px;
+            }
+
+            &:hover {
+                transform: scale(1.1) translate(-50%, -50%);
+            }
+        }
+    }
+
+    .backBtn {
+        position: absolute;
+        top: 8%;
+        left: 31%;
+        width: 46px;
+        height: 46px;
+        transform: translate(-50%, -50%);
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            border-radius: 22.5px;
+            border: none;
+            transition: transform 0.3s ease-in-out;
+
+            img {
+                margin: 0 auto;
+                width: 35px;
+                height: 35px;
+            }
+
+            &:hover {
+                transform: scale(1.1) translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+#orderSuccess {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    background: linear-gradient(to bottom, rgba(21, 21, 21, 0.65), rgba(68, 68, 68, 0.65));
+    backdrop-filter: blur(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .orderSuccessPanel {
+        padding: 40px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 440px;
+        height: 560px;
+        opacity: 1;
+        background-color: $color-primary-white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            width: 200px;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.8s ease-in forwards;
+        }
+
+        .orderSuccessText {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .title {
+                font-family: $font-family-ch;
+                font-size: $font-size-40;
+                color: #6B6B6B;
+            }
+
+            .text {
+                font-family: $font-family-ch;
+                font-size: $font-size-32;
+                color: #6B6B6B;
+            }
+        }
+
+        .orderNumber {
+            font-family: $font-family-en;
+            font-size: 64px;
+            color: $color-sub-black;
+            font-weight: $font-weight-bold;
+        }
+
+        .orderTrackBtn {
+            position: relative;
+            font-family: $font-family-ch;
+            font-size: $font-size-24;
+            text-decoration: none;
+
+            a::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0%;
+                /* 初始寬度為 0 */
+                height: 2px;
+                background-color: #000;
+                transition: width 0.2s ease;
+                /* 添加過渡效果 */
+            }
+
+            a:hover::after {
+                width: 100%;
+                /* 當滑鼠移到標題時，底線展開至全寬 */
+            }
+        }
+    }
+
+    .reminderText {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: $font-family-ch;
+        font-size: $font-size-24;
+        color: $color-primary-white;
+    }
+
+    .closeBtn {
+        position: absolute;
+        top: 12%;
+        right: 24%;
+        width: 46px;
+        height: 46px;
+        transform: translate(-50%, -50%);
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            border-radius: 22.5px;
+            border: none;
+            transition: transform 0.3s ease-in-out;
+
+            img {
+                margin: 0 auto;
+                width: 22px;
+                height: 22px;
+            }
+
+            &:hover {
+                transform: scale(1.1) translate(-50%, -50%);
+            }
+        }
+    }
 }

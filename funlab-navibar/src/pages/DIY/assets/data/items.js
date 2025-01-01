@@ -102,10 +102,10 @@ export const teaItems = [
 
 export const milkItems = [
     {
-        id: 'milk',
+        id: 'freshmilk',
         name: '小農鮮奶',
         price: 30,
-        className: 'milk',
+        className: 'freshmilk',
         image: '/images/DIY/action-m-Milk.svg',
         description: ['屏東回鄉青年', '友善畜牧', '每日清晨直送'],
         color: 'rgb(255, 255, 255)'

@@ -109,7 +109,7 @@ const ActionArea = ({
                 </Slider>
             </div>
 
-            <div className={`carousel carousel2`} style={{ display: currentTab === 'tea' ? 'block' : 'none' }}>
+            <div className={`carousel carousel2`} style={{ display: currentTab === 'milk' ? 'block' : 'none' }}>
                 <Slider key={currentTab} {...slickSettings}>
                     {milkItems.map(item => (
                         <CarouselItem
@@ -121,7 +121,7 @@ const ActionArea = ({
                 </Slider>
             </div>
 
-            <div className={`carousel carousel3`} style={{ display: currentTab === 'tea' ? 'block' : 'none' }}>
+            <div className={`carousel carousel3`} style={{ display: currentTab === 'fruit' ? 'block' : 'none' }}>
                 <Slider key={currentTab} {...slickSettings}>
                     {fruitItems.map(item => (
                         <CarouselItem
@@ -133,7 +133,7 @@ const ActionArea = ({
                 </Slider>
             </div>
 
-            <div className={`carousel carousel4`} style={{ display: currentTab === 'tea' ? 'block' : 'none' }}>
+            <div className={`carousel carousel4`} style={{ display: currentTab === 'topping' ? 'block' : 'none' }}>
                 <Slider key={currentTab} {...slickSettings}>
                     {toppingItems.map(item => (
                         <CarouselItem

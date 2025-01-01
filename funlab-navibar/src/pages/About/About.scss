@@ -91,6 +91,7 @@
     overflow: hidden; //隱藏超出區塊
 
     .about-item {
+        position: relative;
         @extend %box-center-column;
         padding: 60px;
         z-index: 999;

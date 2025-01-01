@@ -6,7 +6,8 @@ const OrderDetails = ({
     inputName, 
     setInputName,
     onReset,
-    onRandom
+    onRandom,
+    onDoneClick,
 }) => {
     const sugarLevels = {
         0: '無糖',
@@ -71,7 +72,7 @@ const OrderDetails = ({
                         placeholder="幫它取個名 :" 
                         value={inputName}
                         onChange={(e) => setInputName(e.target.value)}
-                        size="20%"
+                        size="20%" maxLength="15"
                     />
                 </div>
             </div>
@@ -85,6 +86,7 @@ const OrderDetails = ({
                 <button 
                     className={`doneBtn ${totalPrice > 0 && inputName.trim() ? 'active' : ''}`}
                     disabled={!(totalPrice > 0 && inputName.trim())}
+                    onClick={onDoneClick}
                 >
                     DONE
                 </button>
