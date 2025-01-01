@@ -103,21 +103,15 @@
             cursor: pointer;
 
             .tab-btn {
-                font-size: 22px;
+                font-family: $font-family-ch;
+                font-weight: $font-weight-bold;
+                font-size: $font-size-16;
                 padding: 10px 20px;
                 background: transparent;
-                transition: 0.5s ease-in;
                 border: none;
                 cursor: pointer;
 
-                &:hover {
-                    background-color: #e8e8e8;
-                    color: #000;
-                    border-radius: 50px;
-                }
-
                 &.active {
-                    font-size: $font-size-22;
                     background-color: $color-primary-blue;
                     border-radius: 50px;
                     color: #ffffff;

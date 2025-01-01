@@ -90,7 +90,6 @@ html {
             height: 100%;
             object-fit: cover;
             display: block;
-            border-radius: 50%;
         }
 
         .funlabWarp {
@@ -187,7 +186,7 @@ html {
 
     .drinkCarousel {
         position: relative;
-        height: 600px;
+        height: 75vh;
         top: -20%;
 
         .swiper {
@@ -196,11 +195,12 @@ html {
         }
 
         .swiper-container {
-            height: 400px;
+            height: 50vh;
             width: 80%;
         }
 
         .swiper-slide {
+            position: relative;
             width: 400px;
             text-align: center;
             font-size: 18px;
@@ -540,6 +540,7 @@ html {
             position: absolute;
             top: 28%;
             left: 30%;
+            z-index: -1;
         }
     
         .graph2 {
@@ -547,6 +548,7 @@ html {
             position: absolute;
             top: 70%;
             left: 15%;
+            z-index: -1;
         }
     
         .graph3 {
@@ -554,6 +556,7 @@ html {
             position: absolute;
             top: 60%;
             left: 42%;
+            z-index: -1;
         }
     }
 

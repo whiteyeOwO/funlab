@@ -3,7 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import BubbleAnimation from "./assets/components/BubbleAnimation";
 import MarqueeEffect from "react-fast-marquee";
-import $ from 'jquery';
 import PhotoOverlay from './assets/components/photoOverlay';
 import WaveScroll from './assets/components/SmoothScrollEffect';
 import GSReveal from './assets/components/GSReveal';
@@ -42,7 +41,10 @@ function Index() {
 
         if (circleWrapper && imgContainer) {
             gsap.to(circleWrapper, {
-                scale: 6,
+                scale: 2,
+                width: "50vw",
+                height: "100vh",
+                borderRadius: "0%",
                 transformOrigin: "center center",
                 ease: "power2.out",
                 scrollTrigger: {
