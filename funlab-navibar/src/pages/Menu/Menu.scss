@@ -136,16 +136,21 @@
         /* Smooth transition */
 
         &:hover {
-            transform: scale(1.08);
             opacity: 0.9;
             /* Reduce opacity for a subtle effect */
+        }
+    }
+    .drinkImage{
+        transition: all 0.5s ease;
+        &:hover{
+            transform: rotateZ(5deg);
         }
     }
 
     .drinkText {
         position: relative;
         text-align: center;
-        transition: transform 0.5s ease, opacity 0.5s ease;
+        transition: opacity 0.5s ease;
         /* Transition for scaling and opacity */
 
         &::before {
@@ -165,7 +170,6 @@
         }
 
         &:hover {
-            transform: scale(1.08);
             opacity: 0.9;
             /* Subtle opacity effect */
 
