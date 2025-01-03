@@ -12,7 +12,7 @@ const ControlPanel = ({
 }) => {
     return (
         <div id="sugarIceArea">
-            <img id="guidedbar" src="/images/DIY/guidedbar.svg" alt="" />
+            <img id="guidedbar" src="images/DIY/guidedbar.svg" alt="" />
             <div>
                 <div id="barSet">
                     {/* 糖度滑塊 */}

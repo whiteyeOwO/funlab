@@ -7,12 +7,12 @@ export default function Footer() {
             <div className="logoFooter">
                 <img
                     className="logoFooterImg"
-                    src="/images/funLogo.svg"
+                    src="images/funLogo.svg"
                     alt="fun飲LOGONav"
                 />
                 <img
                     className="logoFooterText"
-                    src="/images/funLogoText2.svg"
+                    src="images/funLogoText2.svg"
                     alt="fun飲LOGO"
                     title="fun飲LOGO"
                 />
@@ -31,8 +31,8 @@ export default function Footer() {
                         <p>TEL 02-3535-3466</p>
                     </li>
                     <li className="iconFooter">
-                        <img src="/images/icon/icon-ig.svg" alt="Instagram Icon" />
-                        <img src="/images/icon/icon-LINE.svg" alt="LINE Icon" />
+                        <img src="images/icon/icon-ig.svg" alt="Instagram Icon" />
+                        <img src="images/icon/icon-LINE.svg" alt="LINE Icon" />
                     </li>
                     <li>
                         <p>©2024 放飲, All Rights Reserved</p>

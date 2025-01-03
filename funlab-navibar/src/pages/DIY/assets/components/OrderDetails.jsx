@@ -28,7 +28,7 @@ const OrderDetails = ({
     return (
         <div id="orderArea">
             <div className="orderDetails">
-                <img className="orderbg" src="/images/DIY/detailsbackground.svg" alt="" />
+                <img className="orderbg" src="images/DIY/detailsbackground.svg" alt="" />
                 <div className="orderDetailText">
                     <h3>訂單明細</h3>
                     <div className="sugarIceText">
@@ -78,10 +78,10 @@ const OrderDetails = ({
             </div>
             <div className="orderButton">
                 <button className="resetBtn" onClick={onReset}>
-                    <img src="/images/DIY/resetbuttonicon.svg" alt="" />
+                    <img src="images/DIY/resetbuttonicon.svg" alt="" />
                 </button>
                 <button className="randomBtn" onClick={onRandom}>
-                    <img src="/images/DIY/randombuttonicon.svg" alt="" />
+                    <img src="images/DIY/randombuttonicon.svg" alt="" />
                 </button>
                 <button 
                     className={`doneBtn ${totalPrice > 0 && inputName.trim() ? 'active' : ''}`}

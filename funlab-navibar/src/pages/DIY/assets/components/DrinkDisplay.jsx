@@ -2,10 +2,10 @@ import React, { forwardRef } from 'react';
 const DrinkDisplay = forwardRef(({ liquidGradient, selectedToppings }, ref) => {
     return (
         <div id="showDrinkArea">
-            <img src="/images/DIY/showdrinkbackground.svg" alt="" />
-            <img className="reflect" src="/images/DIY/reflective.svg" alt="" />
+            <img src="images/DIY/showdrinkbackground.svg" alt="" />
+            <img className="reflect" src="images/DIY/reflective.svg" alt="" />
             <div id="showDrink" ref={ref}>
-                <img className="drinkcap" src="/images/DIY/drinkcapfront.svg" alt="" />
+                <img className="drinkcap" src="images/DIY/drinkcapfront.svg" alt="" />
                 <div className="liquid" style={{background: liquidGradient}}></div>
                 <div className="cupIngredients">
                     {selectedToppings.map((topping, index) => (
@@ -14,7 +14,7 @@ const DrinkDisplay = forwardRef(({ liquidGradient, selectedToppings }, ref) => {
                         </div>
                     ))}
                 </div>
-                <img className="drinkcap2" src="/images/DIY/drinkcapback.svg" alt="" />
+                <img className="drinkcap2" src="images/DIY/drinkcapback.svg" alt="" />
             </div>
         </div>
     );

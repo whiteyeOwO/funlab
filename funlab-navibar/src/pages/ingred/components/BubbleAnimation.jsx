@@ -8,6 +8,25 @@ const BubbleAnimation = () => {
         const ctx = canvas.getContext('2d');
         let animationFrameId;
 
+        // 設置 canvas 尺寸為容器尺寸
+        const updateCanvasSize = () => {
+            const container = canvas.parentElement;
+            const { width, height } = container.getBoundingClientRect();
+            canvas.width = width;
+            canvas.height = height;
+            
+            // 重新初始化 lava lamp
+            if (window.lava0) {
+                window.lava0 = new LavaLamp(width, height, 6, "#8FCFF6", "rgba(255,255,255,0)");
+            }
+        };
+
+        // 初始化時調用一次
+        updateCanvasSize();
+        
+        // 監聽視窗大小變化
+        window.addEventListener('resize', updateCanvasSize);
+
         // 初始化 ge1doot 和 LavaLamp
         const ge1doot = {
             screen: {
@@ -253,11 +272,12 @@ const BubbleAnimation = () => {
         run();
 
         return () => {
+            window.removeEventListener('resize', updateCanvasSize);
             cancelAnimationFrame(animationFrameId);
         };
     }, []);
 
-    return <canvas ref={canvasRef} id="bubble" style={{ width: '100%', height: '100vh' }} />;
+    return <canvas ref={canvasRef} id="bubble"/>;
 };
 
 export default BubbleAnimation;

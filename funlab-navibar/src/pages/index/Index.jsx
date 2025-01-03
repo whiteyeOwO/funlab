@@ -41,8 +41,8 @@ function Index() {
 
         if (circleWrapper && imgContainer) {
             gsap.to(circleWrapper, {
-                scale: 2,
-                width: "50vw",
+                scale: 1,
+                width: "100vw",
                 height: "100vh",
                 borderRadius: "0%",
                 transformOrigin: "center center",
@@ -69,7 +69,7 @@ function Index() {
     return (
         <> 
             <nav className="subNavigation">
-                <img src="/images/index/Navigation bar.svg" alt="" />
+                <img src="images/index/Navigation bar.svg" alt="" />
                 <ul className="subMenu">
                     <li><a href="#index-banner">UP</a></li>
                     <li><a href="#index-drink">MENU</a></li>
@@ -84,10 +84,10 @@ function Index() {
                 <section id="index-banner">
                     <div ref={imgContainerRef} className="img-container">
                         <div ref={circleWrapperRef} className="circle-wrapper">
-                            <img className="circle-image" src="/images/index/index.banner.webp" alt="" />
+                            <img className="circle-image" src="images/index/index.banner.webp" alt="" />
                         </div>
                         <div className='funlabWarp'>
-                            <img className="goToFunlab" src="/images/index/rotateText.svg" alt="" />
+                            <img className="goToFunlab" src="images/index/rotateText.svg" alt="" />
                         </div>
                         <div className="wrap">
                             <BubbleAnimation />
@@ -117,38 +117,38 @@ function Index() {
                     <MarqueeEffect className="mt-24" pauseOnHover speed={80}>
                         <div className="marquee">
                             <p>放心好喝又過癮</p>
-                            <img src="/images/icon/graph-smile .svg" alt="" />
+                            <img src="images/icon/graph-smile .svg" alt="" />
                             <p>放飲</p>
-                            <img src="/images/icon/graph-Heart.svg" alt="" />
-                            <img src="/images/icon/graph-Heart.svg" alt="" />
+                            <img src="images/icon/graph-Heart.svg" alt="" />
+                            <img src="images/icon/graph-Heart.svg" alt="" />
                         </div>
                         <div className="marquee">
                             <p>放心好喝又過癮</p>
-                            <img src="/images/icon/graph-smile .svg" alt="" />
+                            <img src="images/icon/graph-smile .svg" alt="" />
                             <p>放飲</p>
-                            <img src="/images/icon/graph-Heart.svg" alt="" />
-                            <img src="/images/icon/graph-Heart.svg" alt="" />
+                            <img src="images/icon/graph-Heart.svg" alt="" />
+                            <img src="images/icon/graph-Heart.svg" alt="" />
                         </div>
                         <div className="marquee">
                             <p>放心好喝又過癮</p>
-                            <img src="/images/icon/graph-smile .svg" alt="" />
+                            <img src="images/icon/graph-smile .svg" alt="" />
                             <p>放飲</p>
-                            <img src="/images/icon/graph-Heart.svg" alt="" />
-                            <img src="/images/icon/graph-Heart.svg" alt="" />
+                            <img src="images/icon/graph-Heart.svg" alt="" />
+                            <img src="images/icon/graph-Heart.svg" alt="" />
                         </div>
                         <div className="marquee">
                             <p>放心好喝又過癮</p>
-                            <img src="/images/icon/graph-smile .svg" alt="" />
+                            <img src="images/icon/graph-smile .svg" alt="" />
                             <p>放飲</p>
-                            <img src="/images/icon/graph-Heart.svg" alt="" />
-                            <img src="/images/icon/graph-Heart.svg" alt="" />
+                            <img src="images/icon/graph-Heart.svg" alt="" />
+                            <img src="images/icon/graph-Heart.svg" alt="" />
                         </div>
                         <div className="marquee">
                             <p>放心好喝又過癮</p>
-                            <img src="/images/icon/graph-smile .svg" alt="" />
+                            <img src="images/icon/graph-smile .svg" alt="" />
                             <p>放飲</p>
-                            <img src="/images/icon/graph-Heart.svg" alt="" />
-                            <img src="/images/icon/graph-Heart.svg" alt="" />
+                            <img src="images/icon/graph-Heart.svg" alt="" />
+                            <img src="images/icon/graph-Heart.svg" alt="" />
                         </div>
                     </MarqueeEffect>
                 </div>
@@ -157,9 +157,9 @@ function Index() {
                     <PhotoOverlay featureOffset={featureOffset}  debug={true} />
                     <div className="scroll-container">
                         <div className="sticky-content" >
-                            <img className='graph1' src="/images/icon/graph-pinkBall.svg" alt="" />
-                            <img className='graph2' src="/images/icon/graph-smile Two.svg" alt="" />
-                            <img className='graph3' src="/images/icon/graph-yellowLine.svg" alt="" />
+                            <img className='graph1' src="images/icon/graph-pinkBall.svg" alt="" />
+                            <img className='graph2' src="images/icon/graph-smile Two.svg" alt="" />
+                            <img className='graph3' src="images/icon/graph-yellowLine.svg" alt="" />
                             <div className="text-section">
                                 <div className="text-block active">
                                     <header className="title">
@@ -171,7 +171,7 @@ function Index() {
                                     <a href="/about">
                                         <div className="aboutus">
                                             <p>ABOUT US</p>
-                                            <img src="../public/images/icon/icon-arrowPink.svg" alt="" />
+                                            <img src="images/icon/icon-arrowPink.svg" alt="" />
                                         </div>
                                     </a>
                                 </div>
@@ -185,7 +185,7 @@ function Index() {
                                     <a href="/about">
                                         <div className="aboutus">
                                             <p>ABOUT US</p>
-                                            <img src="../public/images/icon/icon-arrowPink.svg" alt="" />
+                                            <img src="images/icon/icon-arrowPink.svg" alt="" />
                                         </div>
                                     </a>
                                 </div>
@@ -199,14 +199,14 @@ function Index() {
                                     <a href="/about">
                                         <div className="aboutus">
                                             <p>ABOUT US</p>
-                                            <img src="../public/images/icon/icon-arrowPink.svg" alt="" />
+                                            <img src="images/icon/icon-arrowPink.svg" alt="" />
                                         </div>
                                     </a>
                                 </div>
                                 <div className="image-section">
-                                    <figure className="feature1 image-stack"><img src="../public/images/index/feature1.webp" alt="" /></figure>
-                                    <figure className="feature2 image-stack"><img src="../public/images/index/feature2.webp" alt="" /></figure>
-                                    <figure className="feature3 image-stack"><img src="../public/images/index/feature3.webp" alt="" /></figure>
+                                    <figure className="feature1 image-stack"><img src="images/index/feature1.webp" alt="" /></figure>
+                                    <figure className="feature2 image-stack"><img src="images/index/feature2.webp" alt="" /></figure>
+                                    <figure className="feature3 image-stack"><img src="images/index/feature3.webp" alt="" /></figure>
 
                                 </div>
                             </div>
@@ -218,8 +218,8 @@ function Index() {
 
                 <section id="index-DIY">
                     <WaveScroll DIYOffset={DIYOffset} targetSelectors={['.wave', '#DIYContent']} />
-                    <img className='whiteWave' src="/images/index/graph-whiteWaves.svg" alt="" />
-                    <img className='wave' src="/images/index/graph-waves.svg" alt="" />
+                    <img className='whiteWave' src="images/index/graph-whiteWaves.svg" alt="" />
+                    <img className='wave' src="images/index/graph-waves.svg" alt="" />
                     <div id="DIYContent">
                         <header className="title">
                             <GSReveal from='top'>
@@ -227,23 +227,23 @@ function Index() {
                                 <h3>讓飲品變得獨一無二</h3>
                             </GSReveal>
                         </header>
-                        <GSReveal from='bottom'>
-                            <img className='hotDrink1' src="/images/index/hotDrink/hotDrink1.png" alt="" />
-                            <img className='hotDrink2' src="/images/index/hotDrink/hotDrink2.png" alt="" />
-                        </GSReveal>
-                        <GSReveal from='right'>
+                        {/* <GSReveal from='bottom'> */}
+                            <img className='hotDrink1' src="images/index/hotDrink/hotDrink1.png" alt="" />
+                            <img className='hotDrink2' src="images/index/hotDrink/hotDrink2.png" alt="" />
+                        {/* </GSReveal> */}
+                        {/* <GSReveal from='right'> */}
                             <div className="content">
                                 <p>1. Make</p>
-                                <img src="../public/images/icon/icon-arrowYellow.svg" alt="" />
+                                <img src="images/icon/icon-arrowYellow.svg" alt="" />
                                 <p>2. share</p>
-                                <img src="../public/images/icon/icon-arrowYellow.svg" alt="" />
+                                <img src="images/icon/icon-arrowYellow.svg" alt="" />
                                 <p>3. drink</p>
                             </div>
                             <div className='DIYButton'>
                                 <a href="/diy">製作專屬飲品</a>
-                                <img src="../public/images/funLogo.svg" alt="" />
+                                <img src="images/funLogo.svg" alt="" />
                             </div>
-                        </GSReveal>
+                        {/* </GSReveal> */}
                     </div>
 
                 </section>

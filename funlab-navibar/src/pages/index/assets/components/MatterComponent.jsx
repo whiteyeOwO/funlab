@@ -219,11 +219,11 @@ const MatterComponent = () => {
         <p>QQ彈彈珍珠</p>
       </div>
       <div className="tag4 dm-matter-elem-pill">
-          <img src="../public/images/icon/graph-smileWhite .svg" alt="" />
-          <img src="../public/images/icon/graph-smileWhite .svg" alt="" />
+          <img src="images/icon/graph-smileWhite .svg" alt="" />
+          <img src="images/icon/graph-smileWhite .svg" alt="" />
       </div>
       <div className="tag5 dm-matter-elem-pill">
-          <img src="../public/images/icon/graph-HeartWhite.svg" alt="" />
+          <img src="images/icon/graph-HeartWhite.svg" alt="" />
       </div>
       <div className="tag6 dm-matter-elem-pill">
         <p>Fabulous Drink</p>

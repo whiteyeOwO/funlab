@@ -159,7 +159,7 @@ function Store() {
 
                     {/* 裝飾素材 */}
                     <figure className="graph-1"><GSReveal><img src="images/icon/graph-blueBall.svg" alt="" /></GSReveal></figure>
-                    <figure className="graph-2"><img src="/images/icon/graph-bubleTwo.svg" alt="" /></figure>
+                    <figure className="graph-2"><img src="images/icon/graph-bubleTwo.svg" alt="" /></figure>
                     <figure className="graph-3"><GSReveal><img src="images/icon/graph-yellowLine.svg" alt="" /></GSReveal></figure>
                     <figure className="graph-4"><img src="images/icon/graph-blueLine.svg" alt="" /></figure>
 

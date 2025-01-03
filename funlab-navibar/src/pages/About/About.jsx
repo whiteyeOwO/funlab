@@ -18,7 +18,7 @@ function About() {
                         </GSReveal>
                     </div>
 
-                    <figure><img src="./images/about/about-banner.webp" alt="about概念圖" />
+                    <figure><img src="images/about/about-banner.webp" alt="about概念圖" />
                     </figure>
                 </section>
 
@@ -29,7 +29,7 @@ function About() {
                             <h2 ><GSReveal from="left">「靈感隨手搖，創意放手喝！」</GSReveal></h2>
                             <p>在放飲 Lab，我們不僅提供飲料，更帶來一場與靈感的碰撞。每一杯都是一次創作，每一口都是驚喜。我們希望將飲料變成日常生活中的快樂創作，讓每個人都能透過飲品，表達自己，分享趣味。
                                 無論是隨興放鬆還是熱鬧聚會，放飲 Lab 都是你不可或缺的陪伴者。</p>
-                            <figure className="circleImage "><GSReveal><img src="./images/about/about1.webp" alt="" /></GSReveal></figure>
+                            <figure className="circleImage "><GSReveal><img src="images/about/about1.webp" alt="" /></GSReveal></figure>
                         </div>
                     </div>
 
@@ -42,11 +42,11 @@ function About() {
                         </div>
                     </div>
 
-                    <figure className="whiteBack"><img src="./images/about/about-background.svg" alt="" /></figure>
+                    <figure className="whiteBack"><img src="images/about/about-background.svg" alt="" /></figure>
 
                     {/* 裝飾 */}
-                    <figure className="graph-1"><GSReveal><img src="./images/icon/graph-pinkLine.svg" alt="" /> </GSReveal></figure>
-                    <figure className="graph-2"><GSReveal><img src="./images/icon/graph-blueBall.svg" alt="" /> </GSReveal></figure>
+                    <figure className="graph-1"><GSReveal><img src="images/icon/graph-pinkLine.svg" alt="" /> </GSReveal></figure>
+                    <figure className="graph-2"><GSReveal><img src="images/icon/graph-blueBall.svg" alt="" /> </GSReveal></figure>
                 </section>
 
 
@@ -61,12 +61,12 @@ function About() {
                             </p>
                         </GSReveal>
                         </div>
-                        <figure className="photo1"><GSReveal from="left"><img src="./images/about/about3.webp" alt="" /></GSReveal></figure>
+                        <figure className="photo1"><GSReveal from="left"><img src="images/about/about3.webp" alt="" /></GSReveal></figure>
 
                     </div>
 
                     <div className="about2-item">
-                        <figure className="photo2"><GSReveal from="left"><img src="./images/about/about2.jpg" alt="" /> </GSReveal></figure>
+                        <figure className="photo2"><GSReveal from="left"><img src="images/about/about2.jpg" alt="" /> </GSReveal></figure>
                         <div className="content2"><GSReveal from="left">
                             <h3>「企業願景」</h3>
                             <p>「成為全球最具創意的飲品品牌，讓每一杯都訴說你的故事！」
@@ -77,10 +77,10 @@ function About() {
 
 
                     {/* 裝飾圖 */}
-                    <figure className="graph-3 "><img src="./images/icon/graph-buble.svg" alt="" /></figure>
-                    <figure className="graph-4 "><img src="./images/icon/graph-buble.svg" alt="" /></figure>
-                    <figure className="graph-5 "><img src="./images/icon/graph-yellowLine.svg" alt="" /></figure>
-                    <figure className="graph-6 "><img src="./images/icon/graph-blueLine.svg" alt="" /></figure>
+                    <figure className="graph-3 "><img src="images/icon/graph-buble.svg" alt="" /></figure>
+                    <figure className="graph-4 "><img src="images/icon/graph-buble.svg" alt="" /></figure>
+                    <figure className="graph-5 "><img src="images/icon/graph-yellowLine.svg" alt="" /></figure>
+                    <figure className="graph-6 "><img src="images/icon/graph-blueLine.svg" alt="" /></figure>
                 </section>
 
                 <Footer></Footer>

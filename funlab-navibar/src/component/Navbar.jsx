@@ -28,7 +28,7 @@ export default function Navbar() {
         <div id="topBar" className="topBar">
             <div className="logo">
                 <Link to="/">
-                    <img src="/images/funlogoText.svg" alt="Logo" />
+                    <img src="images/funlogoText.svg" alt="Logo" />
                 </Link>
             </div>
 
@@ -53,7 +53,7 @@ export default function Navbar() {
                     <Link to="/diy">
                         <div className="funLab">
 
-                            <img src="/images/funLogo.svg" alt="FUNLAB" />
+                            <img src="images/funLogo.svg" alt="FUNLAB" />
                             <p>FUNLAB</p>
 
                         </div>   

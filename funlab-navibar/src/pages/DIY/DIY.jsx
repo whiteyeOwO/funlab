@@ -250,16 +250,20 @@ function DIY() {
 
             const canvas = await html2canvas(orderDownloadRef.current, {
                 backgroundColor: null,
-                scale: 2,
+                scale: 5, // 提高解析度
                 logging: false,
                 useCORS: true,
-                allowTaint: true
+                allowTaint: true,
+                width: orderDownloadRef.current.offsetWidth, // 設置固定寬度
+                height: orderDownloadRef.current.offsetHeight, // 設置固定高度
+                windowWidth: orderDownloadRef.current.offsetWidth,
+                windowHeight: orderDownloadRef.current.offsetHeight
             });
 
             // 創建下載連結
             const link = document.createElement('a');
             link.download = `${inputName}.png`;
-            link.href = canvas.toDataURL('image/png');
+            link.href = canvas.toDataURL('image/png', 1.0);
             link.click();
         } catch (error) {
             console.error('Download failed:', error);
@@ -348,9 +352,9 @@ function DIY() {
     return (
         <main>
             <section id='DIY' className={isFlashing ? 'flash' : ''}>
-                <img className="bg" src="/images/DIY/gridbackground.svg" alt="" />
+                <img className="bg" src="images/DIY/gridbackground.svg" alt="" />
                 <section id="panel">
-                    <img className="bg" src="/images/DIY/bluebackground.svg" alt="" />
+                    <img className="bg" src="images/DIY/bluebackground.svg" alt="" />
 
                     <ControlPanel
                         iceLevel={iceLevel}
@@ -409,9 +413,10 @@ function DIY() {
                                 alt="飲料截圖"
                                 style={{
                                     width: '100%',
-                                    height: '100%',
+                                    height: 'auto',
                                     objectFit: 'contain',
-                                    transform: 'translateY(-100px) scale(2)' // 放大圖片
+                                    transform: 'translateY(-120px) scale(1.5)', // 放大圖片
+                                    transformOrigin: 'center center'
                                 }}
                             />
                         )}
@@ -428,17 +433,17 @@ function DIY() {
                 </div>
                 <div className='closeBtn'>
                     <button className='closeBtn' onClick={handleCloseClick}>
-                        <img src="/images/icon/icon-close.svg" alt="" />
+                        <img src="images/icon/icon-close.svg" alt="" />
                     </button>
                 </div>
                 <div className='shareBtn'>
                     <button className='shareBtn' onClick={handleShareClick}>
-                        <img src="/images/icon/icon-share.svg" alt="" />
+                        <img src="images/icon/icon-share.svg" alt="" />
                     </button>
                 </div>
                 <div className='orderBtn'>
                     <button className='orderBtn' onClick={handleOrderClick}>
-                        <img src="/images/icon/icon-order.svg" alt="" />
+                        <img src="images/icon/icon-order.svg" alt="" />
                     </button>
                 </div>
             </section>
@@ -469,27 +474,27 @@ function DIY() {
                     <p className='shareBigText'>快將結果分享至</p>
                     <div className='shareBtnDetail'>
                         <div className='fbBtn'>
-                            <a href="https://zh-tw.facebook.com/"><img src="/images/icon/icon-fb-share.svg" alt="" /></a>
+                            <a href="https://zh-tw.facebook.com/"><img src="images/icon/icon-fb-share.svg" alt="" /></a>
                         </div>
                         <div className='igBtn'>
-                            <a href="https://www.instagram.com/"><img src="/images/icon/icon-ig-share.svg" alt="" /></a>
+                            <a href="https://www.instagram.com/"><img src="images/icon/icon-ig-share.svg" alt="" /></a>
                         </div>
                         <div className='XBtn'>
-                            <a href="https://x.com/"><img src="/images/icon/icon-X-share.svg" alt="" /></a>
+                            <a href="https://x.com/"><img src="images/icon/icon-X-share.svg" alt="" /></a>
                         </div>
                         <div className='threadBtn'>
-                            <a href="https://threads.net/"><img src="/images/icon/icon-thread-share.svg" alt="" /></a>
+                            <a href="https://threads.net/"><img src="images/icon/icon-thread-share.svg" alt="" /></a>
                         </div>
                     </div>
                 </div>
                 <div className='closeBtn'>
                     <button className='closeBtn' onClick={handleCloseClick}>
-                        <img src="/images/icon/icon-close.svg" alt="" />
+                        <img src="images/icon/icon-close.svg" alt="" />
                     </button>
                 </div>
                 <div className='backBtn'>
                     <button className='backBtn' onClick={handleBackClick}>
-                        <img src="/images/icon/icon-back.svg" alt="" />
+                        <img src="images/icon/icon-back.svg" alt="" />
                     </button>
                 </div>
             </section>
@@ -566,18 +571,18 @@ function DIY() {
                 </div>
                 <div className='closeBtn'>
                     <button className='closeBtn' onClick={handleCloseClick}>
-                        <img src="/images/icon/icon-close.svg" alt="" />
+                        <img src="images/icon/icon-close.svg" alt="" />
                     </button>
                 </div>
                 <div className='backBtn'>
                     <button className='backBtn' onClick={handleBackClick}>
-                        <img src="/images/icon/icon-back.svg" alt="" />
+                        <img src="images/icon/icon-back.svg" alt="" />
                     </button>
                 </div>
             </section>
             <section id='orderSuccess' className={showOrderSuccess ? 'show' : ''}>
                 <div className='orderSuccessPanel'>
-                    <img src="/images/DIY/orderSuccess.svg" alt="" />
+                    <img src="images/DIY/orderSuccess.svg" alt="" />
                     <div className='orderSuccessText'>
                         <h3 className='title'>送出成功</h3>
                         <p className='text'>取單編號</p>
@@ -589,7 +594,7 @@ function DIY() {
                 </div>
                 <div className='closeBtn'>
                     <button className='closeBtn' onClick={handleCloseClick}>
-                        <img src="/images/icon/icon-close.svg" alt="" />
+                        <img src="images/icon/icon-close.svg" alt="" />
                     </button>
                 </div>
                 <div className='reminderText'>

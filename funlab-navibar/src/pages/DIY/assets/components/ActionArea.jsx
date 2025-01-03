@@ -23,7 +23,7 @@ const ActionArea = ({
                 type="button"
                 aria-label="Previous"
             >
-                <img src="/images/DIY/button-previcon.svg" alt="Previous" />
+                <img src="images/DIY/button-previcon.svg" alt="Previous" />
             </button>
         );
     };
@@ -37,7 +37,7 @@ const ActionArea = ({
                 type="button"
                 aria-label="Next"
             >
-                <img src="/images/DIY/button-nexticon.svg" alt="Next" />
+                <img src="images/DIY/button-nexticon.svg" alt="Next" />
             </button>
         );
     };
@@ -80,7 +80,7 @@ const ActionArea = ({
 
     return (
         <section id="action">
-            <img className="actionbg" src="/images/DIY/actionbackground.svg" alt="" />
+            <img className="actionbg" src="images/DIY/actionbackground.svg" alt="" />
             <div className="tabArea">
                 <div className="tabAlign">
                     {['tea', 'milk', 'fruit', 'topping'].map(tab => (
@@ -89,7 +89,7 @@ const ActionArea = ({
                             className={`tab-button ${currentTab === tab ? 'active' : ''}`}
                             onClick={() => setCurrentTab(tab)}
                             style={{
-                                backgroundImage: `url(/images/DIY/${tab}tab-${currentTab === tab ? 'on' : 'off'}.svg)`
+                                backgroundImage: `url(images/DIY/${tab}tab-${currentTab === tab ? 'on' : 'off'}.svg)`
                             }}
                         />
                     ))}
