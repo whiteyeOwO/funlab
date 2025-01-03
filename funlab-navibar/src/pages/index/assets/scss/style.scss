@@ -73,7 +73,7 @@ html {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url(../public/images/index/graph-blueLine.svg), linear-gradient(#FFFFFF 0%, #EEF2FD 18%, #D9E2FB 47%, #5181FF 93%);
+        background-image: url(/images/index/graph-blueLine.svg), linear-gradient(#FFFFFF 0%, #EEF2FD 18%, #D9E2FB 47%, #5181FF 93%);
         background-size: cover;
 
         .circle-wrapper {
@@ -301,7 +301,7 @@ html {
                 color: #469BF6;
 
                 &:after {
-                    background-image: url(../../public/images/index/hotDrink/no1.png);
+                    background-image: url(/images/index/hotDrink/no1.png);
                 }
                 &::before{
                     position: absolute;
@@ -319,7 +319,7 @@ html {
                 color: #CF8BFF;
 
                 &:after {
-                    background-image: url(../../public/images/index/hotDrink/no2.png);
+                    background-image: url(/images/index/hotDrink/no2.png);
                 }
                 &::before{
                     position: absolute;
@@ -337,7 +337,7 @@ html {
                 color: $color-sub-yellow;
 
                 &:after {
-                    background-image: url(../../public/images/index/hotDrink/no3.png);
+                    background-image: url(/images/index/hotDrink/no3.png);
                 }
                 &::before{
                     position: absolute;
@@ -355,7 +355,7 @@ html {
                 color: $color-sub-pink;
 
                 &:after {
-                    background-image: url(../../public/images/index/hotDrink/no4.png);
+                    background-image: url(/images/index/hotDrink/no4.png);
                 }
                 &::before{
                     position: absolute;
@@ -373,7 +373,7 @@ html {
                 color: #49F646;
 
                 &:after {
-                    background-image: url(../../public/images/index/hotDrink/no5.png);
+                    background-image: url(/images/index/hotDrink/no5.png);
                 }
                 &::before{
                     position: absolute;

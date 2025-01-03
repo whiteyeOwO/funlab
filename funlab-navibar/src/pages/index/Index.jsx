@@ -69,7 +69,7 @@ function Index() {
     return (
         <> 
             <nav className="subNavigation">
-                <img src="../public/images/index/Navigation bar.svg" alt="" />
+                <img src="/images/index/Navigation bar.svg" alt="" />
                 <ul className="subMenu">
                     <li><a href="#index-banner">UP</a></li>
                     <li><a href="#index-drink">MENU</a></li>
@@ -84,10 +84,10 @@ function Index() {
                 <section id="index-banner">
                     <div ref={imgContainerRef} className="img-container">
                         <div ref={circleWrapperRef} className="circle-wrapper">
-                            <img className="circle-image" src="../public/images/index/index.banner.webp" alt="" />
+                            <img className="circle-image" src="/images/index/index.banner.webp" alt="" />
                         </div>
                         <div className='funlabWarp'>
-                            <img className="goToFunlab" src="../public/images/index/rotateText.svg" alt="" />
+                            <img className="goToFunlab" src="/images/index/rotateText.svg" alt="" />
                         </div>
                         <div className="wrap">
                             <BubbleAnimation />
@@ -117,38 +117,38 @@ function Index() {
                     <MarqueeEffect className="mt-24" pauseOnHover speed={80}>
                         <div className="marquee">
                             <p>放心好喝又過癮</p>
-                            <img src="../public/images/icon/graph-smile .svg" alt="" />
+                            <img src="/images/icon/graph-smile .svg" alt="" />
                             <p>放飲</p>
-                            <img src="../public/images/icon/graph-Heart.svg" alt="" />
-                            <img src="../public/images/icon/graph-Heart.svg" alt="" />
+                            <img src="/images/icon/graph-Heart.svg" alt="" />
+                            <img src="/images/icon/graph-Heart.svg" alt="" />
                         </div>
                         <div className="marquee">
                             <p>放心好喝又過癮</p>
-                            <img src="../public/images/icon/graph-smile .svg" alt="" />
+                            <img src="/images/icon/graph-smile .svg" alt="" />
                             <p>放飲</p>
-                            <img src="../public/images/icon/graph-Heart.svg" alt="" />
-                            <img src="../public/images/icon/graph-Heart.svg" alt="" />
+                            <img src="/images/icon/graph-Heart.svg" alt="" />
+                            <img src="/images/icon/graph-Heart.svg" alt="" />
                         </div>
                         <div className="marquee">
                             <p>放心好喝又過癮</p>
-                            <img src="../public/images/icon/graph-smile .svg" alt="" />
+                            <img src="/images/icon/graph-smile .svg" alt="" />
                             <p>放飲</p>
-                            <img src="../public/images/icon/graph-Heart.svg" alt="" />
-                            <img src="../public/images/icon/graph-Heart.svg" alt="" />
+                            <img src="/images/icon/graph-Heart.svg" alt="" />
+                            <img src="/images/icon/graph-Heart.svg" alt="" />
                         </div>
                         <div className="marquee">
                             <p>放心好喝又過癮</p>
-                            <img src="../public/images/icon/graph-smile .svg" alt="" />
+                            <img src="/images/icon/graph-smile .svg" alt="" />
                             <p>放飲</p>
-                            <img src="../public/images/icon/graph-Heart.svg" alt="" />
-                            <img src="../public/images/icon/graph-Heart.svg" alt="" />
+                            <img src="/images/icon/graph-Heart.svg" alt="" />
+                            <img src="/images/icon/graph-Heart.svg" alt="" />
                         </div>
                         <div className="marquee">
                             <p>放心好喝又過癮</p>
-                            <img src="../public/images/icon/graph-smile .svg" alt="" />
+                            <img src="/images/icon/graph-smile .svg" alt="" />
                             <p>放飲</p>
-                            <img src="../public/images/icon/graph-Heart.svg" alt="" />
-                            <img src="../public/images/icon/graph-Heart.svg" alt="" />
+                            <img src="/images/icon/graph-Heart.svg" alt="" />
+                            <img src="/images/icon/graph-Heart.svg" alt="" />
                         </div>
                     </MarqueeEffect>
                 </div>
@@ -157,9 +157,9 @@ function Index() {
                     <PhotoOverlay featureOffset={featureOffset}  debug={true} />
                     <div className="scroll-container">
                         <div className="sticky-content" >
-                            <img className='graph1' src="../public/images/icon/graph-pinkBall.svg" alt="" />
-                            <img className='graph2' src="../public/images/icon/graph-smile Two.svg" alt="" />
-                            <img className='graph3' src="../public/images/icon/graph-yellowLine.svg" alt="" />
+                            <img className='graph1' src="/images/icon/graph-pinkBall.svg" alt="" />
+                            <img className='graph2' src="/images/icon/graph-smile Two.svg" alt="" />
+                            <img className='graph3' src="/images/icon/graph-yellowLine.svg" alt="" />
                             <div className="text-section">
                                 <div className="text-block active">
                                     <header className="title">
@@ -218,8 +218,8 @@ function Index() {
 
                 <section id="index-DIY">
                     <WaveScroll DIYOffset={DIYOffset} targetSelectors={['.wave', '#DIYContent']} />
-                    <img className='whiteWave' src="../public/images/index/graph-whiteWaves.svg" alt="" />
-                    <img className='wave' src="../public/images/index/graph-waves.svg" alt="" />
+                    <img className='whiteWave' src="/images/index/graph-whiteWaves.svg" alt="" />
+                    <img className='wave' src="/images/index/graph-waves.svg" alt="" />
                     <div id="DIYContent">
                         <header className="title">
                             <GSReveal from='top'>
@@ -228,8 +228,8 @@ function Index() {
                             </GSReveal>
                         </header>
                         <GSReveal from='bottom'>
-                            <img className='hotDrink1' src="../public/images/index/hotDrink/hotDrink1.png" alt="" />
-                            <img className='hotDrink2' src="../public/images/index/hotDrink/hotDrink2.png" alt="" />
+                            <img className='hotDrink1' src="/images/index/hotDrink/hotDrink1.png" alt="" />
+                            <img className='hotDrink2' src="/images/index/hotDrink/hotDrink2.png" alt="" />
                         </GSReveal>
                         <GSReveal from='right'>
                             <div className="content">
