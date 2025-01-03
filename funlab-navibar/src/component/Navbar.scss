@@ -11,6 +11,7 @@
     left: 0;
     width: 100%;
     z-index: 1000;
+    transition: transform 0.3s ease-in-out;
 
     display: flex;
     justify-content: space-between;
@@ -19,6 +20,14 @@
     font-family: $font-family-en;
     font-size: $font-size-16;
     font-weight: $font-weight-bold;
+
+    &.nav-visible {
+        transform: translateY(0);
+    }
+
+    &.nav-hidden {
+        transform: translateY(-100%);
+    }
 
     .logo {
         min-width: 100px;

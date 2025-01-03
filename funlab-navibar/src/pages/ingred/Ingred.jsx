@@ -218,6 +218,17 @@ const Ingred = () => {
         },
     ];
 
+    const scrollToSection = (e, sectionId) => {
+        e.preventDefault();
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     useEffect(() => {
         // 確保 DOM 已經加載完成才添加事件監聽
         window.addEventListener('scroll', scrollFunction);
@@ -245,10 +256,10 @@ const Ingred = () => {
             {/*分組頁籤 迅速傳送到該區 */}
             <div className="drinkList">
                 <div className="drinkListTab">
-                    <div><a href="#tea">放飲純茶</a></div>
-                    <div><a href="#milk">濃醇奶類</a></div>
-                    <div><a href="#fruit">鮮調果粒</a></div>
-                    <div><a href="#topping">FUN新嚼感</a></div>
+                    <div><a onClick={(e) => scrollToSection(e, 'tea')}>放飲純茶</a></div>
+                    <div><a onClick={(e) => scrollToSection(e, 'milk')}>濃醇奶類</a></div>
+                    <div><a onClick={(e) => scrollToSection(e, 'fruit')}>鮮調果粒</a></div>
+                    <div><a onClick={(e) => scrollToSection(e, 'topping')}>FUN新嚼感</a></div>
                 </div>
             </div>
 

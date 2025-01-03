@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Navbar.scss";
 
 export default function Navbar() {
+    const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
+    const [visible, setVisible] = useState(true);
     useEffect(() => {
         // Select elements using plain class names
         const hamburgerButton = document.querySelector(".hamburger");
@@ -18,14 +20,32 @@ export default function Navbar() {
         // Bind event listener
         hamburgerButton.addEventListener("click", handleClick);
 
+        // 處理滾動隱藏/顯示
+        const handleScroll = () => {
+            const currentScrollPos = window.scrollY;
+            const isScrollingUp = prevScrollPos > currentScrollPos;
+            
+            // 當滾動距離大於 100px 時才開始處理隱藏/顯示
+            if (currentScrollPos > 100) {
+                setVisible(isScrollingUp);
+            } else {
+                setVisible(true);
+            }
+            
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
         // Cleanup
         return () => {
             hamburgerButton.removeEventListener("click", handleClick);
+            window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [prevScrollPos]);
 
     return (
-        <div id="topBar" className="topBar">
+        <div id="topBar" className={`topBar ${visible ? 'nav-visible' : 'nav-hidden'}`}>
             <div className="logo">
                 <Link to="/">
                     <img src="images/funlogoText.svg" alt="Logo" />

@@ -9,6 +9,7 @@ import GSReveal from './assets/components/GSReveal';
 import MatterComponent from './assets/components/MatterComponent';
 import DrinkCarousel from './assets/components/DrinkCarousel';
 import Footer from '../../component/Footer';
+import SubNavigation from './assets/components/SubNavigation';
 import "./assets/scss/style.scss";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,21 +21,6 @@ function Index() {
     const imgContainerRef = useRef(null);
 
     useEffect(() => {
-        // 漢堡按鈕的點擊事件
-        const handleClick = () => {
-            const hamburger = document.querySelector('.hamburger');
-            const navigation = document.querySelector('.navigation');
-            if (hamburger && navigation) {
-                hamburger.querySelector('svg').classList.toggle('active');
-                navigation.classList.toggle('show');
-            }
-        };
-
-        // 綁定事件
-        const hamburger = document.querySelector('.hamburger');
-        if (hamburger) {
-            hamburger.addEventListener('click', handleClick);
-        }
 
         const circleWrapper = circleWrapperRef.current;
         const imgContainer = imgContainerRef.current;
@@ -59,26 +45,13 @@ function Index() {
 
         // 清理事件和 ScrollTrigger
         return () => {
-            if (hamburger) {
-                hamburger.removeEventListener('click', handleClick);
-            }
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     }, []);
 
     return (
         <> 
-            <nav className="subNavigation">
-                <img src="images/index/Navigation bar.svg" alt="" />
-                <ul className="subMenu">
-                    <li><a href="#index-banner">UP</a></li>
-                    <li><a href="#index-drink">MENU</a></li>
-                    <li><a href="#index-Marquee">ABOUT</a></li>
-                    <li><a href="#index-DIY">FUN LAB</a></li>
-                    <li><a href="#footer">DOWN</a></li>
-                </ul>
-            </nav>
-
+            <SubNavigation/>
             {/* 主要內容區 */}
             <main>
                 <section id="index-banner">
