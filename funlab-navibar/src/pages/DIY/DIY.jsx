@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from 'react-router-dom';
 import { teaItems, milkItems, fruitItems, toppingItems } from './assets/data/items';
 import html2canvas from 'html2canvas';
 import OrderDetails from './assets/components/OrderDetails';
@@ -589,7 +590,7 @@ function DIY() {
                     </div>
                     <p className='orderNumber'>313286</p>
                     <div className='orderTrackBtn'>
-                        <a href="#/search">訂單追蹤</a>
+                        <Link to="/search">訂單追蹤</Link>
                     </div>
                 </div>
                 <div className='closeBtn'>

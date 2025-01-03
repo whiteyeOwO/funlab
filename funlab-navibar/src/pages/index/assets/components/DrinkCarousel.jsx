@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -115,7 +116,7 @@ const DrinkCarousel = () => {
               onMouseEnter={() => setIsHoverMove(true)}
               onMouseLeave={() => setIsHoverMove(false)}
             >
-              <a href="#/menu">
+                <Link to="/menu">
                 <img
                   src={isHoverMove
                     ? "./images/icon/icon-arrowMorewhover.svg"
@@ -123,7 +124,7 @@ const DrinkCarousel = () => {
                   }
                   alt="更多"
                 />
-              </a>
+              </Link>
             </div>
             <div className={`other-nav_num num-${index + 1}`}>
               <p>{index + 1}</p>

@@ -9,6 +9,7 @@ import Order from "./pages/Search/Order";
 import Search from "./pages/Search/Search";
 import Store from "./pages/Store/Store";
 import Footer from "./component/Footer";
+import ScrollToTop from "./component/ScrollToTop";
 import './styles/App.scss';
 
 export default function App() {
@@ -17,8 +18,8 @@ export default function App() {
     <>
     <div>
       <Navbar />
-     
-      <Routes>
+      <ScrollToTop />
+      <Routes> 
         <Route path="*" element={<Navigate to="/" replace />} />
         <Route index element={<Home />} />
         <Route path="/" element={<Home />}></Route>
