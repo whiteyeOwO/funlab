@@ -118,8 +118,8 @@ const DrinkCarousel = () => {
               <a href="/menu">
                 <img
                   src={isHoverMove
-                    ? "/images/icon/icon-arrowMorewHover.svg"
-                    : "/images/icon/icon-arrowMorew.svg"
+                    ? "../public/images/icon/icon-arrowMorewHover.svg"
+                    : "../public/images/icon/icon-arrowMorew.svg"
                   }
                   alt="更多"
                 />
@@ -140,8 +140,8 @@ const DrinkCarousel = () => {
         >
           <img
             src={isHoverPrev
-              ? "/images/icon/icon-arrowPreHover.svg"
-              : "/images/icon/icon-arrowPre.svg"
+              ? "../public/images/icon/icon-arrowPreHover.svg"
+              : "../public/images/icon/icon-arrowPre.svg"
             }
             alt="上一頁"
           />
@@ -154,8 +154,8 @@ const DrinkCarousel = () => {
         >
           <img
             src={isHoverNext
-              ? "/images/icon/icon-arrowNextHover.svg"
-              : "/images/icon/icon-arrowNext.svg"
+              ? "../public/images/icon/icon-arrowNextHover.svg"
+              : "../public/images/icon/icon-arrowNext.svg"
             }
             alt="下一頁"
           />
