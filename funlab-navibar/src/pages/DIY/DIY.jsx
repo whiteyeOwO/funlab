@@ -589,7 +589,7 @@ function DIY() {
                     </div>
                     <p className='orderNumber'>313286</p>
                     <div className='orderTrackBtn'>
-                        <a href="/search">訂單追蹤</a>
+                        <a href="#/search">訂單追蹤</a>
                     </div>
                 </div>
                 <div className='closeBtn'>

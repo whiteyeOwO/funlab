@@ -107,7 +107,7 @@ function Index() {
                             <p>飲料熱門排行榜 <br /> 你喜愛的飲品有上榜嗎 ?</p>
                         </div>
                         <div className='btn'>
-                            <a href="/menu">VIEW ALL</a>
+                            <a href="#/menu">VIEW ALL</a>
                         </div>
                     </div>
                     <DrinkCarousel/>
@@ -168,7 +168,7 @@ function Index() {
                                     <div className="content">
                                         <p >無論是經典風味、創意特調或清新果茶，在「放飲」菜單應盡有，我們相信每個人都應該享受屬於自己的特色飲品，最貼心的飲品服務。</p>
                                     </div>
-                                    <a href="/about">
+                                    <a href="#/about">
                                         <div className="aboutus">
                                             <p>ABOUT US</p>
                                             <img src="images/icon/icon-arrowPink.svg" alt="" />
@@ -182,7 +182,7 @@ function Index() {
                                     <div className="content">
                                         <p >堅持採用當季水果，為您獻上天然鮮甜的飲品體驗。每一杯飲品都蘊含著季節的氣息，讓每一口飲品帶您回歸自然，感受大地最純真的味道。</p>
                                     </div>
-                                    <a href="/about">
+                                    <a href="#/about">
                                         <div className="aboutus">
                                             <p>ABOUT US</p>
                                             <img src="images/icon/icon-arrowPink.svg" alt="" />
@@ -196,7 +196,7 @@ function Index() {
                                     <div className="content">
                                         <p >無論您喜歡清新的綠茶，還是偏愛香醇的紅茶，我們的茶葉就像您的好朋友，隨時陪伴您度過每一個心情，擁有特選產地和專業沖泡，釋放出最純粹的茶香。</p>
                                     </div>
-                                    <a href="/about">
+                                    <a href="#/about">
                                         <div className="aboutus">
                                             <p>ABOUT US</p>
                                             <img src="images/icon/icon-arrowPink.svg" alt="" />
@@ -240,7 +240,7 @@ function Index() {
                                 <p>3. drink</p>
                             </div>
                             <div className='DIYButton'>
-                                <a href="/diy">製作專屬飲品</a>
+                                <a href="#/diy">製作專屬飲品</a>
                                 <img src="images/funLogo.svg" alt="" />
                             </div>
                         {/* </GSReveal> */}

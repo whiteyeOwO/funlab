@@ -115,7 +115,7 @@ const DrinkCarousel = () => {
               onMouseEnter={() => setIsHoverMove(true)}
               onMouseLeave={() => setIsHoverMove(false)}
             >
-              <a href="/menu">
+              <a href="#/menu">
                 <img
                   src={isHoverMove
                     ? "./images/icon/icon-arrowMorewhover.svg"
