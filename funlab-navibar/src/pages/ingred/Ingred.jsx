@@ -11,10 +11,10 @@ const Ingred = () => {
 
     // 各區域大圖的狀態
     // 變數型態 [state變數名稱, setState函式名稱] = useState(state變數初始值)
-    const [teaBigImage, setTeaBigImage] = useState("../../public/images/Ingredients/tea/big-Assam.jpg");
-    const [milkBigImage, setMilkBigImage] = useState("../../public/images/Ingredients/milk/big-milk.jpg");
-    const [fruitBigImage, setFruitBigImage] = useState("../../public/images/Ingredients/fruit/big-lemon.jpg");
-    const [toppingBigImage, setToppingBigImage] = useState("../../public/images/Ingredients/topping/big-boba.jpg");
+    const [teaBigImage, setTeaBigImage] = useState("./images/Ingredients/tea/big-Assam.jpg");
+    const [milkBigImage, setMilkBigImage] = useState("./images/Ingredients/milk/big-milk.jpg");
+    const [fruitBigImage, setFruitBigImage] = useState("./images/Ingredients/fruit/big-lemon.jpg");
+    const [toppingBigImage, setToppingBigImage] = useState("./images/Ingredients/topping/big-boba.jpg");
 
     // 茶的資料清單
     const teas = [
