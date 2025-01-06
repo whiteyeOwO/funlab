@@ -75,16 +75,25 @@ section.h2 h2 img {
 section.h2 .search {
   display: block;
   width: 30vw;
-  font-size: 1rem;
+  font-size: 1.25rem;
+  font-family: "Noto Sans TC";
+  font-weight: 600;
   padding: 40px 0;
 }
 section.h2 .search h4 {
   padding: 10px 0;
 }
-section.h2 .search #type {
+section.h2 .search .input {
+  padding: 0 10px;
   width: 30vw;
   height: 5vh;
   border: 2px solid #D9D9D9;
+  border-radius: 8px;
+  font-family: "Noto Sans TC";
+}
+section.h2 .search::placeholder {
+  font-family: "Noto Sans TC";
+  color: #61646B;
 }
 section.h2 .submit {
   border: 2px solid;
@@ -93,12 +102,13 @@ section.h2 .submit {
   padding: 8px;
   width: 6vw;
   border-radius: 50px;
-  background-color: rgba(81, 130, 255, 0.6901960784);
-  border-color: #5082FF;
+  background-color: #5082FF;
   color: white;
   cursor: pointer;
   transition: 0.5s;
 }
 section.h2 .submit:hover {
-  background-color: #BCCEFF;
+  background-color: #FFFFFF;
+  color: #5082FF;
+  border: 2px solid #5082FF;
 }/*# sourceMappingURL=Search.css.map */

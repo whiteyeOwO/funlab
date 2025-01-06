@@ -75,7 +75,7 @@ table {
 /* Current Order Section */
 .now {
   display: block;
-  padding: 20px 260px 30px;
+  padding: 20px 260px 10vh;
   height: 100%;
   max-height: fit-content;
 }
@@ -85,7 +85,6 @@ table {
   background-color: #B3C7FD;
   text-align: center;
   padding: 6px;
-  max-height: 10vh;
 }
 .now .nowContent {
   border: 4px solid;
@@ -115,34 +114,35 @@ table {
   margin-left: auto;
   text-align: right;
 }
-.now .nowContent table {
+.now .nowContent .table table {
   border-collapse: collapse;
-  table-layout: fixed;
+  table-layout: auto;
   width: 100%;
+  padding: 20px;
 }
-.now .nowContent table th,
-.now .nowContent table td {
-  padding: 12px;
+.now .nowContent .table table th,
+.now .nowContent .table table td {
+  padding: 12px 0;
   text-align: left;
 }
-.now .nowContent table td {
+.now .nowContent .table table td {
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
 }
-.now .nowContent table th {
+.now .nowContent .table table th {
   font-weight: bold;
 }
-.now .nowContent table th.name, .now .nowContent table th.content, .now .nowContent table th.store,
-.now .nowContent table td.name,
-.now .nowContent table td.content,
-.now .nowContent table td.store {
+.now .nowContent .table table th.name, .now .nowContent .table table th.content, .now .nowContent .table table th.store,
+.now .nowContent .table table td.name,
+.now .nowContent .table table td.content,
+.now .nowContent .table table td.store {
   width: 250px;
 }
-.now .nowContent table th.price,
-.now .nowContent table td.price {
+.now .nowContent .table table th.price,
+.now .nowContent .table table td.price {
   text-align: right;
 }
-.now .nowContent .total {
+.now .nowContent .table .total {
   font-weight: bold;
   display: flex;
   justify-content: flex-end;
@@ -152,19 +152,20 @@ table {
 }
 
 /* Divider Section */
-.divider {
+#custom-hr {
   margin: 10px 260px;
   height: 0.5vh;
-}
-.divider .custom-hr {
   border: none;
   height: 4px;
   background: repeating-linear-gradient(to right, black 0, black 16px, transparent 10px, transparent 30px);
 }
 
 /* Past Orders Section */
+.pastWrap {
+  padding: 10vh 0;
+}
 .pastWrap .pastOrder {
-  padding: 0 260px;
+  padding: 0 260px 20px;
 }
 .pastWrap .pastOrder h2 {
   font-size: 2rem;
@@ -174,7 +175,7 @@ table {
   padding: 6px;
 }
 .pastWrap .past {
-  padding: 0 260px;
+  padding: 0 260px 20px;
 }
 .pastWrap .past .pastContent .orderInfo {
   display: flex;
@@ -198,11 +199,6 @@ table {
 .pastWrap .past .pastContent .orderInfo .date {
   margin-left: auto;
   text-align: right;
-}
-.pastWrap .past .pastContent .orderInfo img {
-  padding: 6px;
-  width: 4.5%;
-  align-self: center;
 }
 .pastWrap .past .table {
   border: 4px solid;
@@ -228,9 +224,8 @@ table {
 .pastWrap .past .table td.name,
 .pastWrap .past .table td.content,
 .pastWrap .past .table td.store {
+  width: 250px;
   text-align: left;
-  width: max-content;
-  padding-right: 10px;
 }
 .pastWrap .past .table th.price,
 .pastWrap .past .table td.price {
@@ -254,11 +249,12 @@ table {
 /* Expand/Collapse Button */
 .iconExpand {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 1.125rem;
 }
-
-/* All Orders Section */
-#all {
-  padding: 60px;
-  background-color: beige;
+.iconExpand :hover {
+  color: black;
+  transition: 0.5s ease-in-out;
+}
+.iconExpand :active {
+  transition: 1s ease-in-out;
 }/*# sourceMappingURL=Order.css.map */
