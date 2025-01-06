@@ -1,8 +1,10 @@
 import { React, useState, useEffect, useRef } from "react";
 import Footer from "../../component/Footer";
-import "./Order.scss";
 import { BiSolidRightArrow, BiSolidDownArrow } from "react-icons/bi";
 import { gsap } from "gsap";
+import GSReveal from "../../component/GSReveal";
+import "./Order.scss";
+
 
 export default function Order() {
     const [activeOID, setActiveOID] = useState(null);
@@ -142,7 +144,7 @@ export default function Order() {
 
             <div className="pastWrap">
                 <div className="pastOrder">
-                    <h2>過去訂單</h2>
+                    <h2><GSReveal from="top">過去訂單</GSReveal></h2>
                 </div>
 
                 {orders.map((order) => (

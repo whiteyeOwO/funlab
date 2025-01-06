@@ -4,34 +4,19 @@
 
 
 /*頁面標題*/
-header {
-    .page-title {
-        font-family: $font-family-en-title;
-        color: $color-primary-blue;
-        font-size: $font-size-96;
-        text-align: center;
-        margin: 160px 0 0 0;
-    }
-}
-.menu {
+
+
+.page-title {
+    font-family: $font-family-en-title;
+    color: $color-primary-blue;
+    font-size: $font-size-96;
     text-align: center;
-    padding: 20px;
-
-    .h {
-        height: 100%;
-        min-height: 125px;
-    }
-
-    h1 {
-        color: #333;
-    }
-
+    margin-top: 5vh;
 }
 
 
 /* 父層容器 */
 .wrapper {
-    margin: 0 0 10vh 0;
     height: 60vh;
     overflow: hidden;
     position: relative;
@@ -92,6 +77,7 @@ header {
 
 /*分組頁籤*/
 .drinkListTab {
+            font-family: $font-family-ch ;
 
     ul {
         display: flex;

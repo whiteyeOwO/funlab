@@ -1,17 +1,17 @@
+import GSReveal from "../../component/GSReveal";
 import React from "react";
 import Banner from "./components/Banner";
 import Tab from "./components/Tab";
-import "./Menu.scss";
 import Footer from "../../component/Footer";
+import "./Menu.scss";
 
 
 export default function Menu() {
     return (
         <div>
             <Banner /> 
-                        <header>
-                        <h1 className="page-title"> Menu </h1>
-                        </header>
+
+                        <h1 className="page-title"><GSReveal from="top"> Menu </GSReveal> </h1>
             <Tab />
             <Footer/>
         </div>

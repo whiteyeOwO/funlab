@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../component/Footer";
+import GSReveal from "../../component/GSReveal";
 import "./Search.scss";
 
 export default function Search() {
@@ -17,10 +18,10 @@ export default function Search() {
 
     return (
         <>
+            <header>
+                <h1 className="page-title"> <GSReveal from="top">search</GSReveal> </h1>
+            </header>
             <section className="h2">
-                <h2>
-                    <img src="./images/search/title-search.svg" alt="Search" />
-                </h2>
                 <div className="search">
                     <h4>手機號碼</h4>
                     <input className="input"
