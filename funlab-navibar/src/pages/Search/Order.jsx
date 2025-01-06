@@ -93,8 +93,8 @@ export default function Order() {
 
     return (
         <main>
-            <header className="title">
-                <h1>訂單管理</h1>
+            <header className="title"><GSReveal from="top">
+                <h1>order</h1></GSReveal>
             </header>
 
             <div className="now">
@@ -144,7 +144,7 @@ export default function Order() {
 
             <div className="pastWrap">
                 <div className="pastOrder">
-                    <h2><GSReveal from="top">過去訂單</GSReveal></h2>
+                    <h2>過去訂單</h2>
                 </div>
 
                 {orders.map((order) => (
@@ -207,6 +207,6 @@ export default function Order() {
             </div>
 
             <Footer />
-        </main>
+        </main >
     );
 }

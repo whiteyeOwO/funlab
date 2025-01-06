@@ -19,7 +19,8 @@ header {
 
 section.h2 {
     font-family: $font-family-ch ;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 60px;
     display: flex;
     /* Use flexbox */
     flex-direction: column;

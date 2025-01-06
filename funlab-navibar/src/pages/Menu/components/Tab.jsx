@@ -255,7 +255,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    仙農奶仙農奶仙農奶仙農奶仙農奶仙農奶仙農奶仙農奶仙農奶仙農奶仙農奶仙農奶仙農奶
+                                    滑嫩Ｑ談的仙草凍，隨著濃乳香滑入口中
                                 </p>
                             </div>
                             {/*3Q紅玉 */}
@@ -269,7 +269,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    3Q紅玉3Q紅玉3Q紅玉3Q紅玉3Q紅玉3Q紅玉3Q紅玉3Q紅玉
+                                    一杯同時喝到3種口感，滿足喜歡配料的朋友
                                 </p>
                             </div>
                             {/*凍美歐蕾 */}
@@ -283,10 +283,11 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    凍美歐蕾凍美歐蕾凍美歐蕾凍美歐蕾凍美歐蕾凍美歐蕾
+                                    溫潤東方美人茶香和鮮奶交融的小步舞曲
                                 </p>
                             </div>
-                        </div>                    </div>
+                        </div>
+                    </div>
                 )}
                 {activeTab === "milkDrink" && (
                     <div id="milkDrink" className="listbox active">
@@ -302,7 +303,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    紅玉歐蕾紅玉歐蕾紅玉歐蕾紅玉歐蕾紅玉歐蕾紅玉歐蕾
+                                    濃郁紅玉茶融合香滑牛奶，茶香甘醇中帶有奶香的圓潤口感
                                 </p>
                             </div>
 
@@ -319,7 +320,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    美人歐蕾美人歐蕾美人歐蕾美人歐蕾美人歐蕾美人歐蕾
+                                    東方美人的蜂蜜茶韻與奶香結合，甜潤清香令人沉醉
                                 </p>
                             </div>
 
@@ -334,7 +335,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    金萱歐蕾金萱歐蕾金萱歐蕾金萱歐蕾金萱歐蕾金萱歐蕾
+                                    金萱茶的奶香韻味與牛奶完美契合，香醇滑順，回味悠長
                                 </p>
                             </div>
                             {/* 玉露歐蕾  */}
@@ -348,7 +349,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    玉露歐蕾玉露歐蕾玉露歐蕾玉露歐蕾玉露歐蕾玉露歐蕾
+                                    細膩玉露茶香與牛奶交融，低調清甜，口感細緻
                                 </p>
                             </div>
                             {/* 四季歐蕾  */}
@@ -362,7 +363,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    四季歐蕾四季歐蕾四季歐蕾四季歐蕾四季歐蕾
+                                    四季春的清新雅緻，搭配柔滑牛奶，輕盈卻不失層次感
                                 </p>
                             </div>
                             {/* 舞鶴歐蕾  */}
@@ -376,7 +377,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    舞鶴歐蕾舞鶴歐蕾舞鶴歐蕾舞鶴歐蕾舞鶴歐蕾
+                                    舞鶴地區特產的高雅茶韻與牛奶融合，濃郁中帶著絲絲甘甜
                                 </p>
                             </div>
                             {/* 碧螺春歐蕾  */}
@@ -390,7 +391,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    碧螺春歐蕾碧螺春歐蕾碧螺春歐蕾碧螺春歐蕾碧螺春歐蕾
+                                    碧螺春的清新茶香與牛奶相輔相成，風味平衡
                                 </p>
                             </div>
 
@@ -426,7 +427,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    烏燕奶烏燕奶烏燕奶烏燕奶烏燕奶烏燕奶
+                                    烏龍茶的淡雅回甘與燕麥奶的柔和融合
                                 </p>
                             </div>
 
@@ -441,7 +442,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    金燕奶金燕奶金燕奶金燕奶金燕奶金燕奶
+                                    金萱茶的奶香搭配燕麥奶，清新中保有絲滑甜美
                                 </p>
                             </div>
                             {/*嘻嘻麥來 */}
@@ -455,7 +456,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    嘻嘻麥來嘻嘻麥來嘻嘻麥來嘻嘻麥來
+                                    濃郁茶香與滑順燕麥奶，可說是經典不敗組合
                                 </p>
                             </div>
                             {/*豆薩奶 */}
@@ -469,7 +470,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    豆薩奶豆薩奶豆薩奶豆薩奶豆薩奶豆薩奶
+                                    阿薩姆的濃厚香氣融入豆漿，茶香與豆香完美平衡
                                 </p>
                             </div>
                             {/*豆好鶴 */}
@@ -483,7 +484,7 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    豆好鶴豆好鶴豆好鶴豆好鶴豆好鶴
+                                    唯有豆漿才能帶出舞鶴紅茶專屬的高雅茶韻
                                 </p>
                             </div>
                             {/*豆趣雙享 */}
@@ -497,18 +498,19 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    豆趣雙享豆趣雙享豆趣雙享豆趣雙享豆趣雙享
+                                    誰能想到豆花與豆漿，竟能夠同時喝到香濃又綿密的口感
                                 </p>
                             </div>
-                        </div>                    </div>
+                        </div>
+                    </div>
                 )}
                 {activeTab === "fruitteaDrink" && (
                     <div id="fruitteaDrink" className="listbox active">
                         <div className="productlist">
                             {/*蜜凍珍珠奶 */}
-                            <div className="product" title="birouchun">
+                            <div className="product" title="蜜凍珍珠奶">
                                 <div className="drinkImage">
-                                    <img src="./images/menu/puretea/birouchun.webp" />
+                                    <img src="./images/menu/juice/蜜凍珍珠奶.webp" />
                                 </div>
                                 <div className="drinkText">
                                     <h2>
@@ -516,14 +518,14 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    碧螺春碧螺春碧螺春碧螺春碧螺春碧螺春
+                                    在鮮嫩蜜桃的香氣中品味珍珠，一起徜徉在鮮奶茶的美好
                                 </p>
                             </div>
 
                             {/*珍愛百香綠 */}
                             <div className="product" title="passion">
                                 <div className="drinkImage">
-                                    <img src="./images/menu/puretea/gold.webp" />
+                                    <img src="./images/menu/juice/珍愛百香綠.webp" />
                                 </div>
 
 
@@ -533,14 +535,14 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    金萱金萱金萱金萱金萱金萱金萱金萱金萱金萱金萱金萱金萱金萱金萱金萱
+                                    清爽綠茶搭配香甜百香果與Q彈珍珠，酸甜口感令人回味無窮
                                 </p>
                             </div>
 
                             {/*粉Q檸檬四季春 */}
                             <div className="product" title="qlemon">
                                 <div className="drinkImage">
-                                    <img src="./images/menu/puretea/japan.webp" />
+                                    <img src="./images/menu/juice/粉Q檸檬四季春.webp" />
                                 </div>
                                 <div className="drinkText">
                                     <h2>
@@ -548,13 +550,13 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    煎茶煎茶煎茶煎茶煎茶煎茶煎茶煎茶煎茶煎茶
+                                    四季春茶香融合檸檬酸甜與滑嫩粉粿，夏日解渴首選
                                 </p>
                             </div>
                             {/*椰果葡香烏龍 */}
                             <div className="product" title="orient">
                                 <div className="drinkImage">
-                                    <img src="./images/menu/puretea/orient.webp" />
+                                    <img src="./images/menu/juice/椰果葡香烏龍.webp" />
                                 </div>
                                 <div className="drinkText">
                                     <h2>
@@ -562,13 +564,13 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    東方美人東方美人東方美人東方美人東方美人
+                                    濃郁烏龍茶襯托葡萄果香，椰果添口感，完美清新組合
                                 </p>
                             </div>
                             {/*莓果杏仁綠 */}
                             <div className="product" title="season">
                                 <div className="drinkImage">
-                                    <img src="./images/menu/puretea/season.webp" />
+                                    <img src="./images/menu/juice/莓果杏仁綠.webp" />
                                 </div>
                                 <div className="drinkText">
                                     <h2>
@@ -576,13 +578,13 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    四季春四季春四季春四季春四季春四季春四季春四季春四季春
+                                    綠茶清香搭配蔓越莓酸甜，杏仁凍滑嫩細膩，滋味層次豐富
                                 </p>
                             </div>
                             {/*酸梅沁青 */}
                             <div className="product" title="wuhe">
                                 <div className="drinkImage">
-                                    <img src="./images/menu/puretea/wuhe.webp" />
+                                    <img src="./images/menu/juice/酸梅沁青.webp" />
                                 </div>
                                 <div className="drinkText">
                                     <h2>
@@ -590,10 +592,11 @@ export default function Tab() {
                                     </h2>
                                 </div>
                                 <p className="drinkInfo">
-                                    舞鶴舞鶴舞鶴舞鶴舞鶴舞鶴
+                                    青茶甘醇融合梅肉酸鹹滋味，獨特風味帶來驚喜享受
                                 </p>
                             </div>
-                        </div>                    </div>
+                        </div>
+                    </div>
                 )}
             </div>
         </div>
