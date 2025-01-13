@@ -4,6 +4,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-family: $font-family-ch;
 }
 
 /*頁面標題*/
@@ -76,7 +77,7 @@ html {
 
 /*分組頁籤*/
 .drinkListTab {
-    padding:  0 8vw;
+    padding: 0 4vw;
     font-family: $font-family-ch ;
 
     ul {
@@ -87,15 +88,15 @@ html {
             background-color: #ffffff;
             border: 3px solid $color-sub-lightGray;
             border-radius: 50px;
-            font-size: $font-size-20;
+            font-size: $font-size-22;
             font-weight: bold;
-            margin: 0 20px;
+            margin: 10px 20px;
             cursor: pointer;
 
             .tab-btn {
                 font-family: $font-family-ch;
                 font-weight: $font-weight-bold;
-                font-size: $font-size-18;
+                font-size: $font-size-20;
                 padding: 10px 20px;
                 background: transparent;
                 border: none;
@@ -114,7 +115,7 @@ html {
 /*分組商品區*/
 .productlist {
     font-family: $font-family-ch;
-    min-height: 120vh;
+    min-height: 160vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -122,7 +123,7 @@ html {
     z-index: 995;
 
     .product {
-        margin: 40px;
+        margin: 0;
         transition: all 0.4s ease-in-out;
         /* Smooth transition */
 
@@ -173,33 +174,44 @@ html {
     }
 
 
-    //  圖片底線
     .drinkText {
         position: relative;
         text-align: center;
         transition: opacity 0.5s ease;
-        /* Transition for scaling and opacity */
 
         &:hover {
             opacity: 0.9;
-            /* Subtle opacity effect */
         }
 
         h2 {
-            background-color: $color-sub-lightblue;
-
-            width: fit-content;
-            display: inline;
+            display: inline-block;
             position: relative;
             font-size: $font-size-20;
             font-weight: 500;
             z-index: 2;
             padding-bottom: 2px;
         }
+
+        .under {
+            background-color: $color-sub-lightblue;
+            width: 100%;
+            height: 1rem;
+            /* Match parent width */
+            position: absolute;
+            bottom: 0;
+            /* Align it to the bottom of the h2 or container */
+            left: 0;
+            /* Align it to the start of the container */
+            z-index: -1;
+            /* Send it behind */
+        }
     }
 
     .drinkInfo {
+        width: 20vw;
+        text-align: center;
         padding-top: 2vh;
         font-size: $font-size-16;
+        position: relative;
     }
 }

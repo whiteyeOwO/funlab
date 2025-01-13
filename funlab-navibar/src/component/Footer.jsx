@@ -27,8 +27,8 @@ export default function Footer() {
                     </li>
                     <li>
                         <p>放飲 FUN LAB</p>
-                        <p>100台北市中正區濟南路一段321號</p>
-                        <p>TEL 02-3535-3466</p>
+                        <p>100台北市中央區放飲路1段1號</p>
+                        <p>TEL 02-1234-5678</p>
                     </li>
                     <li className="iconFooter">
                         <img src="images/icon/icon-ig.svg" alt="Instagram Icon" />
@@ -36,6 +36,8 @@ export default function Footer() {
                     </li>
                     <li>
                         <p>©2024 放飲, All Rights Reserved</p>
+                        <p>本網站為學生作品，無任何商業營利行為。</p>
+
                     </li>
                 </ul>
             </div>

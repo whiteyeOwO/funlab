@@ -63,6 +63,7 @@ export default function Tab() {
                 {/* 放飲純茶 */}
                 {activeTab === "pureteaDrink" && (
                     <div id="pureteaDrink" className="listbox active">
+
                         <div className="productlist">
                             {/* 碧螺春*/}
                             <div className="product" title="birouchun">
@@ -73,7 +74,10 @@ export default function Tab() {
                                     <h2>
                                         碧螺春&emsp; <span>$35</span>
                                     </h2>
+                                    <div className="under"></div>
+
                                 </div>
+
                                 <p className="drinkInfo">
                                     一起品味碧螺春專屬的清新雅緻的高貴茶香
                                 </p>
