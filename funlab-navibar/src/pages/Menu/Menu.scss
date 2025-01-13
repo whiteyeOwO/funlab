@@ -2,9 +2,13 @@
 @use "/src/styles/abstracts/variables/basic" as *;
 @use "/src/styles/base/reset" as *;
 
+html {
+    scroll-behavior: smooth;
+}
 
 /*頁面標題*/
 .page-title {
+    padding-top: 20vh;
     font-family: $font-family-en-title;
     color: $color-primary-blue;
     font-size: $font-size-96;
@@ -72,6 +76,7 @@
 
 /*分組頁籤*/
 .drinkListTab {
+    padding:  0 8vw;
     font-family: $font-family-ch ;
 
     ul {
@@ -181,8 +186,8 @@
         }
 
         h2 {
-            // background-color: $color-sub-lightblue;
-            background: linear-gradient(0deg, rgba(179, 199, 253, 1) 0%, rgba(255, 255, 255, 0) 60%);
+            background-color: $color-sub-lightblue;
+
             width: fit-content;
             display: inline;
             position: relative;

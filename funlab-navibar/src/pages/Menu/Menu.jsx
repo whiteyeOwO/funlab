@@ -9,8 +9,6 @@ import "./Menu.scss";
 export default function Menu() {
     return (
         <div>
-            <Banner /> 
-
                         <h1 className="page-title"><GSReveal from="top"> Menu </GSReveal> </h1>
             <Tab />
             <Footer/>
