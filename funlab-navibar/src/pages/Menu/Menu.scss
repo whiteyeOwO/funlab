@@ -5,6 +5,8 @@
 html {
     scroll-behavior: smooth;
     font-family: $font-family-ch;
+    background-image: linear-gradient(white 60%, #D9E2FB 100%);
+
 }
 
 /*頁面標題*/
@@ -17,62 +19,8 @@ html {
     margin: 4vh;
 }
 
-
-/* 父層容器 */
-.wrapper {
-    padding-top: 40vh;
-    height: 60vh;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* 輪播的內容 */
-.marquee {
-    display: flex;
-    width: calc(200% + 40px);
-    /* Adjust width to account for the gaps */
-    animation: scroll 50s linear infinite;
-}
-
-/* 單張圖片 */
-.slide {
-    flex: 0 0 auto;
-    width: 100vw;
-    /* 讓每個 slide 寬度等於整個視窗 */
-    height: 60vh;
-    /* 高度等於視窗高度 */
-    margin-right: 8vw;
-    /* Slide 間的間距 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-}
-
-.slide img {
-    object-fit: contain;
-    /* 圖片等比例縮放，完整顯示 */
-}
-
-/* 輪播動畫定義 */
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-// Media queries for responsiveness
-@media (max-width: 768px) {
-    .slide {
-        height: 70vh;
-    }
+.listbox {
+    padding: 8vh 0;
 }
 
 /*分組頁籤*/
@@ -88,15 +36,13 @@ html {
             background-color: #ffffff;
             border: 3px solid $color-sub-lightGray;
             border-radius: 50px;
-            font-size: $font-size-22;
-            font-weight: bold;
             margin: 10px 20px;
             cursor: pointer;
 
             .tab-btn {
                 font-family: $font-family-ch;
-                font-weight: $font-weight-bold;
-                font-size: $font-size-20;
+                font-weight: 500;
+                font-size: $font-size-22;
                 padding: 10px 20px;
                 background: transparent;
                 border: none;
@@ -115,64 +61,62 @@ html {
 /*分組商品區*/
 .productlist {
     font-family: $font-family-ch;
-    min-height: 160vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
     /* Add some spacing between items */
     z-index: 995;
+    padding-bottom: 10vh;
+}
 
-    .product {
-        margin: 0;
-        transition: all 0.4s ease-in-out;
-        /* Smooth transition */
+.product {
+    width: 20vw;
+    /* Center the product container */
+    display: flex;
+    flex-direction: column;
+    /* Stack children vertically */
+    align-items: center;
+    /* Center children horizontally */
+    transition: all 0.4s ease-in-out;
 
-        &:hover {
-            opacity: 0.9;
-            /* Reduce opacity for a subtle effect */
-        }
+    &:hover {
+        opacity: 0.9;
     }
 
     .drinkImage {
+        width: 25vw;
         position: relative;
         display: inline-block;
-        /* Ensure proper stacking of child elements */
-        transition: all 0.5s ease;
+        transition: all 0.4s ease-in-out;
 
         &:hover {
             transform: rotateZ(5deg);
-            /* Apply rotation on hover */
         }
 
+        ::before{
+            display: none;
+            opacity: 0.7;
+        }
         &:hover::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            opacity: 0.9;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 50%;
             background: rgba(179, 199, 253, 0.5);
-            /* Add a semi-transparent background */
             border-radius: 50%;
             filter: blur(12.5px);
-            transition: all 0.5s ease;
+            -webkit-transition: width 1s, height 1s, margin 1s;
+            -moz-transition: width 1s, height 1s, margin 1s;
+            -ms-transition: width 1s, height 1s, margin 1s;
+            transition: width 1s, height 1s, margin 1s;
             z-index: -1;
-            /* Place behind the image */
-            transform: scale(0.8);
-        }
-
-        img {
-            display: block;
-            width: 100%;
-            /* Ensure the image is properly sized */
-            height: auto;
-            border-radius: 50%;
-            /* Optional: Add rounded corners to the image */
-            position: relative;
-            /* Keep the image above the blurred background */
+            transform: translate(-50%, -50%) scale(1);
+            /* Center and maintain scale */
         }
     }
-
 
     .drinkText {
         position: relative;
@@ -186,29 +130,25 @@ html {
         h2 {
             display: inline-block;
             position: relative;
-            font-size: $font-size-20;
+            font-size: $font-size-24;
             font-weight: 500;
             z-index: 2;
-            padding-bottom: 2px;
         }
 
         .under {
-            background-color: $color-sub-lightblue;
-            width: 100%;
-            height: 1rem;
-            /* Match parent width */
+            background-color: #5082ff40;
             position: absolute;
             bottom: 0;
-            /* Align it to the bottom of the h2 or container */
-            left: 0;
-            /* Align it to the start of the container */
+            left: -10%;
+            width: 120%;
+            height: 14px;
             z-index: -1;
-            /* Send it behind */
         }
     }
 
     .drinkInfo {
-        width: 20vw;
+        padding: 2vh 2vw 0;
+        font-family: $font-family-ch;
         text-align: center;
         padding-top: 2vh;
         font-size: $font-size-16;
