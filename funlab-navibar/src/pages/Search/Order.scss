@@ -2,19 +2,25 @@
 @use "../../styles/abstracts/variables/basic" as *;
 @use "../../styles/base/reset" as *;
 
+
+html {
+    scroll-behavior: smooth;
+    font-family: $font-family-ch;
+    background-image: linear-gradient(white 60%, #D9E2FB 100%);
+}
+
 /* Title Section */
 .title {
     h1 {
+        padding-top: 20vh;
         font-family: $font-family-en-title;
         color: $color-primary-blue;
-        padding-top: 20vh;
-        font-size: $font-size-48;
-        font-weight: bold;
+        font-size: $font-size-96;
         text-align: center;
+        margin: 4vh;
     }
 }
 
-/* Common Styles for Headers, Paragraphs, and Tables */
 h1,
 h2,
 h3,
@@ -24,6 +30,15 @@ h6,
 p,
 table {
     font-family: $font-family-ch;
+}
+.greeting {
+    font-family: $font-family-ch;
+    text-align: center;
+    margin: 20px 0;
+    font-size: $font-size-20;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
 }
 
 /* Current Order Section */

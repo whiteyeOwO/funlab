@@ -6,7 +6,6 @@ html {
     scroll-behavior: smooth;
     font-family: $font-family-ch;
     background-image: linear-gradient(white 60%, #D9E2FB 100%);
-
 }
 
 /*頁面標題*/
@@ -64,19 +63,15 @@ html {
     min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* Add some spacing between items */
     z-index: 995;
     padding-bottom: 10vh;
 }
 
 .product {
     width: 20vw;
-    /* Center the product container */
     display: flex;
     flex-direction: column;
-    /* Stack children vertically */
     align-items: center;
-    /* Center children horizontally */
     transition: all 0.4s ease-in-out;
 
     &:hover {
@@ -85,6 +80,7 @@ html {
 
     .drinkImage {
         width: 25vw;
+        height: 43vh;
         position: relative;
         display: inline-block;
         transition: all 0.4s ease-in-out;
@@ -101,11 +97,11 @@ html {
             content: '';
             position: absolute;
             opacity: 0.9;
-            top: 50%;
+            top: 54%;
             left: 50%;
             width: 50%;
             height: 50%;
-            background: rgba(179, 199, 253, 0.5);
+            background: rgba(179, 199, 253, 0.7);
             border-radius: 50%;
             filter: blur(12.5px);
             -webkit-transition: width 1s, height 1s, margin 1s;
@@ -118,6 +114,7 @@ html {
         }
     }
 
+// Product TEXT
     .drinkText {
         position: relative;
         text-align: center;
@@ -147,7 +144,7 @@ html {
     }
 
     .drinkInfo {
-        padding: 2vh 2vw 0;
+        padding: 2vh 1vw 0;
         font-family: $font-family-ch;
         text-align: center;
         padding-top: 2vh;
