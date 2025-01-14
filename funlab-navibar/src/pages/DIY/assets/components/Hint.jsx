@@ -82,9 +82,9 @@ const Hint = ({ isVisible, onClose }) => {
                     )}
                 </div>
                 {/* 關閉提示 */}
-                {currentStep === 4 && (
+                {/* {currentStep === 4 && (
                     <div className="close-hint">點擊灰色背景關閉提示</div>
-                )}
+                )} */}
             </div>
         </div>
     );
