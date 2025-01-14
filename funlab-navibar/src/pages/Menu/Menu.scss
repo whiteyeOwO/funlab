@@ -69,8 +69,10 @@ html {
 
 .product {
     width: 20vw;
+    height: 50vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     transition: all 0.4s ease-in-out;
 
@@ -79,8 +81,8 @@ html {
     }
 
     .drinkImage {
-        width: 25vw;
-        height: 43vh;
+        width: 100%;
+        height: fit-content;
         position: relative;
         display: inline-block;
         transition: all 0.4s ease-in-out;
@@ -89,18 +91,17 @@ html {
             transform: rotateZ(5deg);
         }
 
-        ::before{
-            display: none;
-            opacity: 0.7;
+        &:hover::before{
+            opacity: 1;
         }
-        &:hover::before {
+        &::before {
             content: '';
             position: absolute;
-            opacity: 0.9;
-            top: 54%;
+            opacity: 0;
+            top: 50%;
             left: 50%;
-            width: 50%;
-            height: 50%;
+            width: 70%;         
+            height: 70%;
             background: rgba(179, 199, 253, 0.7);
             border-radius: 50%;
             filter: blur(12.5px);
@@ -109,7 +110,8 @@ html {
             -ms-transition: width 1s, height 1s, margin 1s;
             transition: width 1s, height 1s, margin 1s;
             z-index: -1;
-            transform: translate(-50%, -50%) scale(1);
+            transition: all 0.2s ease-in-out;
+            transform: translate(-50%, -50%);
             /* Center and maintain scale */
         }
     }
