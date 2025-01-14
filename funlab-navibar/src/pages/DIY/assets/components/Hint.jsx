@@ -14,7 +14,7 @@ const Hint = ({ isVisible, onClose }) => {
         {
             id: 2,
             title: '客製方式',
-            description: '請選擇甜度(或添加蜂蜜)和溫度',
+            description: '選好茶底或奶類基底(可混搭!)水果和料最多選3種喔!',
             image: 'images/DIY/hint-step2.svg',
             alt: 'Step 2',
         },

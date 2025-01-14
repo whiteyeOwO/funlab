@@ -69,7 +69,7 @@ html {
 
 .product {
     width: 20vw;
-    height: 50vh;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -146,7 +146,7 @@ html {
     }
 
     .drinkInfo {
-        padding: 2vh 1vw 0;
+        padding: 2vh 2vw 0;
         font-family: $font-family-ch;
         text-align: center;
         padding-top: 2vh;

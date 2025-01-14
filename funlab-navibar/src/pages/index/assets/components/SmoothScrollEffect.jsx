@@ -18,10 +18,10 @@ const SmoothScrollEffect = ({ DIYOffset, targetSelectors }) => {
             const scrollY = window.scrollY;
 
             if (
-                scrollY >= DIYOffset + sectionHeight * 3.4&&
+                scrollY >= DIYOffset + sectionHeight * 3.3&&
                 scrollY < DIYOffset + sectionHeight * 3.8
             ) {
-                const targetY = scrollY - DIYOffset - sectionHeight * 3.4;
+                const targetY = scrollY - DIYOffset - sectionHeight * 3.3;
 
                 // 平滑更新所有目標元素
                 startSmoothTransform(targetY);

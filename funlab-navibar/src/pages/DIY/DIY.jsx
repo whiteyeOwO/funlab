@@ -453,11 +453,11 @@ function DIY() {
                             <img src="images/icon/icon-share.svg" alt="" />
                         </button>
                     </div>
-                    <div className='orderBtn'>
+                    {/* <div className='orderBtn'>
                         <button className='orderBtn' onClick={handleOrderClick}>
                             <img src="images/icon/icon-order.svg" alt="" />
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </section>
             <section id='shareArea' className={showShareArea ? 'show' : ''}>
