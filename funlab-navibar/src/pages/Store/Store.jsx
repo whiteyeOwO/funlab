@@ -90,7 +90,7 @@ function Store() {
                         </a>
 
                         <div className="content-text">
-                            <h3>台北北商店
+                            <h3>台北北飲店
                             </h3>
                             <div className="paragraph">
                                 <img src="images/icon/icon-phone.svg" alt="" id="content-image1" />
@@ -100,7 +100,7 @@ function Store() {
                             </div>
                             <div className="paragraph">
                                 <img src="images/icon/icon-address.svg" alt="" id="content-image2" />
-                                <p>新北市板橋區中山路一段101號</p>
+                                <p>100台北市中央區放飲路二段1號</p>
                             </div>
                         </div>
 
@@ -127,7 +127,7 @@ function Store() {
                             </div>
                             <div className="paragraph">
                                 <img src="images/icon/icon-address.svg" alt="" id="content-image2" />
-                                <p>新北市板橋區中山路一段101號</p>
+                                <p>新北市板橋區放飲路一段8號</p>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@ function Store() {
                             </div>
                             <div className="paragraph">
                                 <img src="images/icon/icon-address.svg" alt="" id="content-image2" />
-                                <p>台北市信義區忠孝東路五段68號</p>
+                                <p>台北市信義區放飲路四段3號</p>
                             </div>
                         </div>
                     </div>
@@ -186,7 +186,7 @@ function Store() {
                             </div>
                             <div className="paragraph">
                                 <img src="images/icon/icon-address.svg" alt="" id="content-image2" />
-                                <p>台中市西屯區逢甲路20號</p>
+                                <p>台中市西屯區放飲路22號</p>
                             </div>
                         </div>
                     </div>
@@ -209,7 +209,7 @@ function Store() {
                             </div>
                             <div className="paragraph">
                                 <img src="images/icon/icon-address.svg" alt="" id="content-image2" />
-                                <p>台中市西區美村路一段99號</p>
+                                <p>台中市西區放飲路一段3號</p>
                             </div>
                         </div>
                     </div>
@@ -243,7 +243,7 @@ function Store() {
                             </div>
                             <div className="paragraph">
                                 <img src="images/icon/icon-address.svg" alt="" id="content-image2" />
-                                <p>台南市東區安平路33號</p>
+                                <p>台南市東區放飲路45號</p>
                             </div>
                         </div>
                     </div>
@@ -266,7 +266,7 @@ function Store() {
                             </div>
                             <div className="paragraph">
                                 <img src="images/icon/icon-address.svg" alt="" id="content-image2" />
-                                <p>高雄市前鎮區中華五路789號</p>
+                                <p>高雄市前鎮區放飲路六段6號</p>
                             </div>
                         </div>
                     </div>
@@ -300,7 +300,7 @@ function Store() {
                             </div>
                             <div className="paragraph">
                                 <img src="images/icon/icon-address.svg" alt="" id="content-image2" />
-                                <p>花蓮市中山路120號</p>
+                                <p>花蓮市放飲路252號</p>
                             </div>
                         </div>
                     </div>

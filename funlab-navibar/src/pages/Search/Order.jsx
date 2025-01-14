@@ -1,4 +1,5 @@
 import { React, useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom"; 
 import Footer from "../../component/Footer";
 import { BiSolidRightArrow, BiSolidDownArrow } from "react-icons/bi";
 import { gsap } from "gsap";
@@ -7,9 +8,11 @@ import "./Order.scss";
 
 
 export default function Order() {
+    const location = useLocation();
+    const phoneNumber = location.state?.phoneNumber || "未提供手機號碼"; // Use useLocation to access state
     const [activeOID, setActiveOID] = useState(null);
-    const [orderStatus, setOrderStatus] = useState("飲品製作中"); // Default order status
-    const conditionRef = useRef(null); // Ref for the condition element
+    const [orderStatus, setOrderStatus] = useState("飲品製作中");
+    const conditionRef = useRef(null);
 
     const orders = [
         {
@@ -93,10 +96,12 @@ export default function Order() {
 
     return (
         <main>
-            <header className="title"><GSReveal from="top">
-                <h1>order</h1></GSReveal>
+            <header className="title">
+                <h1><GSReveal from="top">ORDER</GSReveal></h1>
             </header>
-
+            <div className="greeting">
+                <h2>{`${phoneNumber} 您好，以下為您查詢的訂單內容：`}</h2>
+            </div>
             <div className="now">
                 <h2 className="now">當前訂單</h2>
                 <div className="nowContent">
