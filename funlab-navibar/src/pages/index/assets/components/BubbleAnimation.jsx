@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const BubbleAnimation = () => {
+const BubbleAnimation =  React.memo( () => {
     const canvasRef = useRef(null);
 
     useEffect(() => {
@@ -278,6 +278,6 @@ const BubbleAnimation = () => {
     }, []);
 
     return <canvas ref={canvasRef} id="bubble"/>;
-};
+});
 
 export default BubbleAnimation;

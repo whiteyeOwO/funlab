@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef,lazy, Suspense } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,8 +7,8 @@ import MarqueeEffect from "react-fast-marquee";
 import PhotoOverlay from './assets/components/photoOverlay';
 import WaveScroll from './assets/components/SmoothScrollEffect';
 import GSReveal from './assets/components/GSReveal';
-import MatterComponent from './assets/components/MatterComponent';
-import DrinkCarousel from './assets/components/DrinkCarousel';
+const MatterComponent = lazy(() => import('./assets/components/MatterComponent'));
+const DrinkCarousel = lazy(() => import('./assets/components/DrinkCarousel'));
 import Footer from '../../component/Footer';
 import SubNavigation from './assets/components/SubNavigation';
 import "./assets/scss/style.scss";
@@ -84,7 +84,9 @@ function Index() {
                             <Link to="/menu">VIEW ALL</Link>
                         </div>
                     </div>
+                    <Suspense>
                     <DrinkCarousel/>
+                    </Suspense>
                 </section>
 
                 <div id="index-Marquee">
@@ -223,7 +225,9 @@ function Index() {
                 </section>
 
                 <section id="index-dropText">
+                <Suspense>
                     <MatterComponent />
+                </Suspense>
                 </section>
                 <Footer/>
             </main>

@@ -52,7 +52,7 @@ const MatterComponent = () => {
         const circleBody = Bodies.circle(posX, posY, radius, {
           density: 0.01,
           friction: 0.1,
-          restitution: 0.5,
+          restitution: 0.2,
           render: {
             opacity: 0,
           },
@@ -85,7 +85,7 @@ const MatterComponent = () => {
         const pillBody = Body.create({
           parts: [leftCircle, rightCircle, rect],
           friction: 0.1,
-          restitution: 0.5,
+          restitution: 0.2,
         });
 
         Composite.add(engine.world, pillBody);
@@ -144,6 +144,7 @@ const MatterComponent = () => {
         height: matterBox.clientHeight,
         wireframes: false,
         background: 'transparent',
+        pixelRatio: window.devicePixelRatio,
       },
     });
     renderRef.current = render;
