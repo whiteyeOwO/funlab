@@ -55,8 +55,10 @@ a {
 /* RESET  END*/
 /* 頁尾區 */
 #footer {
+  position: relative;
   width: 100%;
   z-index: 1000;
+  margin-top: auto;
   display: flex;
   /* 主軸方向:水平 */
   justify-content: space-between;

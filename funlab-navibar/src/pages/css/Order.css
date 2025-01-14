@@ -54,6 +54,8 @@ a {
 /* RESET  END*/
 /* Title Section */
 .title h1 {
+  font-family: "Notable";
+  color: #5082FF;
   padding-top: 20vh;
   font-size: 3rem;
   font-weight: bold;

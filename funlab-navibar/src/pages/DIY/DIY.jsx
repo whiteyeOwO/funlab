@@ -6,6 +6,7 @@ import OrderDetails from './assets/components/OrderDetails';
 import ActionArea from './assets/components/ActionArea';
 import DrinkDisplay from './assets/components/DrinkDisplay';
 import ControlPanel from './assets/components/ControlPanel';
+import Hint from "./assets/components/Hint";
 import "./assets/scss/style.scss";
 
 function DIY() {
@@ -25,6 +26,7 @@ function DIY() {
     const [showShareArea, setShowShareArea] = useState(false);
     const [showOrderDataArea, setShowOrderDataArea] = useState(false);
     const [showOrderSuccess, setShowOrderSuccess] = useState(false);
+    const [isHintVisible, setIsHintVisible] = useState(true);
 
 
     // 订单相关状态
@@ -352,6 +354,7 @@ function DIY() {
 
     return (
         <main>
+            <Hint isVisible={isHintVisible} onClose={() => setIsHintVisible(false)} />
             <section id='DIY' className={isFlashing ? 'flash' : ''}>
                 <img className="bg" src="images/DIY/gridbackground.svg" alt="" />
                 <section id="panel">
@@ -406,51 +409,8 @@ function DIY() {
                 />
             </section>
             <section id='orderConfirm' className={showOrderConfirm ? 'show' : ''}>
-                <div className='orderDownload' ref={orderDownloadRef}>
-                    <div className='drinkScreenshot'>
-                        {drinkScreenshot && (
-                            <img
-                                src={drinkScreenshot}
-                                alt="飲料截圖"
-                                style={{
-                                    width: '100%',
-                                    height: 'auto',
-                                    objectFit: 'contain',
-                                    transform: 'translateY(-120px) scale(1.5)', // 放大圖片
-                                    transformOrigin: 'center center'
-                                }}
-                            />
-                        )}
-                    </div>
-                    <div className='drinkText'>
-                        <h2 className='drinkName'>{inputName}
-                        </h2>
-                        <p className='drinkDetail'>{drinkDetail}
-                        </p>
-                    </div>
-                </div>
-                <div className='orderDownloadBtn'>
-                    <button className='downloadBtn' onClick={handleDownload}>下載你的手搖</button>
-                </div>
-                <div className='closeBtn'>
-                    <button className='closeBtn' onClick={handleCloseClick}>
-                        <img src="images/icon/icon-close.svg" alt="" />
-                    </button>
-                </div>
-                <div className='shareBtn'>
-                    <button className='shareBtn' onClick={handleShareClick}>
-                        <img src="images/icon/icon-share.svg" alt="" />
-                    </button>
-                </div>
-                <div className='orderBtn'>
-                    <button className='orderBtn' onClick={handleOrderClick}>
-                        <img src="images/icon/icon-order.svg" alt="" />
-                    </button>
-                </div>
-            </section>
-            <section id='shareArea' className={showShareArea ? 'show' : ''}>
-                <div className='sharePanel'>
-                    <div className='drinkAlign'>
+                <div className='orderDownloadAlign'>
+                    <div className='orderDownload' ref={orderDownloadRef}>
                         <div className='drinkScreenshot'>
                             {drinkScreenshot && (
                                 <img
@@ -458,9 +418,10 @@ function DIY() {
                                     alt="飲料截圖"
                                     style={{
                                         width: '100%',
-                                        height: '100%',
+                                        height: 'auto',
                                         objectFit: 'contain',
-                                        transform: 'translateY(-80px) scale(2)' // 放大圖片
+                                        transform: 'translateY(-120px) scale(1.5)', // 放大圖片
+                                        transformOrigin: 'center center'
                                     }}
                                 />
                             )}
@@ -472,20 +433,81 @@ function DIY() {
                             </p>
                         </div>
                     </div>
-                    <p className='shareBigText'>快將結果分享至</p>
-                    <div className='shareBtnDetail'>
-                        <div className='fbBtn'>
-                            <a href="https://zh-tw.facebook.com/"><img src="images/icon/icon-fb-share.svg" alt="" /></a>
+                    <div className='btnAlign'>
+                        <div className='orderDownloadBtn'>
+                            <button className='orderDownloadBtn' onClick={handleDownload}>下載你的手搖</button>
                         </div>
-                        <div className='igBtn'>
-                            <a href="https://www.instagram.com/"><img src="images/icon/icon-ig-share.svg" alt="" /></a>
+                        <div className='orderMainBtn'>
+                            <button className='orderMainBtn' onClick={handleOrderClick}>馬上下訂</button>
                         </div>
-                        <div className='XBtn'>
-                            <a href="https://x.com/"><img src="images/icon/icon-X-share.svg" alt="" /></a>
+                    </div>
+                </div>
+                <div className="subBtnAlign">
+                    <div className='closeBtn'>
+                        <button className='closeBtn' onClick={handleCloseClick}>
+                            <img src="images/icon/icon-close.svg" alt="" />
+                        </button>
+                    </div>
+                    <div className='shareBtn'>
+                        <button className='shareBtn' onClick={handleShareClick}>
+                            <img src="images/icon/icon-share.svg" alt="" />
+                        </button>
+                    </div>
+                    <div className='orderBtn'>
+                        <button className='orderBtn' onClick={handleOrderClick}>
+                            <img src="images/icon/icon-order.svg" alt="" />
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section id='shareArea' className={showShareArea ? 'show' : ''}>
+                <div className='backBtn'>
+                    <button className='backBtn' onClick={handleBackClick}>
+                        <img src="images/icon/icon-back.svg" alt="" />
+                    </button>
+                </div>
+                <div className='shareAlign'>
+                    <div className='sharePanel'>
+                        <div className='drinkAlign'>
+                            <div className='drinkScreenshot'>
+                                {drinkScreenshot && (
+                                    <img
+                                        src={drinkScreenshot}
+                                        alt="飲料截圖"
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'contain',
+                                            transform: 'translateY(-80px) scale(2)' // 放大圖片
+                                        }}
+                                    />
+                                )}
+                            </div>
+                            <div className='drinkText'>
+                                <h2 className='drinkName'>{inputName}
+                                </h2>
+                                <p className='drinkDetail'>{drinkDetail}
+                                </p>
+                            </div>
                         </div>
-                        <div className='threadBtn'>
-                            <a href="https://threads.net/"><img src="images/icon/icon-thread-share.svg" alt="" /></a>
+                        <p className='shareBigText'>快將結果分享至</p>
+                        <div className='shareBtnDetail'>
+                            <div className='fbBtn'>
+                                <a href="https://zh-tw.facebook.com/"><img src="images/icon/icon-fb-share.svg" alt="" /></a>
+                            </div>
+                            <div className='igBtn'>
+                                <a href="https://www.instagram.com/"><img src="images/icon/icon-ig-share.svg" alt="" /></a>
+                            </div>
+                            <div className='XBtn'>
+                                <a href="https://x.com/"><img src="images/icon/icon-X-share.svg" alt="" /></a>
+                            </div>
+                            <div className='threadBtn'>
+                                <a href="https://threads.net/"><img src="images/icon/icon-thread-share.svg" alt="" /></a>
+                            </div>
                         </div>
+                    </div>
+                    <div className='orderDownloadBtn'>
+                        <button className='orderDownloadBtn' onClick={handleDownload}>下載你的手搖</button>
                     </div>
                 </div>
                 <div className='closeBtn'>
@@ -493,13 +515,13 @@ function DIY() {
                         <img src="images/icon/icon-close.svg" alt="" />
                     </button>
                 </div>
+            </section>
+            <section id='orderDataArea' className={showOrderDataArea ? 'show' : ''}>
                 <div className='backBtn'>
                     <button className='backBtn' onClick={handleBackClick}>
                         <img src="images/icon/icon-back.svg" alt="" />
                     </button>
                 </div>
-            </section>
-            <section id='orderDataArea' className={showOrderDataArea ? 'show' : ''}>
                 <div className='orderPanel'>
                     <div className='drinkAlign'>
                         <div className='drinkScreenshot'>
@@ -575,31 +597,28 @@ function DIY() {
                         <img src="images/icon/icon-close.svg" alt="" />
                     </button>
                 </div>
-                <div className='backBtn'>
-                    <button className='backBtn' onClick={handleBackClick}>
-                        <img src="images/icon/icon-back.svg" alt="" />
-                    </button>
-                </div>
             </section>
             <section id='orderSuccess' className={showOrderSuccess ? 'show' : ''}>
-                <div className='orderSuccessPanel'>
-                    <img src="images/DIY/orderSuccess.svg" alt="" />
-                    <div className='orderSuccessText'>
-                        <h3 className='title'>送出成功</h3>
-                        <p className='text'>取單編號</p>
+                <div className="successAlign">
+                    <div className='orderSuccessPanel'>
+                        <img src="images/DIY/orderSuccess.svg" alt="" />
+                        <div className='orderSuccessText'>
+                            <h3 className='title'>送出成功</h3>
+                            <p className='text'>取單編號</p>
+                        </div>
+                        <p className='orderNumber'>313286</p>
+                        <div className='orderTrackBtn'>
+                            <Link to="/search">訂單追蹤</Link>
+                        </div>
                     </div>
-                    <p className='orderNumber'>313286</p>
-                    <div className='orderTrackBtn'>
-                        <Link to="/search">訂單追蹤</Link>
+                    <div className='reminderText'>
+                        <p>記得截圖取單編號</p>
                     </div>
                 </div>
                 <div className='closeBtn'>
                     <button className='closeBtn' onClick={handleCloseClick}>
                         <img src="images/icon/icon-close.svg" alt="" />
                     </button>
-                </div>
-                <div className='reminderText'>
-                    <p>記得截圖取單編號</p>
                 </div>
             </section>
         </main>

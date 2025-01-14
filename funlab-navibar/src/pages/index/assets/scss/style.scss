@@ -113,7 +113,7 @@ html {
         .wrap {
             position: absolute;
             top: 0;
-            z-index: 0;
+            z-index: 6;
             width: 100%;
             height: 100%;
             overflow: hidden;
@@ -191,11 +191,13 @@ html {
         top: -20%;
 
         .swiper {
+            position: relative;
             width: 80%;
             height: 100%;
         }
 
         .swiper-container {
+            position: relative;
             height: 50vh;
             width: 80%;
         }
@@ -592,6 +594,7 @@ html {
             font-family: $font-family-en;
             font-size: $font-size-20;
             margin-right: 10px;
+            font-weight: $font-weight-bold;
             color: $color-sub-pink;
         }
 
@@ -735,6 +738,7 @@ html {
                 font-family: $font-family-ch;
                 font-size: $font-size-32;
                 color: $color-sub-lightblue;
+                font-weight: $font-weight-bold;
             }
         }
 

@@ -16,7 +16,7 @@ import "./assets/scss/style.scss";
 gsap.registerPlugin(ScrollTrigger);
 function Index() {
     const featureOffset = window.innerHeight * 3 + 50;
-    const DIYOffset = window.innerHeight * 5;
+    const DIYOffset = window.innerHeight * 4;
 
     const circleWrapperRef = useRef(null);
     const imgContainerRef = useRef(null);

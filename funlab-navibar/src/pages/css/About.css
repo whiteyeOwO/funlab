@@ -145,6 +145,7 @@ a {
   overflow: hidden;
 }
 #about .about-item {
+  position: relative;
   padding: 60px;
   z-index: 999;
 }

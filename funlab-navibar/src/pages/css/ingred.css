@@ -53,7 +53,6 @@ a {
 }
 
 /* RESET  END*/
-/* 至頂按鈕(搬出去元件區了) */
 /*泡泡*/
 .backgroundBubble {
   position: fixed;
@@ -99,6 +98,7 @@ header .page-title {
   background-color: #fff;
   color: #333;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .drinkList .drinkListTab a:hover {
   background-color: #5082FF;
@@ -111,12 +111,10 @@ header .page-title {
 }
 
 /*內容區*/
-.ingredient-list {
+main.ingredient-list {
   display: flex;
   align-items: center;
-  /* 水平置中 */
   flex-direction: column;
-  /* 垂直排列子元素 */
 }
 
 .tea,
@@ -124,12 +122,8 @@ header .page-title {
 .fruit {
   display: grid;
   grid-template-columns: repeat(3, 1fr) auto;
-  /* ingredient 3 欄 + 右側大圖 */
   grid-template-rows: auto;
-  /* 根據內容自適應高度 */
   column-gap: 20px;
-  /* 欄之間的間距 */
-  /* 行之間的間距 */
   position: relative;
   padding: 110px 0;
   max-width: 814px;
@@ -140,6 +134,7 @@ header .page-title {
   flex-direction: column;
   gap: 40px;
   position: relative;
+  margin-bottom: 230px;
 }
 .topping .top-row {
   display: grid;
@@ -180,11 +175,8 @@ header .page-title {
 .topping .bottom-rows {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* 每行 4 個 */
   column-gap: 20px;
-  /* 欄間距 */
   row-gap: 40px;
-  /* 行間距 */
 }
 
 .showImg-left {
@@ -284,44 +276,4 @@ header .page-title {
 .up-icon img {
   width: 10px;
   height: 10px;
-}
-
-/* 頁尾區 */
-#footer {
-  display: flex;
-  /* 主軸方向:水平 */
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 25px 70px;
-  background-color: #5082FF;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  font-family: "Noto Sans TC";
-  font-size: 1rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  letter-spacing: 0.05rem;
-  position: relative;
-  z-index: 98;
-}
-#footer .logoFooter .logoFooterImg {
-  width: 80px;
-  padding: 5px 0px;
-}
-#footer .logoFooter .logoFooterText {
-  width: 200px;
-  padding-bottom: 15px;
-}
-#footer .articleFooter li {
-  margin-bottom: 15px;
-}
-#footer .articleFooter li p {
-  margin-bottom: 5px;
-}
-#footer .articleFooter .iconFooter {
-  display: flex;
-}
-#footer .articleFooter .iconFooter img {
-  width: 30px;
-  margin-right: 5px;
 }/*# sourceMappingURL=ingred.css.map */

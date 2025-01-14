@@ -92,6 +92,61 @@ a {
     transform: translateX(-100%);
   }
 }
+@keyframes flash {
+  0% {
+    filter: brightness(100%) saturate(100%);
+  }
+  50% {
+    filter: brightness(300%) saturate(50%);
+  }
+  100% {
+    filter: brightness(100%) saturate(100%);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @property --val {
   syntax: "<integer>";
   inherits: true;
@@ -102,12 +157,15 @@ a {
   inherits: true;
   initial-value: 0;
 }
-main {
+#DIY {
   position: relative;
   width: 100%;
   height: 100vh;
 }
-main .bg {
+#DIY.flash {
+  animation: flash 0.4s ease-in;
+}
+#DIY .bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -411,12 +469,12 @@ main .bg {
 }
 #panel #showDrinkArea #showDrink .liquid {
   position: absolute;
-  top: -5.5%;
+  top: 0%;
   left: 2.2%;
-  width: 100%;
+  width: 95%;
   height: 110%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-  clip-path: path("M-3.68362e-06 23.3945L20.9731 210.342C20.9731 222.481 49.4995 228 76.0092 228C102.501 228 131.027 222.481 131.027 210.342L152 23.3945C148.535 38.586 110.989 45.5428 76.0092 45.5428C41.0112 45.5428 3.46496 38.586 -3.68362e-06 23.3945Z M152 24.3937C152 7.64184 112.602 0 76 0C39.3797 0 0 7.64184 0 24.3937C0 41.1456 39.3979 48.7874 76 48.7874C112.602 48.7874 152 41.1633 152 24.3937Z");
+  clip-path: path("M-3.68362e-06 23.3945L20.9731 200.342C20.9731 212.481 49.4995 218 76.0092 218C102.501 218 131.027 212.481 131.027 200.342L152 23.3945C148.535 38.586 110.989 45.5428 76.0092 45.5428C41.0112 45.5428 3.46496 38.586 -3.68362e-06 23.3945Z M152 24.3937C152 7.64184 112.602 0 76 0C39.3797 0 0 7.64184 0 24.3937C0 41.1456 39.3979 48.7874 76 48.7874C112.602 48.7874 152 41.1633 152 24.3937Z");
 }
 #panel #showDrinkArea #showDrink .cupIngredients {
   position: absolute;
@@ -756,4 +814,618 @@ main .bg {
 #action .itemText h3 span {
   font-family: "Mulish";
   font-size: 1rem;
+}
+
+#orderConfirm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  background: linear-gradient(to bottom, rgba(21, 21, 21, 0.65), rgba(68, 68, 68, 0.65));
+  backdrop-filter: blur(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#orderConfirm.show {
+  opacity: 1;
+  visibility: visible;
+}
+#orderConfirm .orderDownload {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 415px;
+  height: 555px;
+  opacity: 1;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+#orderConfirm .orderDownload.screenshot-mode #showDrink .drinkcap,
+#orderConfirm .orderDownload.screenshot-mode #showDrink .drinkcap2 {
+  display: none;
+}
+#orderConfirm .orderDownload .drinkScreenshot {
+  align-self: center;
+  width: 350px;
+  height: 360px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#orderConfirm .orderDownload .drinkScreenshot img {
+  width: 350px;
+  height: 360px;
+  object-fit: contain;
+  transform: scale(1);
+}
+#orderConfirm .orderDownload .drinkText {
+  margin-left: 30px;
+}
+#orderConfirm .orderDownload .drinkName {
+  margin-top: 10px;
+  width: 350px;
+  font-family: "Noto Sans TC";
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000;
+}
+#orderConfirm .orderDownload .drinkDetail {
+  width: 350px;
+  margin-top: 5px;
+  font-family: "Noto Sans TC";
+  font-size: 1rem;
+  font-weight: 400;
+  color: #7C7C7C;
+}
+#orderConfirm .orderDownloadBtn {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 60px;
+}
+#orderConfirm .orderDownloadBtn button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: #5082FF;
+  color: #FFFFFF;
+  font-family: "Noto Sans TC";
+  font-size: 1.375rem;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+}
+#orderConfirm .orderDownloadBtn button:hover {
+  animation: rotate 0.7s ease-in-out both;
+}
+#orderConfirm .orderDownloadBtn button:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+#orderConfirm .closeBtn {
+  position: absolute;
+  top: 8%;
+  right: 25%;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+}
+#orderConfirm .closeBtn button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 22.5px;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+#orderConfirm .closeBtn button img {
+  margin: 0 auto;
+  width: 22px;
+  height: 22px;
+}
+#orderConfirm .closeBtn button:hover {
+  transform: scale(1.1) translate(-50%, -50%);
+}
+#orderConfirm .shareBtn {
+  position: absolute;
+  top: 19%;
+  right: 25%;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+}
+#orderConfirm .shareBtn button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 22.5px;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+#orderConfirm .shareBtn button img {
+  margin: 0 auto;
+  width: 22px;
+  height: 22px;
+}
+#orderConfirm .shareBtn button:hover {
+  transform: scale(1.1) translate(-50%, -50%);
+}
+#orderConfirm .orderBtn {
+  position: absolute;
+  top: 26%;
+  right: 25%;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+}
+#orderConfirm .orderBtn button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 22.5px;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+#orderConfirm .orderBtn button img {
+  margin: 0 auto;
+  width: 22px;
+  height: 22px;
+}
+#orderConfirm .orderBtn button:hover {
+  transform: scale(1.1) translate(-50%, -50%);
+}
+
+#shareArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  background: linear-gradient(to bottom, rgba(21, 21, 21, 0.65), rgba(68, 68, 68, 0.65));
+  backdrop-filter: blur(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#shareArea.show {
+  opacity: 1;
+  visibility: visible;
+}
+#shareArea .sharePanel {
+  padding: 40px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 465px;
+  opacity: 1;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#shareArea .sharePanel .drinkAlign {
+  width: 425px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+#shareArea .sharePanel .drinkScreenshot {
+  width: 174px;
+  height: 220px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#shareArea .sharePanel .drinkScreenshot img {
+  width: 174px;
+  height: 178px;
+  object-fit: contain;
+  transform: scale(1);
+}
+#shareArea .sharePanel .drinkText {
+  height: 250px;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#shareArea .sharePanel .drinkName {
+  width: 150px;
+  font-family: "Noto Sans TC";
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+#shareArea .sharePanel .drinkDetail {
+  margin-top: 20px;
+  width: 150px;
+  font-family: "Noto Sans TC";
+  font-size: 1rem;
+  font-weight: 400;
+  color: #7C7C7C;
+}
+#shareArea .sharePanel .shareBigText {
+  font-family: "Noto Sans TC";
+  font-size: 1.375rem;
+  color: #000;
+}
+#shareArea .sharePanel .shareBtnDetail {
+  margin-top: 20px;
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#shareArea .closeBtn {
+  position: absolute;
+  top: 13%;
+  right: 22%;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+}
+#shareArea .closeBtn button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 22.5px;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+#shareArea .closeBtn button img {
+  margin: 0 auto;
+  width: 22px;
+  height: 22px;
+}
+#shareArea .closeBtn button:hover {
+  transform: scale(1.1) translate(-50%, -50%);
+}
+#shareArea .backBtn {
+  position: absolute;
+  top: 12%;
+  left: 28%;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+}
+#shareArea .backBtn button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 22.5px;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+#shareArea .backBtn button img {
+  margin: 0 auto;
+  width: 35px;
+  height: 35px;
+}
+#shareArea .backBtn button:hover {
+  transform: scale(1.1) translate(-50%, -50%);
+}
+
+#orderDataArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  background: linear-gradient(to bottom, rgba(21, 21, 21, 0.65), rgba(68, 68, 68, 0.65));
+  backdrop-filter: blur(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#orderDataArea.show {
+  opacity: 1;
+  visibility: visible;
+}
+#orderDataArea .orderPanel {
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 700px;
+  opacity: 1;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#orderDataArea .orderPanel .drinkAlign {
+  width: 425px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+#orderDataArea .orderPanel .drinkScreenshot {
+  width: 174px;
+  height: 220px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#orderDataArea .orderPanel .drinkScreenshot img {
+  width: 174px;
+  height: 178px;
+  object-fit: contain;
+  transform: scale(1);
+}
+#orderDataArea .orderPanel .drinkText {
+  height: 250px;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#orderDataArea .orderPanel .drinkName {
+  width: 150px;
+  font-family: "Noto Sans TC";
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+#orderDataArea .orderPanel .drinkDetail {
+  margin-top: 20px;
+  width: 150px;
+  font-family: "Noto Sans TC";
+  font-size: 1rem;
+  font-weight: 400;
+  color: #7C7C7C;
+}
+#orderDataArea .orderPanel .orderForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#orderDataArea .orderPanel .orderForm .orderFormItem {
+  height: 60px;
+  width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#orderDataArea .orderPanel .orderForm .orderFormItem label {
+  width: 100px;
+  font-family: "Noto Sans TC";
+  font-size: 1.5rem;
+}
+#orderDataArea .orderPanel .orderForm .orderFormItem input,
+#orderDataArea .orderPanel .orderForm .orderFormItem select {
+  width: 200px;
+  height: 36px;
+  border: 2px solid #AFB1B6;
+  border-radius: 8px;
+  padding: 0 10px;
+  color: #404040;
+}
+#orderDataArea .orderPanel .orderForm .orderFormItem input::placeholder {
+  font-family: "Noto Sans TC";
+  font-size: 0.875rem;
+  color: #61646B;
+}
+#orderDataArea .orderPanel .orderForm .orderFormItem optgroup {
+  font-family: "Noto Sans TC";
+}
+#orderDataArea .orderPanel .orderForm .orderFormItem option {
+  font-family: "Noto Sans TC";
+  font-size: 0.875rem;
+  color: #404040;
+}
+#orderDataArea .orderPanel .submitBtn {
+  margin: 30px 0;
+  width: 136px;
+  height: 46px;
+  background-color: #5082FF;
+  border-radius: 20px;
+  color: #FFFFFF;
+  font-family: "Noto Sans TC";
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+#orderDataArea .orderPanel .submitBtn:hover {
+  background-color: #FFFFFF;
+  color: #5082FF;
+  border: 2px solid #5082FF;
+}
+#orderDataArea .orderPanel .submitBtn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+#orderDataArea .orderPanel .submitBtn.active {
+  opacity: 1;
+  cursor: pointer;
+}
+#orderDataArea .closeBtn {
+  position: absolute;
+  top: 8%;
+  right: 25%;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+}
+#orderDataArea .closeBtn button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 22.5px;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+#orderDataArea .closeBtn button img {
+  margin: 0 auto;
+  width: 22px;
+  height: 22px;
+}
+#orderDataArea .closeBtn button:hover {
+  transform: scale(1.1) translate(-50%, -50%);
+}
+#orderDataArea .backBtn {
+  position: absolute;
+  top: 8%;
+  left: 31%;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+}
+#orderDataArea .backBtn button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 22.5px;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+#orderDataArea .backBtn button img {
+  margin: 0 auto;
+  width: 35px;
+  height: 35px;
+}
+#orderDataArea .backBtn button:hover {
+  transform: scale(1.1) translate(-50%, -50%);
+}
+
+#orderSuccess {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  background: linear-gradient(to bottom, rgba(21, 21, 21, 0.65), rgba(68, 68, 68, 0.65));
+  backdrop-filter: blur(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#orderSuccess.show {
+  opacity: 1;
+  visibility: visible;
+}
+#orderSuccess .orderSuccessPanel {
+  padding: 40px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  height: 560px;
+  opacity: 1;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#orderSuccess .orderSuccessPanel img {
+  width: 200px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.8s ease-in forwards;
+}
+#orderSuccess .orderSuccessPanel .orderSuccessText {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#orderSuccess .orderSuccessPanel .orderSuccessText .title {
+  font-family: "Noto Sans TC";
+  font-size: 2.5rem;
+  color: #6B6B6B;
+}
+#orderSuccess .orderSuccessPanel .orderSuccessText .text {
+  font-family: "Noto Sans TC";
+  font-size: 2rem;
+  color: #6B6B6B;
+}
+#orderSuccess .orderSuccessPanel .orderNumber {
+  font-family: "Mulish";
+  font-size: 64px;
+  color: #000000;
+  font-weight: 800;
+}
+#orderSuccess .orderSuccessPanel .orderTrackBtn {
+  position: relative;
+  font-family: "Noto Sans TC";
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+#orderSuccess .orderSuccessPanel .orderTrackBtn a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  /* 初始寬度為 0 */
+  height: 2px;
+  background-color: #000;
+  transition: width 0.2s ease;
+  /* 添加過渡效果 */
+}
+#orderSuccess .orderSuccessPanel .orderTrackBtn a:hover::after {
+  width: 100%;
+  /* 當滑鼠移到標題時，底線展開至全寬 */
+}
+#orderSuccess .reminderText {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Noto Sans TC";
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+#orderSuccess .closeBtn {
+  position: absolute;
+  top: 12%;
+  right: 24%;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+}
+#orderSuccess .closeBtn button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 22.5px;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+#orderSuccess .closeBtn button img {
+  margin: 0 auto;
+  width: 22px;
+  height: 22px;
+}
+#orderSuccess .closeBtn button:hover {
+  transform: scale(1.1) translate(-50%, -50%);
 }/*# sourceMappingURL=style.css.map */

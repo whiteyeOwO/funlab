@@ -60,6 +60,7 @@ a {
   left: 0;
   width: 100%;
   z-index: 1000;
+  transition: transform 0.3s ease-in-out;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,6 +68,12 @@ a {
   font-family: "Mulish";
   font-size: 1rem;
   font-weight: 800;
+}
+#topBar.nav-visible {
+  transform: translateY(0);
+}
+#topBar.nav-hidden {
+  transform: translateY(-100%);
 }
 #topBar .logo {
   min-width: 100px;
@@ -106,6 +113,8 @@ a {
   transition: color 0.2s;
 }
 #topBar .navigation a:hover::after {
+  font-family: "Noto Sans TC";
+  font-weight: 600;
   color: #000000;
 }
 #topBar .navigation a:hover {

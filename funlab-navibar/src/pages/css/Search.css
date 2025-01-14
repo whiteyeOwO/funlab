@@ -53,8 +53,18 @@ a {
 
 /* RESET  END*/
 /*標題*/
+header .page-title {
+  font-family: "Notable";
+  color: #5082FF;
+  font-size: 6rem;
+  text-align: center;
+  margin: 160px 0 0 0;
+}
+
 section.h2 {
-  padding: 300px;
+  font-family: "Noto Sans TC";
+  padding-top: 20px;
+  padding-bottom: 60px;
   display: flex;
   /* Use flexbox */
   flex-direction: column;
@@ -62,15 +72,6 @@ section.h2 {
   align-items: center;
   /* Center-align all items horizontally */
   /*訂單查詢區*/
-}
-section.h2 h2 {
-  padding: 10px 200px;
-}
-section.h2 h2 img {
-  display: block;
-  margin: 0 auto;
-  /* Center image */
-  width: 30vw;
 }
 section.h2 .search {
   display: block;
