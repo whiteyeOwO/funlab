@@ -124,6 +124,7 @@
                 font-weight: $font-weight-bold;
             }
             p{
+                margin-top: 10px;
                 font-family: $font-family-ch;
                 font-size: $font-size-22;
                 color: $color-sub-black;
@@ -1052,6 +1053,8 @@
     .btnAlign{
         margin-top: 10%;
         display: flex;
+        width: 415px;
+        justify-content: space-between;
     }
 
     .orderDownloadBtn {
@@ -1082,7 +1085,7 @@
     }
 
     .orderMainBtn{
-        margin: 0 20px;
+        margin: 0 10px;
         width: 200px;
         height: 60px;
 
@@ -1122,7 +1125,7 @@
     .closeBtn {
         width: 46px;
         height: 46px;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -70%);
 
         button {
             cursor: pointer;
@@ -1139,7 +1142,7 @@
             }
 
             &:hover {
-                transform: scale(1.1) translate(-50%, -50%) ;
+                transform: scale(1.1) translate(-50%, -70%) ;
             }
         }
     }
@@ -1148,7 +1151,7 @@
         margin-top: 60%;
         width: 46px;
         height: 46px;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -80%);
 
         button {
             cursor: pointer;
@@ -1165,7 +1168,7 @@
             }
 
             &:hover {
-                transform: scale(1.1) translate(-50%, -50%);
+                transform: scale(1.1) translate(-50%, -80%);
             }
         }
     }

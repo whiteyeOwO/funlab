@@ -41,7 +41,7 @@ const Hint = ({ isVisible, onClose }) => {
     };
 
     const handleBackgroundClick = (e) => {
-        if (e.target.id === "hintArea" && currentStep === 4) {
+        if (e.target.id === "hintArea") {
             onClose();
         }
     };

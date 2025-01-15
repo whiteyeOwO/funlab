@@ -493,16 +493,16 @@ function DIY() {
                         <p className='shareBigText'>快將結果分享至</p>
                         <div className='shareBtnDetail'>
                             <div className='fbBtn'>
-                                <a href="https://zh-tw.facebook.com/"><img src="images/icon/icon-fb-share.svg" alt="" /></a>
+                                <a href="https://zh-tw.facebook.com/" target="_blank"><img src="images/icon/icon-fb-share.svg" alt="" /></a>
                             </div>
                             <div className='igBtn'>
-                                <a href="https://www.instagram.com/"><img src="images/icon/icon-ig-share.svg" alt="" /></a>
+                                <a href="https://www.instagram.com/" target="_blank"><img src="images/icon/icon-ig-share.svg" alt="" /></a>
                             </div>
                             <div className='XBtn'>
-                                <a href="https://x.com/"><img src="images/icon/icon-X-share.svg" alt="" /></a>
+                                <a href="https://x.com/" target="_blank"><img src="images/icon/icon-X-share.svg" alt="" /></a>
                             </div>
                             <div className='threadBtn'>
-                                <a href="https://threads.net/"><img src="images/icon/icon-thread-share.svg" alt="" /></a>
+                                <a href="https://threads.net/" target="_blank"><img src="images/icon/icon-thread-share.svg" alt="" /></a>
                             </div>
                         </div>
                     </div>
