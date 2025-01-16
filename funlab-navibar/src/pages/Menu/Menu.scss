@@ -91,16 +91,17 @@ html {
             transform: rotateZ(5deg);
         }
 
-        &:hover::before{
+        &:hover::before {
             opacity: 1;
         }
+
         &::before {
             content: '';
             position: absolute;
             opacity: 0;
             top: 50%;
             left: 50%;
-            width: 70%;         
+            width: 70%;
             height: 70%;
             background: rgba(179, 199, 253, 0.7);
             border-radius: 50%;
@@ -116,7 +117,7 @@ html {
         }
     }
 
-// Product TEXT
+    // Product TEXT
     .drinkText {
         position: relative;
         text-align: center;
@@ -153,4 +154,38 @@ html {
         font-size: $font-size-16;
         position: relative;
     }
+}
+
+// 裝飾decor
+
+
+// 黃線條
+.graph-1 {
+    position: absolute;
+    top: 40%;
+    left: 2%;
+    width: 13%;
+    rotate: -10deg;
+    z-index: -10;
+}
+
+// 黃卷
+.graph-2 {
+    position: absolute;
+    top: 115%;
+    right: 5%;
+    width: 6%;
+    z-index: -10;
+
+}
+
+// 
+.graph-3 {
+    position: absolute;
+    top: 130%;
+    right: 20%;
+    width: 15%;
+    rotate: 10deg;
+    z-index: -10;
+
 }
