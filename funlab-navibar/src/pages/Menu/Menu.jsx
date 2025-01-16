@@ -8,7 +8,7 @@ import "./Menu.scss";
 
 export default function Menu() {
     return (
-        <div>
+        <div className="menu-section">
             <h1 className="page-title"><GSReveal from="top"> Menu </GSReveal> </h1>
             <Tab />
             {/* 裝飾 */}

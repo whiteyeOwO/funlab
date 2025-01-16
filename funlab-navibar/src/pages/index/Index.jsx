@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef,lazy, Suspense } from 'react';
+import React, { useEffect, useState, useRef, lazy, Suspense } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -20,6 +20,16 @@ function Index() {
 
     const circleWrapperRef = useRef(null);
     const imgContainerRef = useRef(null);
+
+    const marqueeContent = (
+        <>
+            <p>放心好喝又過癮</p>
+            <img src="images/icon/graph-smile .svg" alt="smile icon" />
+            <p>放飲</p>
+            <img src="images/icon/graph-Heart.svg" alt="heart icon 1" />
+            <img src="images/icon/graph-Heart.svg" alt="heart icon 2" />
+        </>
+    );
 
     useEffect(() => {
 
@@ -51,8 +61,8 @@ function Index() {
     }, []);
 
     return (
-        <> 
-            <SubNavigation/>
+        <>
+            <SubNavigation />
             {/* 主要內容區 */}
             <main>
                 <section id="index-banner">
@@ -85,52 +95,24 @@ function Index() {
                         </div>
                     </div>
                     <Suspense>
-                    <DrinkCarousel/>
+                        <DrinkCarousel />
                     </Suspense>
                 </section>
 
                 <div id="index-Marquee">
-                    <MarqueeEffect className="mt-24" pauseOnHover speed={80}>
-                        <div className="marquee">
-                            <p>放心好喝又過癮</p>
-                            <img src="images/icon/graph-smile .svg" alt="" />
-                            <p>放飲</p>
-                            <img src="images/icon/graph-Heart.svg" alt="" />
-                            <img src="images/icon/graph-Heart.svg" alt="" />
-                        </div>
-                        <div className="marquee">
-                            <p>放心好喝又過癮</p>
-                            <img src="images/icon/graph-smile .svg" alt="" />
-                            <p>放飲</p>
-                            <img src="images/icon/graph-Heart.svg" alt="" />
-                            <img src="images/icon/graph-Heart.svg" alt="" />
-                        </div>
-                        <div className="marquee">
-                            <p>放心好喝又過癮</p>
-                            <img src="images/icon/graph-smile .svg" alt="" />
-                            <p>放飲</p>
-                            <img src="images/icon/graph-Heart.svg" alt="" />
-                            <img src="images/icon/graph-Heart.svg" alt="" />
-                        </div>
-                        <div className="marquee">
-                            <p>放心好喝又過癮</p>
-                            <img src="images/icon/graph-smile .svg" alt="" />
-                            <p>放飲</p>
-                            <img src="images/icon/graph-Heart.svg" alt="" />
-                            <img src="images/icon/graph-Heart.svg" alt="" />
-                        </div>
-                        <div className="marquee">
-                            <p>放心好喝又過癮</p>
-                            <img src="images/icon/graph-smile .svg" alt="" />
-                            <p>放飲</p>
-                            <img src="images/icon/graph-Heart.svg" alt="" />
-                            <img src="images/icon/graph-Heart.svg" alt="" />
-                        </div>
+                    <MarqueeEffect className="mt-24" pauseOnHover={true} speed={80}>
+                        {Array(5) // 動態生成 5 次相同結構
+                            .fill(0)
+                            .map((_, index) => (
+                                <div className="marquee" key={index}>
+                                    {marqueeContent}
+                                </div>
+                            ))}
                     </MarqueeEffect>
                 </div>
 
                 <section id="index-feature">
-                    <PhotoOverlay featureOffset={featureOffset}  debug={true} />
+                    <PhotoOverlay featureOffset={featureOffset} debug={true} />
                     <div className="scroll-container">
                         <div className="sticky-content" >
                             <img className='graph1' src="images/icon/graph-pinkBall.svg" alt="" />
@@ -194,7 +176,7 @@ function Index() {
 
                 <section id="index-DIY">
                     <WaveScroll DIYOffset={DIYOffset} targetSelectors={['.wave', '#DIYContent']} />
-                    <img className='whiteWave' src="images/index/graph-whiteWaves.svg" alt="" />
+                    {/* <img className='whiteWave' src="images/index/graph-whiteWaves.svg" alt="" /> */}
                     <img className='wave' src="images/index/graph-waves.svg" alt="" />
                     <div id="DIYContent">
                         <header className="title">
@@ -204,32 +186,32 @@ function Index() {
                             </GSReveal>
                         </header>
                         {/* <GSReveal from='bottom'> */}
-                            <img className='hotDrink1' src="images/index/hotDrink/hotDrink1.png" alt="" />
-                            <img className='hotDrink2' src="images/index/hotDrink/hotDrink2.png" alt="" />
+                        <img className='hotDrink1' src="images/index/hotDrink/hotDrink1.png" alt="" />
+                        <img className='hotDrink2' src="images/index/hotDrink/hotDrink2.png" alt="" />
                         {/* </GSReveal> */}
                         {/* <GSReveal from='right'> */}
-                            <div className="content">
-                                <p>1. Make</p>
-                                <img src="images/icon/icon-arrowYellow.svg" alt="" />
-                                <p>2. share</p>
-                                <img src="images/icon/icon-arrowYellow.svg" alt="" />
-                                <p>3. drink</p>
-                            </div>
-                            <div className='DIYButton'>
-                                <Link to="/diy">製作專屬飲品</Link>
-                                <img src="images/funLogo.svg" alt="" />
-                            </div>
+                        <div className="content">
+                            <p>1. Make</p>
+                            <img src="images/icon/icon-arrowYellow.svg" alt="" />
+                            <p>2. share</p>
+                            <img src="images/icon/icon-arrowYellow.svg" alt="" />
+                            <p>3. drink</p>
+                        </div>
+                        <div className='DIYButton'>
+                            <Link to="/diy">製作專屬飲品</Link>
+                            <img src="images/funLogo.svg" alt="" />
+                        </div>
                         {/* </GSReveal> */}
                     </div>
 
                 </section>
 
                 <section id="index-dropText">
-                <Suspense>
-                    <MatterComponent />
-                </Suspense>
+                    <Suspense>
+                        <MatterComponent />
+                    </Suspense>
                 </section>
-                <Footer/>
+                <Footer />
             </main>
 
             {/* 頁尾區 */}

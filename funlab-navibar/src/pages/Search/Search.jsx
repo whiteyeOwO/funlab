@@ -23,27 +23,29 @@ export default function Search() {
 
     return (
         <>
-            <header>
-                <h1 className="page-title">
-                    <GSReveal from="top">search</GSReveal>
-                </h1>
-            </header>
-            <section className="h2">
-                <div className="search">
-                    <h4>手機號碼</h4>
-                    <input
-                        className="input"
-                        type="text"
-                        placeholder="請輸入手機號碼，不需加空格、「-」或「( )」。"
-                        value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}
-                    />
-                </div>
-                <button type="button" className="submit" onClick={handleSubmit}>
-                    查詢
-                </button>
-            </section>
-            <Footer />
+            <main className="search-main">
+                <header>
+                    <h1 className="page-title">
+                        <GSReveal from="top">search</GSReveal>
+                    </h1>
+                </header>
+                <section className="h2">
+                    <div className="search">
+                        <h4>手機號碼</h4>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="請輸入手機號碼，不需加空格、「-」或「( )」。"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                        />
+                    </div>
+                    <button type="button" className="submit" onClick={handleSubmit}>
+                        查詢
+                    </button>
+                </section>
+                <Footer />
+            </main>
         </>
     );
 }

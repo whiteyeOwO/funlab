@@ -312,7 +312,7 @@ function Store() {
                     <figure className="graph-4"><img src="images/icon/graph-blueLine.svg" alt="" /></figure>
                 </div>
 
-                <Footer></Footer>
+                <Footer/>
             </main>
 
 

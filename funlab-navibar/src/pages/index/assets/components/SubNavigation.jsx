@@ -18,7 +18,7 @@ function SubNavigation() {
             <ul className="subMenu">
                 <li><a onClick={(e) => scrollToSection(e, 'index-banner')}>UP</a></li>
                 <li><a onClick={(e) => scrollToSection(e, 'index-drink')}>MENU</a></li>
-                <li><a onClick={(e) => scrollToSection(e, 'index-Marquee')}>ABOUT</a></li>
+                <li><a onClick={(e) => scrollToSection(e, 'index-feature')}>ABOUT</a></li>
                 <li><a onClick={(e) => scrollToSection(e, 'index-DIY')}>FUN LAB</a></li>
                 <li><a onClick={(e) => scrollToSection(e, 'footer')}>DOWN</a></li>
             </ul>

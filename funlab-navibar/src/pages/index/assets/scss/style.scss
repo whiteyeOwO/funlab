@@ -84,6 +84,7 @@ html {
             overflow: hidden;
             border-radius: 50%;
             z-index: 5;
+            will-change: transform, scale;
         }
 
         .circle-image {
@@ -495,6 +496,7 @@ html {
     .marquee {
         display: flex;
         margin-right: 20px;
+        will-change: transform;
 
         p {
             font-family: $font-family-ch;
@@ -699,6 +701,7 @@ html {
     height: 300vh;
     background: linear-gradient(to bottom, white 80%, #DAE4FF 20%);
     ;
+    overflow: hidden;
 
     .wave {
         position: absolute;
@@ -707,11 +710,11 @@ html {
         /* 控制過渡時間和效果 */
     }
 
-    .whiteWave {
-        position: absolute;
-        top: -7%;
-        z-index: -1;
-    }
+    // .whiteWave {
+    //     position: absolute;
+    //     top: -7%;
+    //     z-index: -1;
+    // }
 
     #DIYContent {
         width: 100%;
@@ -824,7 +827,7 @@ html {
 }
 
 #index-dropText {
-    height: 100vh;
+    height: 50vh;
     position: relative;
     width: 100%;
     z-index: 3;
@@ -833,7 +836,11 @@ html {
     .matter-box {
         overflow: hidden;
         width: 100%;
-        height: 100vh;
+        height: 50vh;
+    }
+
+    .dm-matter-elem, .dm-matter-elem-pill {
+        will-change: transform, opacity;
     }
 
     .tag1 {

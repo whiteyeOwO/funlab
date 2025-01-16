@@ -95,7 +95,7 @@ export default function Order() {
     }, [orderStatus]);
 
     return (
-        <main>
+        <main className="order-main">
             <header className="title">
                 <h1><GSReveal from="top">ORDER</GSReveal></h1>
             </header>

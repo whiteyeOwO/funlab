@@ -250,7 +250,7 @@ const Ingred = () => {
                 <BubbleAnimation />
             </div>
 
-            <header>
+            <header className="drinkheader">
                 <h1 className="page-title"> <GSReveal from="top">INGERDIENT</GSReveal> </h1>
             </header>
             {/*分組頁籤 迅速傳送到該區 */}

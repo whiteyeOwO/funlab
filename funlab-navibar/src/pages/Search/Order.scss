@@ -6,10 +6,13 @@
 html {
     scroll-behavior: smooth;
     font-family: $font-family-ch;
-    background-image: linear-gradient(white 60%, #D9E2FB 100%);
 }
 
-/* Title Section */
+.order-main{
+    
+    background-image: linear-gradient(white 60%, #D9E2FB 100%);
+
+    /* Title Section */
 .title {
     h1 {
         padding-top: 20vh;
@@ -283,4 +286,5 @@ table {
     :active {
     transition: 1s ease-in-out;
     }
+}
 }

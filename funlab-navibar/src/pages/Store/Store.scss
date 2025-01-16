@@ -4,18 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap');
 
 
-// body {
-//     background-image: linear-gradient(white 80%, #D9E2FB 100%);
-// }
-
-#store-main{
-    background-image: linear-gradient(white 60%, #D9E2FB 100%);
-}
-
-
-
 /* 主要內容區 */
-main {
+#store-main {
+    background-image: linear-gradient(white 60%, #D9E2FB 100%);
 
     // banner區
     #store-banner {

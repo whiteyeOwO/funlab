@@ -5,187 +5,193 @@
 html {
     scroll-behavior: smooth;
     font-family: $font-family-ch;
+}
+
+.menu-section {
     background-image: linear-gradient(white 60%, #D9E2FB 100%);
-}
+    /*頁面標題*/
+    .page-title {
+        padding-top: 20vh;
+        font-family: $font-family-en-title;
+        color: $color-primary-blue;
+        font-size: $font-size-96;
+        text-align: center;
+        margin: 4vh;
+    }
 
-/*頁面標題*/
-.page-title {
-    padding-top: 20vh;
-    font-family: $font-family-en-title;
-    color: $color-primary-blue;
-    font-size: $font-size-96;
-    text-align: center;
-    margin: 4vh;
-}
+    .listbox {
+        padding: 8vh 0;
+    }
 
-.listbox {
-    padding: 8vh 0;
-}
+    /*分組頁籤*/
+    .drinkListTab {
+        padding: 0 4vw;
+        font-family: $font-family-ch ;
 
-/*分組頁籤*/
-.drinkListTab {
-    padding: 0 4vw;
-    font-family: $font-family-ch ;
+        ul {
+            display: flex;
+            justify-content: center;
 
-    ul {
-        display: flex;
-        justify-content: center;
-
-        li {
-            background-color: #ffffff;
-            border: 3px solid $color-sub-lightGray;
-            border-radius: 50px;
-            margin: 10px 20px;
-            cursor: pointer;
-
-            .tab-btn {
-                font-family: $font-family-ch;
-                font-weight: 800;
-                font-size: $font-size-16;
-                padding: 10px 20px;
-                background: transparent;
-                border: none;
+            li {
+                background-color: #ffffff;
+                border: 3px solid $color-sub-lightGray;
+                border-radius: 50px;
+                margin: 10px 20px;
                 cursor: pointer;
 
-                &.active {
-                    background-color: $color-primary-blue;
-                    border-radius: 50px;
-                    color: #ffffff;
+                .tab-btn {
+                    font-family: $font-family-ch;
+                    font-weight: 800;
+                    font-size: $font-size-16;
+                    padding: 10px 20px;
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+
+                    &.active {
+                        background-color: $color-primary-blue;
+                        border-radius: 50px;
+                        color: #ffffff;
+                    }
                 }
             }
         }
     }
-}
 
-/*分組商品區*/
-.productlist {
-    font-family: $font-family-ch;
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    z-index: 995;
-    padding-bottom: 10vh;
-}
-
-.product {
-    width: 20vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    transition: all 0.4s ease-in-out;
-
-    &:hover {
-        opacity: 0.9;
+    /*分組商品區*/
+    .productlist {
+        font-family: $font-family-ch;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        z-index: 995;
+        padding-bottom: 10vh;
     }
 
-    .drinkImage {
-        width: 100%;
+    .product {
+        width: 20vw;
         height: fit-content;
-        position: relative;
-        display: inline-block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         transition: all 0.4s ease-in-out;
-
-        &:hover {
-            transform: rotateZ(5deg);
-        }
-
-        &:hover::before {
-            opacity: 1;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            opacity: 0;
-            top: 50%;
-            left: 50%;
-            width: 70%;
-            height: 70%;
-            background: rgba(179, 199, 253, 0.7);
-            border-radius: 50%;
-            filter: blur(12.5px);
-            -webkit-transition: width 1s, height 1s, margin 1s;
-            -moz-transition: width 1s, height 1s, margin 1s;
-            -ms-transition: width 1s, height 1s, margin 1s;
-            transition: width 1s, height 1s, margin 1s;
-            z-index: -1;
-            transition: all 0.2s ease-in-out;
-            transform: translate(-50%, -50%);
-            /* Center and maintain scale */
-        }
-    }
-
-    // Product TEXT
-    .drinkText {
-        position: relative;
-        text-align: center;
-        transition: opacity 0.5s ease;
 
         &:hover {
             opacity: 0.9;
         }
 
-        h2 {
-            display: inline-block;
+        .drinkImage {
+            width: 100%;
+            height: fit-content;
             position: relative;
-            font-size: $font-size-24;
-            font-weight: 500;
-            z-index: 2;
+            display: inline-block;
+            transition: all 0.4s ease-in-out;
+
+            &:hover {
+                transform: rotateZ(5deg);
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                opacity: 0;
+                top: 50%;
+                left: 50%;
+                width: 70%;
+                height: 70%;
+                background: rgba(179, 199, 253, 0.7);
+                border-radius: 50%;
+                filter: blur(12.5px);
+                -webkit-transition: width 1s, height 1s, margin 1s;
+                -moz-transition: width 1s, height 1s, margin 1s;
+                -ms-transition: width 1s, height 1s, margin 1s;
+                transition: width 1s, height 1s, margin 1s;
+                z-index: -1;
+                transition: all 0.2s ease-in-out;
+                transform: translate(-50%, -50%);
+                /* Center and maintain scale */
+            }
         }
 
-        .under {
-            background-color: #5082ff40;
-            position: absolute;
-            bottom: 0;
-            left: -10%;
-            width: 120%;
-            height: 14px;
-            z-index: -1;
+        // Product TEXT
+        .drinkText {
+            position: relative;
+            text-align: center;
+
+
+            &:hover {
+                .under{
+                    opacity: 0.9;
+                }
+            }
+
+            h2 {
+                display: inline-block;
+                position: relative;
+                font-size: $font-size-24;
+                font-weight: 500;
+                z-index: 2;
+            }
+
+            .under {
+                background-color: #5082ff40;
+                position: absolute;
+                bottom: 0;
+                left: -10%;
+                width: 120%;
+                height: 14px;
+                z-index: -1;
+                opacity: 0;
+                transition: all 0.2s ease;
+            }
+        }
+
+        .drinkInfo {
+            padding: 2vh 2vw 0;
+            font-family: $font-family-ch;
+            text-align: center;
+            padding-top: 2vh;
+            font-size: $font-size-16;
+            position: relative;
         }
     }
 
-    .drinkInfo {
-        padding: 2vh 2vw 0;
-        font-family: $font-family-ch;
-        text-align: center;
-        padding-top: 2vh;
-        font-size: $font-size-16;
-        position: relative;
+    // 裝飾decor
+
+
+    // 黃線條
+    .graph-1 {
+        position: absolute;
+        top: 40%;
+        left: 2%;
+        width: 13%;
+        rotate: -10deg;
+        z-index: -10;
     }
-}
 
-// 裝飾decor
+    // 黃卷
+    .graph-2 {
+        position: absolute;
+        top: 115%;
+        right: 5%;
+        width: 6%;
+        z-index: -10;
 
+    }
 
-// 黃線條
-.graph-1 {
-    position: absolute;
-    top: 40%;
-    left: 2%;
-    width: 13%;
-    rotate: -10deg;
-    z-index: -10;
-}
+    // 
+    .graph-3 {
+        position: absolute;
+        top: 130%;
+        right: 20%;
+        width: 15%;
+        rotate: 10deg;
+        z-index: -10;
 
-// 黃卷
-.graph-2 {
-    position: absolute;
-    top: 115%;
-    right: 5%;
-    width: 6%;
-    z-index: -10;
-
-}
-
-// 
-.graph-3 {
-    position: absolute;
-    top: 130%;
-    right: 20%;
-    width: 15%;
-    rotate: 10deg;
-    z-index: -10;
-
+    }
 }

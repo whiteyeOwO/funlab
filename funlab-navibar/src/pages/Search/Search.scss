@@ -11,77 +11,80 @@
 html {
     scroll-behavior: smooth;
     font-family: $font-family-ch;
+}
+
+.search-main{
     background-image: linear-gradient(white 60%, #D9E2FB 100%);
-}
-
-header {
-    .page-title {
-        font-family: $font-family-en-title;
-        color: $color-primary-blue;
-        font-size: $font-size-96;
-        text-align: center;
-    }
-}
-
-section.h2 {
-    font-family: $font-family-ch ;
-    padding-top: 20px;
-    padding-bottom: 60px;
-    display: flex;
-    /* Use flexbox */
-    flex-direction: column;
-    /* Stack children vertically */
-    align-items: center;
-    /* Center-align all items horizontally */
-
-
-    /*訂單查詢區*/
-    .search {
-        display: block;
-        width: 30vw;
-        font-size: $font-size-20;
-        font-family: $font-family-ch;
-        font-weight: 600;
-        padding: 40px 0;
-
-        h4 {
-            padding: 10px 0;
+    header {
+        .page-title {
+            font-family: $font-family-en-title;
+            color: $color-primary-blue;
+            font-size: $font-size-96;
+            text-align: center;
+            margin-top: 160px;
         }
-
-        .input {
-            padding: 0 10px;
+    }
+    
+    section.h2 {
+        font-family: $font-family-ch ;
+        padding-top: 20px;
+        padding-bottom: 60px;
+        display: flex;
+        /* Use flexbox */
+        flex-direction: column;
+        /* Stack children vertically */
+        align-items: center;
+        /* Center-align all items horizontally */
+    
+    
+        /*訂單查詢區*/
+        .search {
+            display: block;
             width: 30vw;
-            height: 5vh;
-            border: 2px solid $color-sub-lightGray;
-            border-radius: 8px;
+            font-size: $font-size-20;
             font-family: $font-family-ch;
+            font-weight: 600;
+            padding: 40px 0;
+    
+            h4 {
+                padding: 10px 0;
+            }
+    
+            .input {
+                padding: 0 10px;
+                width: 30vw;
+                height: 5vh;
+                border: 2px solid $color-sub-lightGray;
+                border-radius: 8px;
+                font-family: $font-family-ch;
+            }
+    
+            &::placeholder {
+                font-family: $font-family-ch;
+                color: #61646B;
+            }
+    
         }
-
-        &::placeholder {
-            font-family: $font-family-ch;
-            color: #61646B;
+    
+        .submit {
+            margin-bottom: 5vh;
+            border: 2px solid;
+            font-size: $font-size-16;
+            font-weight: bold;
+            padding: 8px;
+            width: 6vw;
+            border-radius: 50px;
+            background-color: $color-primary-blue;
+            color: white;
+            cursor: pointer;
+            transition: 0.5s;
         }
-
+    
+        .submit:hover {
+            background-color: $color-primary-white;
+            color: $color-primary-blue;
+            border: 2px solid $color-primary-blue;
+        }
+    
     }
-
-    .submit {
-        margin-bottom: 5vh;
-        border: 2px solid;
-        font-size: $font-size-16;
-        font-weight: bold;
-        padding: 8px;
-        width: 6vw;
-        border-radius: 50px;
-        background-color: $color-primary-blue;
-        color: white;
-        cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .submit:hover {
-        background-color: $color-primary-white;
-        color: $color-primary-blue;
-        border: 2px solid $color-primary-blue;
-    }
-
 }

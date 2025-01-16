@@ -18,7 +18,7 @@ html {
 }
 
 /*Page-title*/
-header {
+.drinkheader {
     .page-title {
         font-family: $font-family-en-title;
         color: $color-primary-blue;
@@ -67,13 +67,12 @@ header {
 }
 
 /*內容區*/
-main.ingredient-list {
+.ingredient-list {
     display: flex;
     align-items: center;
     flex-direction: column;
-}
 
-.tea,
+    .tea,
 .milk,
 .fruit {
     display: grid;
@@ -243,12 +242,5 @@ main.ingredient-list {
         line-height: 28px;
     }
 }
-
-.up-icon {
-    img {
-        width: 10px;
-        height: 10px;
-
-    }
 }
 
