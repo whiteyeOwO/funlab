@@ -41,7 +41,7 @@ const Hint = ({ isVisible, onClose }) => {
     };
 
     const handleBackgroundClick = (e) => {
-        if (e.target.id === "hintArea") {
+        if (e.target.id === "hintArea" || e.target.className === "hintClose") {
             onClose();
         }
     };
@@ -51,6 +51,7 @@ const Hint = ({ isVisible, onClose }) => {
     return (
         <div id="hintArea" onClick={handleBackgroundClick}>
             <div className="popup-content">
+                <img className='hintClose' onClick={handleBackgroundClick} src="images/icon/icon-close.svg" alt="" />
                 {/* 動態顯示當前步驟內容 */}
                 <div className="stepText">
                     <h3>{steps[currentStep - 1].title}</h3>

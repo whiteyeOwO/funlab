@@ -116,6 +116,14 @@
         justify-content: space-around;
         flex-direction: column;
 
+        .hintClose{
+            position: absolute;
+            top: 6%;
+            right: 5%;
+            width: 30px;
+            cursor: pointer;
+        }
+
         .stepText{
             h3{
                 font-family: $font-family-ch;
@@ -155,17 +163,28 @@
                 cursor: pointer;
             }
         }
-    
-        // .close-hint {
-        //     position: absolute;
-        //     bottom: 10%;
-        //     right: 5%;
-        //     font-family: $font-family-ch;
-        //     font-size: 1rem;
-        //     color: $color-sub-gray;
-        // }
     }
 }
+
+// .alertBox{
+//     display: none;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     z-index: 1500;
+//     transform: translate(-50%,-50%);
+//     width: 200px;
+//     height: 100px;
+//     background-color: white;
+//     border: 6px solid $color-primary-blue;
+//     padding: 20px;
+//     p{
+//         font-family: $font-family-ch;
+//         font-size: $font-size-18;
+//         font-weight: 800;
+
+//     }
+// }
 
 #DIY {
     position: relative;

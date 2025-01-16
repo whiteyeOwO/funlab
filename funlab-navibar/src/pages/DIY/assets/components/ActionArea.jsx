@@ -96,7 +96,7 @@ const ActionArea = ({
                 </div>
             </div>
 
-            {/* 四個獨立的輪播，使用原本的 display 控制 */}
+            {/* 四個獨立的輪播，使用 display 控制 */}
             <div className={`carousel carousel1`} style={{ display: currentTab === 'tea' ? 'block' : 'none' }}>
                 <Slider key={currentTab} {...slickSettings}>
                     {teaItems.map(item => (

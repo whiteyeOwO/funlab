@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 const DrinkDisplay = forwardRef(({ liquidGradient, selectedToppings }, ref) => {
+
     return (
         <div id="showDrinkArea">
             <img src="images/DIY/showdrinkbackground.svg" alt="" />

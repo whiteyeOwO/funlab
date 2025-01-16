@@ -27,6 +27,7 @@ function DIY() {
     const [showOrderDataArea, setShowOrderDataArea] = useState(false);
     const [showOrderSuccess, setShowOrderSuccess] = useState(false);
     const [isHintVisible, setIsHintVisible] = useState(true);
+    // const [showAlert, setShowAlert] = useState(false);
 
 
     // 订单相关状态
@@ -350,11 +351,25 @@ function DIY() {
         const milkPrice = selectedMilk?.price || 0;
         const toppingsPrice = selectedToppings.reduce((sum, item) => sum + item.price, 0);
         setTotalPrice(teaPrice + milkPrice + toppingsPrice);
+        // // 當配料數量超過三個時，顯示提示框
+        // if (selectedToppings.length > 3) {
+        //     setShowAlert(true);
+        // } else {
+        //     setShowAlert(false);
+        // }
     }, [selectedTea, selectedMilk, selectedToppings, currentTab]);
 
     return (
         <main>
             <Hint isVisible={isHintVisible} onClose={() => setIsHintVisible(false)} />
+            {/* {showAlert && (
+                <div className="alertBox" style={{
+                    display: showAlert ? 'block' : 'none', // 控制顯示與隱藏
+                }}>
+                    <p>配料不能超過三種喔！</p>
+                    <button onClick={() => setShowAlert(false)}>OK</button>
+                </div>
+            )} */}
             <section id='DIY' className={isFlashing ? 'flash' : ''}>
                 <img className="bg" src="images/DIY/gridbackground.svg" alt="" />
                 <section id="panel">
