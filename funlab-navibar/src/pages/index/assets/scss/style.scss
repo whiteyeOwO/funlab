@@ -763,6 +763,15 @@ html {
             top: 25%;
             left: 32%;
             transform: rotate(15deg);
+            z-index: 1;
+            &:hover {
+                animation: rotate-hotdirnk1 0.7s ease-in-out both;
+
+                span {
+                    animation: storm-hotdirnk1 0.7s ease-in-out both;
+                    animation-delay: 0.06s;
+                }
+            }
         }
 
         .hotDrink2 {
@@ -773,7 +782,15 @@ html {
             top: 45%;
             left: 28%;
             transform: rotate(-15deg);
-            z-index: -1;
+            z-index: 0;
+            &:hover {
+                animation: rotate-hotdirnk2 0.7s ease-in-out both;
+
+                span {
+                    animation: storm-hotdirnk2 0.7s ease-in-out both;
+                    animation-delay: 0.06s;
+                }
+            }
         }
 
         .content {

@@ -3,75 +3,6 @@
 @use "function" as *;
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Notable&family=Noto+Sans+TC:wght@100..900&display=swap');
 
-@keyframes flash {
-    0% {
-        filter: brightness(100%) saturate(100%);
-    }
-
-    50% {
-        filter: brightness(300%) saturate(50%);
-    }
-
-    100% {
-        filter: brightness(100%) saturate(100%);
-    }
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg) translate3d(0, 0, 0);
-    }
-
-    25% {
-        transform: rotate(3deg) translate3d(0, 0, 0);
-    }
-
-    50% {
-        transform: rotate(-3deg) translate3d(0, 0, 0);
-    }
-
-    75% {
-        transform: rotate(1deg) translate3d(0, 0, 0);
-    }
-
-    100% {
-        transform: rotate(0deg) translate3d(0, 0, 0);
-    }
-}
-
-@keyframes storm {
-    0% {
-        transform: translate3d(0, 0, 0) translateZ(0);
-    }
-
-    25% {
-        transform: translate3d(4px, 0, 0) translateZ(0);
-    }
-
-    50% {
-        transform: translate3d(-3px, 0, 0) translateZ(0);
-    }
-
-    75% {
-        transform: translate3d(2px, 0, 0) translateZ(0);
-    }
-
-    100% {
-        transform: translate3d(0, 0, 0) translateZ(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-      transform: translateY(10px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
 @property --val {
     syntax: "<integer>";
     inherits: true;
@@ -84,7 +15,7 @@
     initial-value: 0;
 }
 
-#hintArea{
+#hintArea {
     position: absolute;
     top: 0;
     left: 0;
@@ -99,6 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     /* 每個步驟的視窗 */
     .popup-content {
         position: relative;
@@ -116,7 +48,7 @@
         justify-content: space-around;
         flex-direction: column;
 
-        .hintClose{
+        .hintClose {
             position: absolute;
             top: 6%;
             right: 5%;
@@ -124,16 +56,18 @@
             cursor: pointer;
         }
 
-        .stepText{
+        .stepText {
             width: 100%;
             height: 30%;
-            h3{
+
+            h3 {
                 font-family: $font-family-ch;
                 font-size: 1.75rem;
                 color: $color-primary-blue;
                 font-weight: $font-weight-bold;
             }
-            p{
+
+            p {
                 margin-top: 10px;
                 font-family: $font-family-ch;
                 font-size: $font-size-22;
@@ -147,19 +81,20 @@
             height: 50%;
             display: flex;
         }
-    
+
         .step-image {
             width: 100%;
             height: auto;
         }
-    
-        .navigation-buttons{
+
+        .navigation-buttons {
             position: absolute;
             top: 50%;
             width: 95%;
             display: flex;
             justify-content: space-between;
-            button{
+
+            button {
                 background-color: transparent;
                 border: none;
                 cursor: pointer;
@@ -1071,7 +1006,7 @@
         }
     }
 
-    .btnAlign{
+    .btnAlign {
         margin-top: 10%;
         display: flex;
         width: 415px;
@@ -1105,7 +1040,7 @@
         }
     }
 
-    .orderMainBtn{
+    .orderMainBtn {
         margin: 0 10px;
         width: 200px;
         height: 60px;
@@ -1133,7 +1068,7 @@
         }
     }
 
-    .subBtnAlign{
+    .subBtnAlign {
         align-self: start;
         width: 46px;
         height: 50vh;
@@ -1163,7 +1098,7 @@
             }
 
             &:hover {
-                transform: scale(1.1) translate(-50%, -70%) ;
+                transform: scale(1.1) translate(-50%, -70%);
             }
         }
     }
@@ -1242,7 +1177,7 @@
         visibility: visible;
     }
 
-    .shareAlign{
+    .shareAlign {
         margin: 0 100px;
         width: 500px;
         height: 100vh;
@@ -1538,10 +1473,12 @@
                     font-size: $font-size-14;
                     color: #61646B;
                 }
-                optgroup{
+
+                optgroup {
                     font-family: $font-family-ch;
                 }
-                option{
+
+                option {
                     font-family: $font-family-ch;
                     font-size: $font-size-14;
                     color: #404040;
@@ -1568,10 +1505,12 @@
                 color: $color-primary-blue;
                 border: 2px solid $color-primary-blue;
             }
+
             &.disabled {
                 opacity: 0.5;
                 cursor: not-allowed;
             }
+
             &.active {
                 opacity: 1;
                 cursor: pointer;
@@ -1659,7 +1598,7 @@
         visibility: visible;
     }
 
-    .successAlign{
+    .successAlign {
         margin: 0 100px;
         width: 440px;
         height: 100vh;
@@ -1684,11 +1623,65 @@
         justify-content: space-between;
         align-items: center;
 
-        img {
+        .icon-animated {
             width: 200px;
-            opacity: 0;
-            transform: translateY(10px);
-            animation: fadeIn 0.8s ease-in forwards;
+            height: 200px;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+
+            &.in-view .circle {
+                fill: #60D154;
+                animation-fill-mode: forwards;
+                animation-name: circle-pulse;
+                animation-duration: 2s;
+                animation-iteration-count: 1;
+            }
+
+            &.in-view .tick {
+                width: 100%;
+                height: 100%;
+                transform: rotate(45deg) scale(0.8);
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+
+                svg {
+                    position: absolute;
+                    left: 50px;
+                    right: 0;
+                    top: 12px;
+                    bottom: 0;
+                    fill: #fff;
+                    width: 80px;
+                    height: 166px;
+                }
+
+                .tick-leg1 {
+                    fill: #fff;
+                    animation-fill-mode: forwards;
+                    animation-name: tick-swipe1;
+                    animation-duration: 0.5s;
+                    animation-iteration-count: 1;
+                    transform: scaleX(0);
+                    transform-origin: left bottom;
+                    opacity: 0;
+                }
+
+                .tick-leg2 {
+                    fill: #fff;
+                    animation-fill-mode: forwards;
+                    animation-name: tick-swipe2;
+                    animation-duration: 1s;
+                    animation-iteration-count: 1;
+                    transform: scaleY(0);
+                    transform-origin: right bottom;
+                    opacity: 0;
+                }
+            }
         }
 
         .orderSuccessText {

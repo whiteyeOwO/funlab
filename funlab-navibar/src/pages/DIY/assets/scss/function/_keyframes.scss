@@ -1,6 +1,3 @@
-@keyframes goToFunlabAnime{
-    100%{transform: rotate(360deg);}
-}
 
 //出現
 @keyframes show {
@@ -26,23 +23,114 @@
     }
 }
 
-//跑馬燈
-@keyframes marquee {
+// 訂單勾勾
+@keyframes tick-swipe1 {
     0% {
-        transform: translateX(0);
+		opacity: 0;
+    }
+    10% {
+		opacity: 0.5;
+    }
+    20% {
+		opacity: 1;
     }
 
+
     100% {
-        transform: translateX(-100%);
+		opacity: 1;
+    	transform: scaleX(1);
     }
 }
 
-@keyframes marquee2 {
+@keyframes tick-swipe2 {
+	40% {
+		opacity: 0;
+	}
+    47% {
+    	transform: scaleY(0.15);
+		opacity: 1;
+    }
+    100% {
+    	transform: scaleY(1);
+		opacity: 1;
+    }
+}
+
+@keyframes circle-pulse {
+    0%, 25%, 75%, 100% {
+    	transform: scale(1);
+    }
+    50% {
+    	transform: scale(1.05);
+    }
+}
+
+@keyframes flash {
     0% {
-        transform: translateX(0);
+        filter: brightness(100%) saturate(100%);
+    }
+
+    50% {
+        filter: brightness(300%) saturate(50%);
     }
 
     100% {
-        transform: translateX(-100%);
+        filter: brightness(100%) saturate(100%);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }

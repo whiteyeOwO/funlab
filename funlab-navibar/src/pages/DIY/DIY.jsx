@@ -312,7 +312,7 @@ function DIY() {
         phone: '',
         email: '',
         storeChoose: '', // 改為 storeChoose
-        pay: ''  
+        pay: ''
     });
 
     // 處理表單輸入
@@ -563,15 +563,15 @@ function DIY() {
                     <div className='orderForm'>
                         <div className='orderFormItem'>
                             <label htmlFor="username">姓名</label>
-                            <input type="text" name="username" id="username" title="姓名" placeholder="請輸入姓名" value={formData.username} required onChange={handleFormChange}/>
+                            <input type="text" name="username" id="username" title="姓名" placeholder="請輸入姓名" value={formData.username} required onChange={handleFormChange} />
                         </div>
                         <div className='orderFormItem'>
                             <label htmlFor="phone">手機</label>
-                            <input type="tel" name="phone" id="phone" title="手機" placeholder="0912-345678" value={formData.phone} required  onChange={handleFormChange}/>
+                            <input type="tel" name="phone" id="phone" title="手機" placeholder="0912-345678" value={formData.phone} required onChange={handleFormChange} />
                         </div>
                         <div className='orderFormItem'>
                             <label htmlFor="email">Email</label>
-                            <input type="email" name="email" id="email" title="email" placeholder="123@gmail.com" value={formData.email} required onChange={handleFormChange}/>
+                            <input type="email" name="email" id="email" title="email" placeholder="123@gmail.com" value={formData.email} required onChange={handleFormChange} />
                         </div>
                         <div className='orderFormItem'>
                             <label htmlFor="storeChoose">門市</label>
@@ -604,7 +604,7 @@ function DIY() {
                                 <option value="現金">現金</option>
                             </select>
                         </div>
-                        <input className={`submitBtn ${isFormValid() ? 'active' : 'disabled'}`} type="submit" name="submitBtn" id="submitBtn" value="送出" onClick={handleSubmitClick} disabled={!isFormValid()}/>
+                        <input className={`submitBtn ${isFormValid() ? 'active' : 'disabled'}`} type="submit" name="submitBtn" id="submitBtn" value="送出" onClick={handleSubmitClick} disabled={!isFormValid()} />
                     </div>
                 </div>
                 <div className='closeBtn'>
@@ -616,7 +616,20 @@ function DIY() {
             <section id='orderSuccess' className={showOrderSuccess ? 'show' : ''}>
                 <div className="successAlign">
                     <div className='orderSuccessPanel'>
-                        <img src="images/DIY/orderSuccess.svg" alt="" />
+                        <div className={`icon-animated ${showOrderSuccess ? 'in-view' : ''} icon-animated-tick`} tabIndex="-1">
+                            <svg className="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="50" />
+                            </svg>
+
+                            <div className="tick">
+                                <svg className="tick-leg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 52">
+                                    <polygon points="1,41 0,48 25,52 25,45" />
+                                </svg>
+                                <svg className="tick-leg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 52">
+                                    <polygon points="18,45 25,47 25,0 18,0" />
+                                </svg>
+                            </div>
+                        </div>
                         <div className='orderSuccessText'>
                             <h3 className='title'>送出成功</h3>
                             <p className='text'>取單編號</p>
