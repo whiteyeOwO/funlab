@@ -541,7 +541,7 @@ export default function Tab() {
                             {/*蜜凍珍珠奶 */}
                             <div className="product" title="蜜凍珍珠奶">
                                 <div className="drinkImage">
-                                    <img src="./images/menu/juice/蜜凍珍珠奶.webp" />
+                                    <img src="./images/menu/juice/honeyBubleTea.webp" />
                                 </div>
                                 <div className="drinkText">
                                     <h2>
@@ -557,7 +557,7 @@ export default function Tab() {
                             {/*珍愛百香綠 */}
                             <div className="product" title="passion">
                                 <div className="drinkImage">
-                                    <img src="./images/menu/juice/珍愛百香綠.webp" />
+                                    <img src="./images/menu/juice/passionGreen.webp" />
                                 </div>
 
 
@@ -575,7 +575,7 @@ export default function Tab() {
                             {/*粉Q檸檬四季春 */}
                             <div className="product" title="qlemon">
                                 <div className="drinkImage">
-                                    <img src="./images/menu/juice/粉Q檸檬四季春.webp" />
+                                    <img src="./images/menu/juice/lemonGreen.webp" />
                                 </div>
                                 <div className="drinkText">
                                     <h2>
@@ -590,7 +590,7 @@ export default function Tab() {
                             {/*椰果葡香烏龍 */}
                             <div className="product" title="orient">
                                 <div className="drinkImage">
-                                    <img src="./images/menu/juice/椰果葡香烏龍.webp" />
+                                    <img src="./images/menu/juice/grapeGreen.webp" />
                                 </div>
                                 <div className="drinkText">
                                     <h2>
@@ -605,7 +605,7 @@ export default function Tab() {
                             {/*莓果杏仁綠 */}
                             <div className="product" title="season">
                                 <div className="drinkImage">
-                                    <img src="./images/menu/juice/莓果杏仁綠.webp" />
+                                    <img src="./images/menu/juice/almondGreen.webp" />
                                 </div>
                                 <div className="drinkText">
                                     <h2>
@@ -620,7 +620,7 @@ export default function Tab() {
                             {/*酸梅沁青 */}
                             <div className="product" title="wuhe">
                                 <div className="drinkImage">
-                                    <img src="./images/menu/juice/酸梅沁青.webp" />
+                                    <img src="./images/menu/juice/plumGreen.webp" />
                                 </div>
                                 <div className="drinkText">
                                     <h2>

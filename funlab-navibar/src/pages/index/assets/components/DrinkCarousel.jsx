@@ -10,32 +10,32 @@ const DrinkCarousel = () => {
   const slides = [
     {
       bg: "images/index/hotDrink/no1-background.png",
-      mainImg: "images/menu/juice/珍愛百香綠.webp",
+      mainImg: "images/menu/juice/passionGreen.webp",
       title: "放飲之選，百香無可取代！",  // 加入對應的標題
       rank: "No.1"
     },
     {
       bg: "images/index/hotDrink/no2-background.png",
-      mainImg: "images/drink/plantmilk/plantmilk4.webp",
-      title: "榜單佳作 不容錯過！",
+      mainImg: "images/menu/juice/honeyBubleTea.webp",
+      title: "蜜凍珍珠奶喝出幸福感！",
       rank: "No.2"
     },
     {
       bg: "images/index/hotDrink/no3-background.png",
-      mainImg: "images/drink/milktea/milktea5.webp",
+      mainImg: "images/menu/milktea/redjadeo.webp",
       title: "紅玉微醇 柔順鮮奶茶",
       rank: "No.3"
     },
     {
       bg: "images/index/hotDrink/no4-background.png",
-      mainImg: "images/drink/toppings/toppings4.webp",
-      title: "經典搭配珍珠歐蕾",
+      mainImg: "images/menu/toppings/oyu.webp",
+      title: "經典搭配粿玉歐蕾",
       rank: "No.4",
     },
     {
       bg: "images/index/hotDrink/no5-background.png",
-      mainImg: "images/drink/juice/juice6.webp",
-      title: "蜜凍珍珠奶喝出幸福感！",
+      mainImg: "images/menu/plantmilk/wuyen.webp",
+      title: "榜單佳作 不容錯過！",
       rank: "No.5"
     },
   ];
