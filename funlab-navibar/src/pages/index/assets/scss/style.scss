@@ -59,6 +59,10 @@ html {
 
 }
 
+.index-main{
+    background: linear-gradient(#FFFFFF 90%,#dae4ff 95%);
+}
+
 /* banner */
 #index-banner {
     height: 100vh;
@@ -641,6 +645,12 @@ html {
         &.active {
             display: block;
             /* 顯示啟用的文字 */
+        }
+        .content{
+            span{
+                color: $color-primary-blue;
+                font-weight: 600;
+            }
         }
     }
 

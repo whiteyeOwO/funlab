@@ -64,7 +64,7 @@ function Index() {
         <>
             <SubNavigation />
             {/* 主要內容區 */}
-            <main>
+            <main className='index-main'>
                 <section id="index-banner">
                     <div ref={imgContainerRef} className="img-container">
                         <div ref={circleWrapperRef} className="circle-wrapper">
@@ -124,7 +124,7 @@ function Index() {
                                         <h2>#放飲多重選擇</h2>
                                     </header>
                                     <div className="content">
-                                        <p >無論是經典風味、創意特調或清新果茶，在「放飲」菜單應盡有，我們相信每個人都應該享受屬於自己的特色飲品，最貼心的飲品服務。</p>
+                                        <p >無論是經典風味、創意特調或清新果茶，在「放飲」菜單應盡有，我們相信<span>每個人都應該享受屬於自己的特色飲品</span>，最貼心的飲品服務。</p>
                                     </div>
                                     <Link to="/about">
                                         <div className="aboutus">
@@ -138,7 +138,7 @@ function Index() {
                                         <h2>#嚴選新鮮食材</h2>
                                     </header>
                                     <div className="content">
-                                        <p >堅持採用當季水果，為您獻上天然鮮甜的飲品體驗。每一杯飲品都蘊含著季節的氣息，讓每一口飲品帶您回歸自然，感受大地最純真的味道。</p>
+                                        <p ><span>堅持採用當季水果，為您獻上天然鮮甜的飲品體驗</span>。每一杯飲品都蘊含著季節的氣息，讓每一口飲品帶您回歸自然，感受大地最純真的味道。</p>
                                     </div>
                                     <Link to="/about">
                                         <div className="aboutus">
@@ -152,7 +152,7 @@ function Index() {
                                         <h2>#陪你度過每一品茶</h2>
                                     </header>
                                     <div className="content">
-                                        <p >無論您喜歡清新的綠茶，還是偏愛香醇的紅茶，我們的茶葉就像您的好朋友，隨時陪伴您度過每一個心情，擁有特選產地和專業沖泡，釋放出最純粹的茶香。</p>
+                                        <p >無論您喜歡清新的綠茶，還是偏愛香醇的紅茶，我們的茶葉就像您的好朋友，隨時陪伴您度過每一個心情，<span>擁有特選產地和專業沖泡</span>，釋放出最純粹的茶香。</p>
                                     </div>
                                     <Link to="/about">
                                         <div className="aboutus">

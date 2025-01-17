@@ -14,7 +14,10 @@ const Hint = ({ isVisible, onClose }) => {
         {
             id: 2,
             title: '客製方式',
-            description: '選好茶底或奶類基底(可混搭!)水果和料最多選3種喔!',
+            description: <>
+                            <p>選好茶底或奶類基底(可混搭!)</p>
+                            <p>水果和料最多選3種喔!</p>
+                        </>,
             image: 'images/DIY/hint-step2.svg',
             alt: 'Step 2',
         },
@@ -51,7 +54,14 @@ const Hint = ({ isVisible, onClose }) => {
     return (
         <div id="hintArea" onClick={handleBackgroundClick}>
             <div className="popup-content">
-                <img className='hintClose' onClick={handleBackgroundClick} src="images/icon/icon-close.svg" alt="" />
+            {currentStep === 4 && (
+                    <img
+                        className='hintClose'
+                        onClick={onClose}
+                        src="images/icon/icon-close.svg"
+                        alt="Close"
+                    />
+                )}
                 {/* 動態顯示當前步驟內容 */}
                 <div className="stepText">
                     <h3>{steps[currentStep - 1].title}</h3>
