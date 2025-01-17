@@ -184,8 +184,7 @@ function Index() {
                             </GSReveal>
                         </header>
                         {/* <GSReveal from='bottom'> */}
-                        <img className='hotDrink1' src="images/index/hotDrink/hotDrink1.png" alt="" />
-                        <img className='hotDrink2' src="images/index/hotDrink/hotDrink2.png" alt="" />
+                        <img className='hotDrink' src="images/index/hotDrink/DIYHotDrink.png" alt="" />
                         {/* </GSReveal> */}
                         {/* <GSReveal from='right'> */}
                         <div className="content">

@@ -133,6 +133,7 @@ html {
 
 /* drink */
 #index-drink {
+    width: 100%;
     height: 100vh;
     #drinkContent {
         position: relative;
@@ -191,6 +192,7 @@ html {
     }
 
     .drinkCarousel {
+        width: 100%;
         position: relative;
         height: 75vh;
         top: -20%;
@@ -203,15 +205,15 @@ html {
 
         .swiper-container {
             position: relative;
-            height: 50vh;
+            height: 100%;
             width: 80%;
         }
 
         .swiper-slide {
             position: relative;
-            width: 400px;
+            width: 30%;
             text-align: center;
-            font-size: 18px;
+            font-size: 1.125rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -234,7 +236,6 @@ html {
                 img {
                     width: 80%;
                     max-width: 300px;
-                    // height: 300px;
                     object-fit: cover;
                 }
             }
@@ -755,39 +756,19 @@ html {
             }
         }
 
-        .hotDrink1 {
+        .hotDrink {
             width: 40%;
-            max-width: 600px;
+            max-width: 700px;
             height: fit-content;
             position: absolute;
             top: 25%;
             left: 32%;
-            transform: rotate(15deg);
             z-index: 1;
             &:hover {
-                animation: rotate-hotdirnk1 0.7s ease-in-out both;
+                animation: rotate-hotdirnk 0.7s ease-in-out both;
 
                 span {
-                    animation: storm-hotdirnk1 0.7s ease-in-out both;
-                    animation-delay: 0.06s;
-                }
-            }
-        }
-
-        .hotDrink2 {
-            width: 30%;
-            max-width: 400px;
-            height: fit-content;
-            position: absolute;
-            top: 45%;
-            left: 28%;
-            transform: rotate(-15deg);
-            z-index: 0;
-            &:hover {
-                animation: rotate-hotdirnk2 0.7s ease-in-out both;
-
-                span {
-                    animation: storm-hotdirnk2 0.7s ease-in-out both;
+                    animation: storm-hotdirnk 0.7s ease-in-out both;
                     animation-delay: 0.06s;
                 }
             }
