@@ -172,8 +172,6 @@ function Index() {
                     </div>
                 </section>
 
-                {/* <div className="s" style={{ height: "300vh", position: 'relative', zIndex: -1 }}></div> */}
-
                 <section id="index-DIY">
                     <WaveScroll DIYOffset={DIYOffset} targetSelectors={['.wave', '#DIYContent']} />
                     {/* <img className='whiteWave' src="images/index/graph-whiteWaves.svg" alt="" /> */}

@@ -787,9 +787,28 @@ html {
             font-size: $font-size-20;
 
             p {
+                position: relative;
                 display: block;
                 color: $color-primary-white;
                 margin-bottom: 5px;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0%;
+                    /* 初始寬度為 0 */
+                    height: 2px;
+                    background-color: $color-primary-white;
+                    transition: width 0.2s ease;
+                    /* 添加過渡效果 */
+                }
+        
+                &:hover::after {
+                    width: 100%;
+                    /* 當滑鼠移到標題時，底線展開至全寬 */
+                }
+
             }
 
             img {
@@ -836,6 +855,7 @@ html {
     }
 }
 
+/* dropText */
 #index-dropText {
     height: 50vh;
     position: relative;
